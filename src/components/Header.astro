@@ -1,0 +1,55 @@
+---
+---
+<header id="main-header" class="sticky top-0 z-50 transition-all duration-300 bg-white border-b border-gray-100 shadow-sm">
+  <div class="container mx-auto px-6 max-w-7xl h-20 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="/" class="group flex items-center gap-2">
+      <span class="text-2xl font-black italic tracking-tighter uppercase text-queens-primary group-hover:text-queens-secondary transition-colors duration-300">
+        Queens <span class="text-queens-secondary group-hover:text-queens-primary transition-colors duration-300">Mobile</span>
+      </span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="/" class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide">Home</a>
+      <a href="/buy-new-tires" data-astro-reload class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide">Find New Tires</a>
+      <a href="/tire-installation" class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide">Schedule Install</a>
+      <a href="/faq" class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide">FAQ</a>
+    </nav>
+
+    <!-- Mobile Menu Button (Placeholder) -->
+    <button class="md:hidden text-queens-primary hover:text-queens-secondary">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('main-header');
+  
+  const updateHeader = () => {
+    if (window.scrollY > 10) {
+      header.classList.remove('bg-white', 'shadow-sm');
+      header.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-md');
+    } else {
+      header.classList.add('bg-white', 'shadow-sm');
+      header.classList.remove('bg-white/80', 'backdrop-blur-md', 'shadow-md');
+    }
+  };
+
+  window.addEventListener('scroll', updateHeader);
+  // Initial check
+  updateHeader();
+  
+  // Handle Astro View Transitions
+  document.addEventListener('astro:page-load', () => {
+    const header = document.getElementById('main-header');
+    if (header) {
+      window.removeEventListener('scroll', updateHeader); // Remove old listener to avoid duplicates if any
+      window.addEventListener('scroll', updateHeader);
+      updateHeader();
+    }
+  });
+</script>

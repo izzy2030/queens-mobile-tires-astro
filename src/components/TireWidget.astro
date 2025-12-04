@@ -1,0 +1,59 @@
+---
+// src/components/TireWidget.astro
+// This is a UI Shell. Later, we can connect the <form> action to your real search URL.
+import { Image } from 'astro:assets';
+import iphoneImage from '../assets/images/Tireconnect iPhone.webp';
+---
+
+<section class="relative py-24 bg-queens-black overflow-hidden">
+  
+  {/* Background: Abstract Tire Tread Pattern */}
+  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 20px 20px;"></div>
+  
+  {/* The "Glow" behind the phone area */}
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-queens-secondary/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <div class="container mx-auto px-4 max-w-7xl relative z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-16 justify-center">
+      
+      {/* LEFT: The Pitch (Replaces "Order Online" text) */}
+      <div class="lg:w-5/12 text-center lg:text-left">
+        <div class="inline-block bg-queens-secondary/10 border border-queens-secondary/20 rounded-full px-4 py-1 text-queens-secondary text-sm font-bold tracking-wider uppercase mb-6">
+          Mobile Service
+        </div>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+          Don't Go to the Shop.<br/>
+          <span class="text-queens-secondary">We Bring the Shop to You.</span>
+        </h2>
+        <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+          Skip the waiting room. Select your vehicle, pick your tires, and we install them in your driveway while you watch Netflix.
+        </p>
+        
+        <ul class="space-y-4 text-left inline-block">
+          <li class="flex items-center gap-3 text-white font-medium">
+            <span class="w-8 h-8 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center">✓</span>
+            Order from your phone
+          </li>
+          <li class="flex items-center gap-3 text-white font-medium">
+            <span class="w-8 h-8 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center">✓</span>
+            Installed at Home or Work
+          </li>
+          <li class="flex items-center gap-3 text-white font-medium">
+            <span class="w-8 h-8 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center">✓</span>
+            Competitive Online Pricing
+          </li>
+        </ul>
+      </div>
+
+      {/* RIGHT: The "App" Interface (Replaces the phone image) */}
+      <div class="lg:w-5/12 w-full max-w-md flex justify-center">
+        <Image 
+          src={iphoneImage} 
+          alt="TireConnect App on iPhone" 
+          class="w-1/2 h-auto drop-shadow-2xl hover:scale-[1.02] transition duration-500" 
+        />
+      </div>
+
+    </div>
+  </div>
+</section>

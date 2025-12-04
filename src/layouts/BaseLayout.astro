@@ -1,0 +1,33 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import '@fontsource/inter';
+import '@fontsource/source-serif-4';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+const { title = "Queens Mobile Tires", description = "We come to you." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg-gray-50 text-queens-primary flex flex-col min-h-screen">
+    
+    <Header />
+
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <footer class="bg-queens-black text-gray-500 py-8 text-center border-t border-gray-800">
+      <p>&copy; {new Date().getFullYear()} Queens Mobile Tires. Serving Northern Illinois.</p>
+    </footer>
+
+  </body>
+</html>

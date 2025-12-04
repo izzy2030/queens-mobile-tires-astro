@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+    --color-queens-primary: #0b1121;
+    --color-queens-secondary: #0e79c9;
+    --color-queens-dark: #080c17;
+    --color-queens-light: #1489e1;
+    --color-queens-orange: #f97316;
+    --color-queens-black: #050505;
+
+    --font-sans: "Inter", sans-serif;
+    --font-serif: "Source Serif 4", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 5rem;
+    /* Match header height (h-20) */
+}
+
+main>section {
+    scroll-snap-align: start;
+    scroll-margin-top: 1rem;
+    /* Slight offset */
+}
