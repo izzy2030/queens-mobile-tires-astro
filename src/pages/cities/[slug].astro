@@ -2,45 +2,10 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 // 1. FETCH ALL CITIES & GENERATE PATHS
+import cities from "../../data/cities.json";
+
 export async function getStaticPaths() {
-  let nodes = [];
-  try {
-    const response = await fetch("https://queensmobiletires.com/graphql", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: `
-          query GetAllCities {
-            cities(first: 100) {
-              nodes {
-                slug
-                title
-                cityFields {
-                  localTitle
-                  localAttractions
-                  source
-                  image1 {
-                    node { sourceUrl altText }
-                  }
-                  image2 {
-                    node { sourceUrl altText }
-                  }
-                }
-              }
-            }
-          }
-        `,
-      }),
-    });
-
-    const { data } = await response.json();
-    nodes = data?.cities?.nodes || [];
-  } catch (error) {
-    console.error("Error fetching cities for paths:", error);
-    nodes = [];
-  }
-
-  return nodes.map((city) => ({
+  return cities.map((city) => ({
     params: { slug: city.slug },
     props: { city },
   }));
