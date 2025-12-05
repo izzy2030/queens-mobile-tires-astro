@@ -14,16 +14,11 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
     scroll-padding-top: 5rem;
     /* Match header height (h-20) */
 }
 
-main>section {
-    scroll-snap-align: start;
-    scroll-margin-top: 1rem;
-    /* Slight offset */
-}
+
 
 /* Standardized Primary Button */
 .btn-primary {
