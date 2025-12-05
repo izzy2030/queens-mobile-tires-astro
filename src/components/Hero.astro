@@ -1,34 +1,102 @@
 ---
+
 ---
 
 <section class="relative py-24 bg-white overflow-hidden">
   <!-- Background Glow Effect (Subtle) -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none z-0">
-    <div class="absolute top-[20%] left-[10%] w-96 h-96 bg-[var(--color-queens-secondary)]/10 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob"></div>
-    <div class="absolute top-[20%] right-[10%] w-96 h-96 bg-[var(--color-queens-light)]/10 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob animation-delay-2000"></div>
+  <div
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none z-0"
+  >
+    <div
+      class="absolute top-[20%] left-[10%] w-96 h-96 bg-[var(--color-queens-secondary)]/10 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob"
+    >
+    </div>
+    <div
+      class="absolute top-[20%] right-[10%] w-96 h-96 bg-[var(--color-queens-light)]/10 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob animation-delay-2000"
+    >
+    </div>
   </div>
 
   <div class="container relative z-10 mx-auto px-6 max-w-5xl text-center">
-    
     <!-- Badge (Optional, mimics the '100K+ tasks' pill) -->
-    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-queens-gray)]/50 border border-[var(--color-queens-primary)]/5 mb-8">
-      <span class="w-2 h-2 rounded-full bg-[var(--color-queens-secondary)]"></span>
-      <span class="text-sm font-medium text-[var(--color-queens-primary)]/70 font-sans">Northern Illinois' Premier Mobile Service</span>
+    <div
+      class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-queens-secondary)]/10 border border-[var(--color-queens-secondary)]/20 mb-8"
+    >
+      <span class="w-2 h-2 rounded-full bg-[var(--color-queens-secondary)]"
+      ></span>
+      <span
+        class="text-sm font-medium text-[var(--color-queens-primary)]/70 font-sans"
+        >Northern Illinois' Premier Mobile Service</span
+      >
     </div>
 
     <!-- Headline -->
-    <h1 class="text-6xl md:text-8xl font-sans font-normal tracking-tighter text-[var(--color-queens-primary)] mb-8 leading-[1.1]">
+    <h1
+      class="text-6xl md:text-8xl font-sans font-normal tracking-tighter text-[var(--color-queens-primary)] mb-8 leading-[1.1]"
+    >
       We Bring The <br />
-      <span class="font-serif italic text-[var(--color-queens-secondary)]">Tire Shop</span> To You
+      <span class="font-serif italic text-[var(--color-queens-secondary)]"
+        >Tire Shop</span
+      > To You
     </h1>
 
     <!-- Subheadline -->
-    <p class="text-xl md:text-2xl text-[var(--color-queens-primary)]/60 mb-12 max-w-2xl mx-auto leading-relaxed font-sans font-light">
-      Skip the waiting room. We deliver and install your new tires at home or work.
+    <p
+      class="text-xl md:text-2xl text-[var(--color-queens-primary)]/60 mb-12 max-w-2xl mx-auto leading-relaxed font-sans font-light"
+    >
+      Skip the waiting room. We deliver and install your new tires at home or
+      work.
     </p>
 
     <!-- Audio Player (Premium Design) -->
-    <div class="max-w-md mx-auto mb-20 bg-gradient-to-br from-gray-50 via-white to-gray-100/80 backdrop-blur-xl border border-gray-200/60 rounded-3xl p-6 shadow-2xl shadow-gray-900/10 hover:shadow-3xl transition-all duration-300 group" x-data="{ playing: false, audio: null, progress: 0, duration: 0, currentTime: '00:00', durationTime: '00:00' }" x-init="
+    <div class="relative max-w-md mx-auto mb-20 group">
+      <!-- Flowing Beam Animation (SVG Stroke) -->
+      <svg
+        class="absolute -inset-[2px] w-[calc(100%+4px)] h-[calc(100%+4px)] pointer-events-none"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <rect
+          x="0"
+          y="0"
+          width="100"
+          height="100"
+          rx="14"
+          ry="14"
+          fill="none"
+          stroke="url(#beam-gradient)"
+          stroke-width="0.8"
+          class="beam-path"
+          pathLength="100"></rect>
+        <defs>
+          <linearGradient id="beam-gradient" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="transparent"></stop>
+            <stop
+              offset="40%"
+              stop-color="var(--color-queens-light)"
+              stop-opacity="0.8"></stop>
+            <stop
+              offset="50%"
+              stop-color="var(--color-queens-light)"
+              stop-opacity="1"></stop>
+            <stop
+              offset="60%"
+              stop-color="var(--color-queens-light)"
+              stop-opacity="0.8"></stop>
+            <stop offset="100%" stop-color="transparent"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      <!-- Soft Outer Glow (Static) -->
+      <div
+        class="absolute -inset-1 rounded-[28px] bg-[var(--color-queens-light)]/20 blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-700"
+      >
+      </div>
+
+      <div
+        class="relative z-10 bg-gradient-to-br from-gray-50 via-white to-gray-100/80 backdrop-blur-xl border border-gray-200/60 rounded-3xl p-6 shadow-2xl shadow-gray-900/10 hover:shadow-3xl transition-all duration-300"
+        x-data="{ playing: false, audio: null, progress: 0, duration: 0, currentTime: '00:00', durationTime: '00:00' }"
+        x-init="
       audio = $refs.audioPlayer;
       audio.addEventListener('loadedmetadata', () => {
         duration = audio.duration;
@@ -47,52 +115,82 @@
         progress = 0;
         currentTime = '00:00';
       });
-    ">
-      <audio x-ref="audioPlayer" src="https://queensmobiletires.com/wp-content/uploads/2025/01/Queens-Mobile-Tire-Welcome-Message-Cassidy.mp3" preload="metadata"></audio>
-      
-      <div class="flex items-center gap-5">
-        <button 
-          @click="playing ? audio.pause() : audio.play(); playing = !playing" 
-          class="w-14 h-14 flex items-center justify-center rounded-full bg-white text-[var(--color-queens-secondary)] hover:scale-105 hover:shadow-lg hover:shadow-[var(--color-queens-secondary)]/30 transition-all duration-300 focus:outline-none shadow-md ring-2 ring-[var(--color-queens-secondary)]/10 group-hover:ring-[var(--color-queens-secondary)]/20"
-        >
-          <template x-if="!playing">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 ml-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-            </svg>
-          </template>
-          <template x-if="playing">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-            </svg>
-          </template>
-        </button>
+    "
+      >
+        <audio
+          x-ref="audioPlayer"
+          src="https://queensmobiletires.com/wp-content/uploads/2025/01/Queens-Mobile-Tire-Welcome-Message-Cassidy.mp3"
+          preload="metadata"></audio>
 
-        <div class="flex-grow flex flex-col justify-center gap-2">
-          <div class="flex justify-between text-[10px] font-bold tracking-widest uppercase text-gray-500">
-            <span>Your Time, Your Place</span>
-            <span x-text="currentTime" class="text-[var(--color-queens-secondary)]">00:00</span>
-          </div>
-          <div class="bg-gray-200/60 h-2 rounded-full overflow-hidden cursor-pointer relative shadow-inner" @click="
-            let rect = $el.getBoundingClientRect();
-            let x = $event.clientX - rect.left;
-            let width = rect.width;
-            let percent = x / width;
-            audio.currentTime = percent * audio.duration;
-          ">
-            <div class="bg-gradient-to-r from-[var(--color-queens-secondary)] to-[var(--color-queens-light)] h-full absolute top-0 left-0 transition-all duration-100 ease-linear shadow-sm" :style="`width: ${progress}%`"></div>
+        <div class="flex items-center gap-5">
+          <button
+            @click="playing ? audio.pause() : audio.play(); playing = !playing"
+            class="w-14 h-14 flex items-center justify-center rounded-full bg-white text-[var(--color-queens-secondary)] hover:scale-105 hover:shadow-lg hover:shadow-[var(--color-queens-secondary)]/30 transition-all duration-300 focus:outline-none shadow-md ring-2 ring-[var(--color-queens-secondary)]/10 group-hover:ring-[var(--color-queens-secondary)]/20"
+          >
+            <template x-if="!playing">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-6 h-6 ml-0.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
+                ></path>
+              </svg>
+            </template>
+            <template x-if="playing">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 5.25v13.5m-7.5-13.5v13.5"></path>
+              </svg>
+            </template>
+          </button>
+
+          <div class="flex-grow flex flex-col justify-center gap-2">
+            <div
+              class="flex justify-between text-[10px] font-bold tracking-widest uppercase text-gray-500"
+            >
+              <span>Your Time, Your Place</span>
+              <span
+                x-text="currentTime"
+                class="text-[var(--color-queens-secondary)]">00:00</span
+              >
+            </div>
+            <div
+              class="bg-gray-200/60 h-2 rounded-full overflow-hidden cursor-pointer relative shadow-inner"
+              @click="let rect = $el.getBoundingClientRect(); let x = $event.clientX - rect.left; let width = rect.width; let percent = x / width; audio.currentTime = percent * audio.duration;"
+            >
+              <div
+                class="bg-gradient-to-r from-[var(--color-queens-secondary)] to-[var(--color-queens-light)] h-full absolute top-0 left-0 transition-all duration-100 ease-linear shadow-sm"
+                :style="`width: ${progress}%`"
+              >
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-
   </div>
 </section>
 
 <!-- Alpine.js (if not loaded) -->
 <script>
-  import Alpine from 'alpinejs';
-  
+  import Alpine from "alpinejs";
+
   if (!window.Alpine) {
     window.Alpine = Alpine;
     Alpine.start();
@@ -100,11 +198,34 @@
 </script>
 
 <style>
+  .beam-path {
+    stroke-dasharray: 25 75;
+    stroke-dashoffset: 0;
+    animation: beam-flow 3s linear infinite;
+    filter: drop-shadow(0 0 6px var(--color-queens-light))
+      drop-shadow(0 0 12px var(--color-queens-light));
+  }
+  @keyframes beam-flow {
+    from {
+      stroke-dashoffset: 100;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
   @keyframes blob {
-    0% { transform: translate(0px, 0px) scale(1); }
-    33% { transform: translate(30px, -50px) scale(1.1); }
-    66% { transform: translate(-20px, 20px) scale(0.9); }
-    100% { transform: translate(0px, 0px) scale(1); }
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
   }
   .animate-blob {
     animation: blob 7s infinite;

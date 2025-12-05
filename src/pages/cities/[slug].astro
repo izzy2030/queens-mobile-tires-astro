@@ -1,39 +1,46 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 // 1. FETCH ALL CITIES & GENERATE PATHS
 export async function getStaticPaths() {
-  const response = await fetch("https://queensmobiletires.com/graphql", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      query: `
-        query GetAllCities {
-          cities(first: 100) {
-            nodes {
-              slug
-              title
-              cityFields {
-                localTitle
-                localAttractions
-                source
-                image1 {
-                  node { sourceUrl altText }
-                }
-                image2 {
-                  node { sourceUrl altText }
+  let nodes = [];
+  try {
+    const response = await fetch("https://queensmobiletires.com/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `
+          query GetAllCities {
+            cities(first: 100) {
+              nodes {
+                slug
+                title
+                cityFields {
+                  localTitle
+                  localAttractions
+                  source
+                  image1 {
+                    node { sourceUrl altText }
+                  }
+                  image2 {
+                    node { sourceUrl altText }
+                  }
                 }
               }
             }
           }
-        }
-      `
-    }),
-  });
+        `,
+      }),
+    });
 
-  const { data } = await response.json();
+    const { data } = await response.json();
+    nodes = data?.cities?.nodes || [];
+  } catch (error) {
+    console.error("Error fetching cities for paths:", error);
+    nodes = [];
+  }
 
-  return data.cities.nodes.map((city) => ({
+  return nodes.map((city) => ({
     params: { slug: city.slug },
     props: { city },
   }));
@@ -45,17 +52,26 @@ const acf = city.cityFields;
 ---
 
 <BaseLayout title={`${acf.localTitle || city.title} | Queens Mobile Tires`}>
-  
-  <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-queens-black">
+  <section
+    class="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-queens-black"
+  >
     <div class="absolute inset-0 bg-hero-gradient z-10"></div>
-    {acf.image1?.node?.sourceUrl && (
-      <img src={acf.image1.node.sourceUrl} class="absolute inset-0 w-full h-full object-cover opacity-80" />
-    )}
+    {
+      acf.image1?.node?.sourceUrl && (
+        <img
+          src={acf.image1.node.sourceUrl}
+          class="absolute inset-0 w-full h-full object-cover opacity-80"
+        />
+      )
+    }
     <div class="relative z-20 text-center px-4 max-w-4xl">
       <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
         {acf.localTitle || `Tire Service in ${city.title}`}
       </h1>
-      <a href="tel:847-555-0199" class="bg-queens-orange text-white text-xl font-bold py-4 px-10 rounded-full hover:bg-white hover:text-queens-orange transition">
+      <a
+        href="tel:847-555-0199"
+        class="bg-queens-orange text-white text-xl font-bold py-4 px-10 rounded-full hover:bg-white hover:text-queens-orange transition"
+      >
         Book Appointment
       </a>
     </div>
@@ -63,16 +79,29 @@ const acf = city.cityFields;
 
   <div class="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12">
     <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-      <h2 class="text-2xl font-bold mb-4 text-queens-black">About {city.title}</h2>
-      <div class="prose prose-lg prose-headings:text-queens-black prose-a:text-queens-orange text-gray-700" set:html={acf.localAttractions} />
-      {acf.source && <p class="mt-6 text-xs text-gray-400 italic">Source: {acf.source}</p>}
+      <h2 class="text-2xl font-bold mb-4 text-queens-black">
+        About {city.title}
+      </h2>
+      <div
+        class="prose prose-lg prose-headings:text-queens-black prose-a:text-queens-orange text-gray-700"
+        set:html={acf.localAttractions}
+      />
+      {
+        acf.source && (
+          <p class="mt-6 text-xs text-gray-400 italic">Source: {acf.source}</p>
+        )
+      }
     </div>
 
     <div>
-      {acf.image2?.node?.sourceUrl && (
-        <img src={acf.image2.node.sourceUrl} class="rounded-2xl shadow-lg w-full h-auto rotate-1 hover:rotate-0 transition" />
-      )}
+      {
+        acf.image2?.node?.sourceUrl && (
+          <img
+            src={acf.image2.node.sourceUrl}
+            class="rounded-2xl shadow-lg w-full h-auto rotate-1 hover:rotate-0 transition"
+          />
+        )
+      }
     </div>
   </div>
-
 </BaseLayout>
