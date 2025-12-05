@@ -150,7 +150,37 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 </p>
             </div>
 
-            <div class="p-8 bg-white">
+            <div
+                class="p-8 bg-white"
+                x-data="{
+                    jobDetails: {},
+                    dateTimeDetails: {},
+                    customerDetails: {},
+                    confirmationNumber: '',
+                    init() {
+                        this.jobDetails = JSON.parse(localStorage.getItem('jobDetails') || '{}');
+                        this.dateTimeDetails = JSON.parse(localStorage.getItem('dateTimeDetails') || '{}');
+                        this.customerDetails = JSON.parse(localStorage.getItem('customerDetails') || '{}');
+                        this.confirmationNumber = 'QMT-' + new Date().getFullYear() + '-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+                    },
+                    formatDate(dateStr) {
+                        if (!dateStr) return 'Not selected';
+                        const date = new Date(dateStr);
+                        return date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                    },
+                    getServiceName() {
+                        const services = {
+                            'mount-balance': 'Mount & Balance',
+                            'tire-rotation-only': 'Tire Rotation',
+                            'mount-my-way': 'Mount My Way (Balance 4)',
+                            'unmount-swap': 'Un-mount Wheel & Tire Swap',
+                            'flat-repair': 'Flat Repair',
+                            'install-spare': 'Install Spare'
+                        };
+                        return services[this.jobDetails?.service] || 'No service selected';
+                    }
+                }"
+            >
                 <!-- Confirmation Number -->
                 <div class="text-center mb-8 pb-8 border-b border-gray-200">
                     <p
@@ -158,8 +188,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     >
                         Confirmation Number
                     </p>
-                    <p class="text-2xl font-bold text-[#1e3a8a]">
-                        #QMT-2025-001234
+                    <p
+                        class="text-2xl font-bold text-[#1e3a8a]"
+                        x-text="'#' + confirmationNumber"
+                    >
                     </p>
                 </div>
 
@@ -197,11 +229,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     <p class="text-xs text-gray-500 uppercase">
                                         Date & Time
                                     </p>
-                                    <p class="font-bold text-gray-800">
-                                        Friday, December 6th, 2025
+                                    <p
+                                        class="font-bold text-gray-800"
+                                        x-text="formatDate(dateTimeDetails.date)"
+                                    >
                                     </p>
-                                    <p class="text-gray-600">
-                                        10:00 AM - 11:00 AM
+                                    <p
+                                        class="text-gray-600"
+                                        x-text="dateTimeDetails.time || 'Not selected'"
+                                    >
                                     </p>
                                 </div>
                             </div>
@@ -232,10 +268,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     <p class="text-xs text-gray-500 uppercase">
                                         Service
                                     </p>
-                                    <p class="font-bold text-gray-800">
-                                        Mount & Balance 4 Tires
+                                    <p
+                                        class="font-bold text-gray-800"
+                                        x-text="getServiceName() + ' (' + (jobDetails.quantities?.mount || 0) + ' Tires)'"
+                                    >
                                     </p>
-                                    <p class="text-gray-600">$224.95</p>
+                                    <p
+                                        class="text-gray-600"
+                                        x-text="'$' + (jobDetails.costs?.mount || '0.00')"
+                                    >
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -270,11 +312,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     <p class="text-xs text-gray-500 uppercase">
                                         Service Location
                                     </p>
-                                    <p class="font-bold text-gray-800">
-                                        123 Main Street
+                                    <p
+                                        class="font-bold text-gray-800"
+                                        x-text="customerDetails.address?.street || 'Not provided'"
+                                    >
                                     </p>
-                                    <p class="text-gray-600">
-                                        Chicago, IL 60601
+                                    <p
+                                        class="text-gray-600"
+                                        x-text="(customerDetails.address?.city || '') + ', ' + (customerDetails.address?.state || '') + ' ' + (customerDetails.address?.zip || '')"
+                                    >
                                     </p>
                                 </div>
                             </div>
@@ -305,11 +351,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     <p class="text-xs text-gray-500 uppercase">
                                         Vehicle
                                     </p>
-                                    <p class="font-bold text-gray-800">
-                                        2024 Toyota Camry
+                                    <p
+                                        class="font-bold text-gray-800"
+                                        x-text="(jobDetails.vehicle?.year || '') + ' ' + (jobDetails.vehicle?.make || '') + ' ' + (jobDetails.vehicle?.model || '')"
+                                    >
                                     </p>
-                                    <p class="text-gray-600">
-                                        Black • ABC-1234
+                                    <p
+                                        class="text-gray-600"
+                                        x-text="(jobDetails.vehicle?.color || '') + ' • ' + (jobDetails.vehicle?.plate || '')"
+                                    >
                                     </p>
                                 </div>
                             </div>
@@ -380,4 +430,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
         </div>
     </div>
+
+    <script>
+        import Alpine from "alpinejs";
+
+        if (!window.Alpine) {
+            window.Alpine = Alpine;
+            Alpine.start();
+        }
+    </script>
 </BaseLayout>
