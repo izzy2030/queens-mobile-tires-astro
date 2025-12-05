@@ -20,13 +20,24 @@ try {
     }),
   });
 
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch cities: ${response.status} ${response.statusText}`,
+    );
+  }
+
   const { data } = await response.json();
   cities = data?.cities?.nodes || [];
+  console.log(`[Footer] Fetched ${cities.length} cities successfully.`);
 } catch (error) {
-  console.error("Error fetching cities for footer:", error);
-  // Fallback to empty list or static list if preferred
+  console.error("[Footer] Error fetching cities:", error);
   cities = [];
 }
+
+// Clean up titles (e.g. "Mobile Tire Service in Elgin, IL" -> "Elgin, IL")
+const cleanTitle = (title) => {
+  return title.replace("Mobile Tire Service in ", "").trim();
+};
 ---
 
 <footer class="bg-queens-black text-gray-400 py-12 border-t border-gray-800">
@@ -52,25 +63,29 @@ try {
             <a
               href="/"
               class="text-sm hover:text-queens-secondary transition-colors"
-              >Home</a>
+              >Home</a
+            >
           </li>
           <li>
             <a
               href="/buy-new-tires"
               class="text-sm hover:text-queens-secondary transition-colors"
-              >Find New Tires</a>
+              >Find New Tires</a
+            >
           </li>
           <li>
             <a
               href="/tire-installation"
               class="text-sm hover:text-queens-secondary transition-colors"
-              >Schedule Install</a>
+              >Schedule Install</a
+            >
           </li>
           <li>
             <a
               href="/faq"
               class="text-sm hover:text-queens-secondary transition-colors"
-              >FAQ</a>
+              >FAQ</a
+            >
           </li>
         </ul>
       </div>
@@ -88,7 +103,7 @@ try {
                   href={`/cities/${city.slug}`}
                   class="hover:text-queens-secondary transition-colors"
                 >
-                  {city.title}
+                  {cleanTitle(city.title)}
                 </a>
               </li>
             ))
