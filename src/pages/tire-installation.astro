@@ -2,49 +2,35 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Schedule Installation | Queens Mobile Tires">
+<BaseLayout title="Job Details | Queens Mobile Tires">
   <div class="min-h-screen bg-gray-100 py-8 font-sans">
     <!-- Progress Steps -->
     <div class="container mx-auto max-w-4xl mb-8 px-4">
       <div
         class="flex justify-between items-start text-xs font-semibold uppercase tracking-wide"
       >
-        <!-- Step 1: Completed -->
-        <div class="flex flex-col items-center gap-2 text-green-600">
-          <div
-            class="w-10 h-10 rounded-full bg-green-500 text-white font-bold flex items-center justify-center shadow-md"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="3"
-              stroke="currentColor"
-              class="w-5 h-5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4.5 12.75l6 6 9-13.5"></path>
-            </svg>
-          </div>
-          <span>Zip Code</span>
-        </div>
-
-        <!-- Connector Line -->
-        <div
-          class="flex-1 h-1 bg-green-500 self-center mt-[-12px] mx-2 rounded"
-        >
-        </div>
-
-        <!-- Step 2: Current -->
+        <!-- Step 1: Current -->
         <div class="flex flex-col items-center gap-2 text-[#3b6eae]">
           <div
             class="w-10 h-10 rounded-full bg-[#3b6eae] text-white font-bold flex items-center justify-center shadow-lg ring-4 ring-[#3b6eae]/30"
           >
-            2
+            1
           </div>
           <span class="font-bold">Job Details</span>
+        </div>
+
+        <!-- Connector Line -->
+        <div class="flex-1 h-1 bg-gray-300 self-center mt-[-12px] mx-2 rounded">
+        </div>
+
+        <!-- Step 2: Future -->
+        <div class="flex flex-col items-center gap-2 text-gray-400">
+          <div
+            class="w-10 h-10 rounded-full border-2 border-gray-300 bg-white text-gray-400 font-bold flex items-center justify-center"
+          >
+            2
+          </div>
+          <span>Date & Time</span>
         </div>
 
         <!-- Connector Line -->
@@ -58,7 +44,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           >
             3
           </div>
-          <span>Time & Date</span>
+          <span>Your Details</span>
         </div>
 
         <!-- Connector Line -->
@@ -71,20 +57,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             class="w-10 h-10 rounded-full border-2 border-gray-300 bg-white text-gray-400 font-bold flex items-center justify-center"
           >
             4
-          </div>
-          <span>Your Details</span>
-        </div>
-
-        <!-- Connector Line -->
-        <div class="flex-1 h-1 bg-gray-300 self-center mt-[-12px] mx-2 rounded">
-        </div>
-
-        <!-- Step 5: Future -->
-        <div class="flex flex-col items-center gap-2 text-gray-400">
-          <div
-            class="w-10 h-10 rounded-full border-2 border-gray-300 bg-white text-gray-400 font-bold flex items-center justify-center"
-          >
-            5
           </div>
           <span>Review</span>
         </div>
@@ -124,136 +96,128 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </p>
 
         <!-- Services Form -->
-        <form class="space-y-6">
-          <!-- Service Option 1 -->
+
+        <div class="h-px bg-gray-200 my-8"></div>
+
+        <!-- Services Form -->
+        <form
+          class="space-y-6"
+          x-data="{ 
+          selectedService: '',
+          mountQty: 4,
+          tpmsQty: 4,
+          sensorQty: 4,
+          disposalQty: 4,
+          get mountPrice() {
+            const prices = {
+              1: '149.99',
+              2: '169.97',
+              3: '204.96',
+              4: '224.95',
+              5: '274.94',
+              6: '309.93'
+            };
+            return prices[this.mountQty] || '0.00';
+          },
+          get tpmsPrice() {
+            return (9.99 * this.tpmsQty).toFixed(2);
+          },
+          get sensorPrice() {
+            return (99.00 * this.sensorQty).toFixed(2);
+          },
+          get disposalPrice() {
+            return (4.95 * this.disposalQty).toFixed(2);
+          }
+        }"
+        >
+          <!-- Mount & Balance with Quantity -->
           <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" checked />
+            <input
+              type="radio"
+              name="service"
+              value="mount-balance"
+              class="peer sr-only"
+              x-model="selectedService"
+            />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
             >
               <div class="flex justify-between items-start mb-1">
                 <span class="font-bold text-gray-800 text-sm"
-                  >Mount & Balance 1 Customer Supplied Tire</span
+                  >Mount & Balance <span x-text="mountQty"></span> Customer Supplied
+                  Tire<span x-show="mountQty > 1">s</span></span
                 >
-                <span class="font-bold text-gray-900 text-sm">$149.99</span>
+                <span
+                  class="font-bold text-gray-900 text-sm"
+                  x-text="'$' + mountPrice"></span>
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
+              <p class="text-xs text-gray-500 leading-relaxed mb-4">
                 A Mobile Certified Tire Technician will perform the proper
-                installation of your supplied tire using the latest equipment.
+                installation of your supplied tires using the latest equipment.
                 Includes: Touch-less Mounting, Balancing, Installation, Hand
                 Torque Lug Nuts. All Tires set to pressure specifications. TPMS
-                reset. Does NOT include disposal of old tire.
+                reset. Does NOT include disposal of old tires.
               </p>
-            </div>
-          </label>
 
-          <!-- Service Option 2 -->
-          <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
-            <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
-            >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
-                  >Mount & Balance 2 Customer Supplied Tires</span
+              <!-- Quantity Selector -->
+              <div
+                class="flex items-center gap-3 bg-white p-1.5 rounded border border-gray-200 w-fit shadow-sm"
+              >
+                <span
+                  class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-1"
+                  >Qty</span
                 >
-                <span class="font-bold text-gray-900 text-sm">$169.97</span>
+                <div class="flex items-center gap-2">
+                  <button
+                    type="button"
+                    @click="if(mountQty > 1) mountQty--"
+                    class="w-6 h-6 rounded bg-gray-100 text-gray-600 flex items-center justify-center hover:bg-gray-200 transition-colors"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                  <span
+                    class="font-bold text-[#3b6eae] w-4 text-center text-sm"
+                    x-text="mountQty"></span>
+                  <button
+                    type="button"
+                    @click="if(mountQty < 6) mountQty++"
+                    class="w-6 h-6 rounded bg-[#3b6eae] text-white flex items-center justify-center hover:bg-[#2d5a8a] transition-colors"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
-                A Mobile Certified Tire Technician will perform the proper
-                installation of your supplied tires. Includes all standard
-                safety checks. Does NOT include disposal of old tires.
-              </p>
-            </div>
-          </label>
-
-          <!-- Service Option 3 -->
-          <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
-            <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
-            >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
-                  >Mount & Balance 3 Customer Supplied Tires</span
-                >
-                <span class="font-bold text-gray-900 text-sm">$204.96</span>
-              </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
-                A Mobile Certified Tire Technician will perform the proper
-                installation of your supplied tires. Includes: Touch-less
-                Mounting, Balancing, Installation, Hand Torque Lug Nuts. Does
-                NOT include disposal of old tires.
-              </p>
-            </div>
-          </label>
-
-          <!-- Service Option 4 -->
-          <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
-            <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
-            >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
-                  >Mount & Balance 4 Customer Supplied Tires</span
-                >
-                <span class="font-bold text-gray-900 text-sm">$224.95</span>
-              </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
-                A Mobile Certified Tire Technician will perform the proper
-                installation of your 4 supplied tires. Includes: Touch-less
-                Mounting, Balancing, Installation, Hand Torque Lug Nuts. Does
-                NOT include disposal of old tires.
-              </p>
-            </div>
-          </label>
-
-          <!-- Service Option 5 -->
-          <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
-            <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
-            >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
-                  >Mount & Balance 5 Customer Supplied Tires</span
-                >
-                <span class="font-bold text-gray-900 text-sm">$274.94</span>
-              </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
-                A Mobile Certified Tire Technician will perform the proper
-                installation of your 5 supplied tires. Includes: Touch-less
-                Mounting, Balancing, Installation, Hand Torque Lug Nuts. Does
-                NOT include disposal of old tires.
-              </p>
-            </div>
-          </label>
-
-          <!-- Service Option 6 -->
-          <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
-            <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
-            >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
-                  >Mount & Balance 6 Customer Supplied Tires</span
-                >
-                <span class="font-bold text-gray-900 text-sm">$309.93</span>
-              </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
-                A Mobile Certified Tire Technician will perform the proper
-                installation of your 6 supplied tires. Includes: Touch-less
-                Mounting, Balancing, Installation. Does NOT include disposal of
-                old tires.
-              </p>
             </div>
           </label>
 
           <!-- Tire Rotation (rotation of all tires only) -->
           <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
+            <input
+              type="radio"
+              name="service"
+              class="peer sr-only"
+              value="tire-rotation-only"
+              x-model="selectedService"
+            />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
             >
@@ -273,7 +237,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
           <!-- Mount My Way - Balance 4 -->
           <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
+            <input
+              type="radio"
+              name="service"
+              class="peer sr-only"
+              value="mount-my-way"
+              x-model="selectedService"
+            />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
             >
@@ -293,7 +263,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
           <!-- Un-mount Wheel & Tire Swap -->
           <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
+            <input
+              type="radio"
+              name="service"
+              class="peer sr-only"
+              value="unmount-swap"
+              x-model="selectedService"
+            />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
             >
@@ -311,28 +287,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
           </label>
 
-          <!-- Tire Rotation -->
-          <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
-            <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
-            >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
-                  >Tire Rotation</span
-                >
-                <span class="font-bold text-gray-900 text-sm">$143.99</span>
-              </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
-                A Mobile Certified Tire Technician will rotate your tires. Price
-                includes rotating 4 tires.
-              </p>
-            </div>
-          </label>
-
           <!-- Flat Repair -->
           <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
+            <input
+              type="radio"
+              name="service"
+              class="peer sr-only"
+              value="flat-repair"
+              x-model="selectedService"
+            />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
             >
@@ -352,7 +315,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
           <!-- Install Spare -->
           <label class="group relative block cursor-pointer">
-            <input type="radio" name="service" class="peer sr-only" />
+            <input
+              type="radio"
+              name="service"
+              class="peer sr-only"
+              value="install-spare"
+              x-model="selectedService"
+            />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
             >
@@ -377,9 +346,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <!-- Add-Ons Section -->
           <h3 class="text-md font-bold text-gray-700 mb-3">Add-On Services</h3>
 
-          <!-- TPMS -->
-          <label class="group relative block cursor-pointer">
-            <input type="checkbox" name="addon_tpms" class="peer sr-only" />
+          <!-- TPMS Seal Kit -->
+          <label
+            class="group relative block transition-opacity"
+            :class="{'opacity-50 cursor-not-allowed': !selectedService, 'cursor-pointer': selectedService}"
+          >
+            <input
+              type="checkbox"
+              name="addon_tpms"
+              class="peer sr-only"
+              :disabled="!selectedService"
+            />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
             >
@@ -387,20 +364,160 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <span class="font-bold text-gray-800 text-sm"
                   >Tire Pressure Monitoring System Seal Kit</span
                 >
-                <span class="font-bold text-gray-900 text-sm">$3.99 / ea.</span>
+                <span
+                  class="font-bold text-gray-900 text-sm"
+                  x-text="'$' + tpmsPrice"></span>
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
+              <p class="text-xs text-gray-500 leading-relaxed mb-4">
                 A Mobile Certified Tire Technician will replace TPMS valve stem
                 or sensor on your vehicle. (Bring your own sensor or we can
                 order one.) *This does not include mounting & balancing or new
                 TPMS sensor.*
               </p>
+
+              <!-- TPMS Quantity Selector -->
+              <div
+                class="flex items-center gap-3 bg-white p-1.5 rounded border border-gray-200 w-fit shadow-sm"
+              >
+                <span
+                  class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-1"
+                  >Qty</span
+                >
+                <div class="flex items-center gap-2">
+                  <button
+                    type="button"
+                    @click.prevent="if(tpmsQty > 1) tpmsQty--"
+                    :disabled="!selectedService"
+                    class="w-6 h-6 rounded bg-gray-100 text-gray-600 flex items-center justify-center hover:bg-gray-200 transition-colors disabled:opacity-50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                  <span
+                    class="font-bold text-[#3b6eae] w-4 text-center text-sm"
+                    x-text="tpmsQty"></span>
+                  <button
+                    type="button"
+                    @click.prevent="if(tpmsQty < 10) tpmsQty++"
+                    :disabled="!selectedService"
+                    class="w-6 h-6 rounded bg-[#3b6eae] text-white flex items-center justify-center hover:bg-[#2d5a8a] transition-colors disabled:opacity-50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </label>
+
+          <!-- TPMS Sensor Replacement Service -->
+          <label
+            class="group relative block transition-opacity"
+            :class="{'opacity-50 cursor-not-allowed': !selectedService, 'cursor-pointer': selectedService}"
+          >
+            <input
+              type="checkbox"
+              name="addon_sensor"
+              class="peer sr-only"
+              :disabled="!selectedService"
+            />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Tire pressure monitoring system (TPMS) sensor replacement
+                  service</span
+                >
+                <span
+                  class="font-bold text-gray-900 text-sm"
+                  x-text="'$' + sensorPrice"></span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed mb-4">
+                Replace your faulty TPMS sensors with new ones. Price is per
+                unit.
+              </p>
+
+              <!-- Sensor Quantity Selector -->
+              <div
+                class="flex items-center gap-3 bg-white p-1.5 rounded border border-gray-200 w-fit shadow-sm"
+              >
+                <span
+                  class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-1"
+                  >Qty</span
+                >
+                <div class="flex items-center gap-2">
+                  <button
+                    type="button"
+                    @click.prevent="if(sensorQty > 1) sensorQty--"
+                    :disabled="!selectedService"
+                    class="w-6 h-6 rounded bg-gray-100 text-gray-600 flex items-center justify-center hover:bg-gray-200 transition-colors disabled:opacity-50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                  <span
+                    class="font-bold text-[#3b6eae] w-4 text-center text-sm"
+                    x-text="sensorQty"></span>
+                  <button
+                    type="button"
+                    @click.prevent="if(sensorQty < 10) sensorQty++"
+                    :disabled="!selectedService"
+                    class="w-6 h-6 rounded bg-[#3b6eae] text-white flex items-center justify-center hover:bg-[#2d5a8a] transition-colors disabled:opacity-50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
           </label>
 
           <!-- Tire Disposal -->
-          <label class="group relative block cursor-pointer">
-            <input type="checkbox" name="addon_disposal" class="peer sr-only" />
+          <label
+            class="group relative block transition-opacity"
+            :class="{'opacity-50 cursor-not-allowed': !selectedService, 'cursor-pointer': selectedService}"
+          >
+            <input
+              type="checkbox"
+              name="addon_disposal"
+              class="peer sr-only"
+              :disabled="!selectedService"
+            />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
             >
@@ -408,14 +525,66 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <span class="font-bold text-gray-800 text-sm"
                   >Tire Disposal</span
                 >
-                <span class="font-bold text-gray-900 text-sm">$3.50 / ea.</span>
+                <span
+                  class="font-bold text-gray-900 text-sm"
+                  x-text="'$' + disposalPrice"></span>
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
+              <p class="text-xs text-gray-500 leading-relaxed mb-4">
                 Queen My Way will dispose of your used tires in an
                 environmentally-friendly manner. (Fee is for each tire that is
                 being picked up. This is a requirement; made of rubber required
                 to be disposed of properly.)
               </p>
+
+              <!-- Disposal Quantity Selector -->
+              <div
+                class="flex items-center gap-3 bg-white p-1.5 rounded border border-gray-200 w-fit shadow-sm"
+              >
+                <span
+                  class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-1"
+                  >Qty</span
+                >
+                <div class="flex items-center gap-2">
+                  <button
+                    type="button"
+                    @click.prevent="if(disposalQty > 1) disposalQty--"
+                    :disabled="!selectedService"
+                    class="w-6 h-6 rounded bg-gray-100 text-gray-600 flex items-center justify-center hover:bg-gray-200 transition-colors disabled:opacity-50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                  <span
+                    class="font-bold text-[#3b6eae] w-4 text-center text-sm"
+                    x-text="disposalQty"></span>
+                  <button
+                    type="button"
+                    @click.prevent="if(disposalQty < 10) disposalQty++"
+                    :disabled="!selectedService"
+                    class="w-6 h-6 rounded bg-[#3b6eae] text-white flex items-center justify-center hover:bg-[#2d5a8a] transition-colors disabled:opacity-50"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="w-4 h-4"
+                    >
+                      <path
+                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
             </div>
           </label>
 
@@ -487,7 +656,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="mt-10 pt-6 border-t border-gray-100 flex justify-center">
             <a
               href="/schedule-datetime"
-              class="bg-[#a3d900] hover:bg-[#92c200] text-white font-bold text-lg py-4 px-12 rounded-full uppercase tracking-wider shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 w-full md:w-auto text-center"
+              :class="selectedService ? 'bg-[#a3d900] hover:bg-[#92c200] cursor-pointer' : 'bg-gray-300 cursor-not-allowed pointer-events-none'"
+              class="text-white font-bold text-lg py-4 px-12 rounded-full uppercase tracking-wider shadow-lg transition-all w-full md:w-auto text-center"
             >
               Continue <span class="ml-2">›</span>
             </a>
@@ -496,4 +666,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </div>
   </div>
+
+  <script>
+    import Alpine from "alpinejs";
+
+    if (!window.Alpine) {
+      window.Alpine = Alpine;
+      Alpine.start();
+    }
+  </script>
 </BaseLayout>
