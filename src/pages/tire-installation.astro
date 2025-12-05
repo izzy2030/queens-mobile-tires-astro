@@ -3,6 +3,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Job Details | Queens Mobile Tires">
+  <style>
+    @keyframes pulse-qty {
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(59, 110, 174, 0.3);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 0 6px rgba(59, 110, 174, 0);
+        transform: scale(1.02);
+      }
+    }
+    .animate-pulse-qty {
+      animation: pulse-qty 0.8s ease-in-out 2;
+    }
+  </style>
   <div class="min-h-screen bg-gray-100 py-8 font-sans">
     <!-- Progress Steps -->
     <div class="container mx-auto max-w-4xl mb-8 px-4">
@@ -115,6 +131,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           vehicleColor: '',
           vehiclePlate: '',
           isLoading: false,
+          pulseMountQty: false,
+          pulseTpmsQty: false,
+          pulseSensorQty: false,
+          pulseDisposalQty: false,
+          triggerPulse(target) {
+            this[target] = false;
+            setTimeout(() => { this[target] = true; }, 10);
+            setTimeout(() => { this[target] = false; }, 1300);
+          },
           get mountPrice() {
             const prices = {
               1: '149.99',
@@ -195,6 +220,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               value="mount-balance"
               class="peer sr-only"
               x-model="selectedService"
+              @click="triggerPulse('pulseMountQty')"
             />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
@@ -219,6 +245,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <!-- Quantity Selector -->
               <div
                 class="flex items-center gap-3 bg-white p-1.5 rounded border border-gray-200 w-fit shadow-sm"
+                :class="{ 'animate-pulse-qty': pulseMountQty }"
               >
                 <span
                   class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-1"
@@ -414,6 +441,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               class="peer sr-only"
               :disabled="!selectedService"
               x-model="addonTpms"
+              @click="if(!addonTpms) triggerPulse('pulseTpmsQty')"
             />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
@@ -436,6 +464,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <!-- TPMS Quantity Selector -->
               <div
                 class="flex items-center gap-3 bg-white p-1.5 rounded border border-gray-200 w-fit shadow-sm"
+                :class="{ 'animate-pulse-qty': pulseTpmsQty }"
               >
                 <span
                   class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-1"
@@ -496,6 +525,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               class="peer sr-only"
               :disabled="!selectedService"
               x-model="addonDisposal"
+              @click="if(!addonDisposal) triggerPulse('pulseDisposalQty')"
             />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
@@ -518,6 +548,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <!-- Disposal Quantity Selector -->
               <div
                 class="flex items-center gap-3 bg-white p-1.5 rounded border border-gray-200 w-fit shadow-sm"
+                :class="{ 'animate-pulse-qty': pulseDisposalQty }"
               >
                 <span
                   class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-1"
@@ -578,6 +609,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               class="peer sr-only"
               :disabled="!selectedService"
               x-model="addonSensor"
+              @click="if(!addonSensor) triggerPulse('pulseSensorQty')"
             />
             <div
               class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
@@ -599,6 +631,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <!-- Sensor Quantity Selector -->
               <div
                 class="flex items-center gap-3 bg-white p-1.5 rounded border border-gray-200 w-fit shadow-sm"
+                :class="{ 'animate-pulse-qty': pulseSensorQty }"
               >
                 <span
                   class="text-[10px] font-bold text-gray-400 uppercase tracking-wider px-1"
