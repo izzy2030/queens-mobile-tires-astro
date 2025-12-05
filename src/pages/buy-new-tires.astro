@@ -3,145 +3,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Buy New Tires | Queens Mobile Tires">
-  <div class="min-h-screen bg-queens-black py-20 overflow-hidden relative">
-    {/* Background: Abstract Tire Tread Pattern */}
-    <div
-      class="absolute inset-0 opacity-10 pointer-events-none"
-      style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 20px 20px;"
-    >
-    </div>
+  <div class="min-h-screen bg-gray-50 py-12">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center mb-12">
+        <h1
+          class="text-5xl font-black italic uppercase text-[var(--color-queens-primary)] mb-4"
+        >
+          Find Your Perfect Tires
+        </h1>
+        <p class="text-xl text-gray-600">
+          Search for tires and schedule mobile installation
+        </p>
+      </div>
 
-    {/* Glow Effect */}
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-queens-secondary/10 blur-[120px] rounded-full pointer-events-none"
-    >
-    </div>
-
-    <div class="container mx-auto px-4 max-w-7xl relative z-10">
-      <div class="flex flex-col lg:flex-row items-center gap-16 justify-center">
-        {/* LEFT: The Pitch */}
-        <div class="lg:w-5/12 text-center lg:text-left">
-          <div
-            class="inline-block bg-queens-secondary/10 border border-queens-secondary/20 rounded-full px-4 py-1.5 text-queens-secondary text-sm font-bold tracking-wider uppercase mb-8"
-          >
-            Mobile Service
-          </div>
-          <h1
-            class="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-[1.1]"
-          >
-            Don't Go to the Shop.<br />
-            <span class="text-queens-secondary">We Bring the Shop to You.</span>
-          </h1>
-          <p
-            class="text-xl text-gray-400 mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0"
-          >
-            Skip the waiting room. Select your vehicle, pick your tires, and we
-            install them in your driveway while you watch Netflix.
-          </p>
-
-          <ul class="space-y-5 text-left inline-block">
-            <li class="flex items-center gap-4 text-white font-medium text-lg">
-              <span
-                class="w-8 h-8 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="3"
-                  stroke="currentColor"
-                  class="w-4 h-4"
-                  ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M4.5 12.75l6 6 9-13.5"></path></svg
-                >
-              </span>
-              Order from your phone
-            </li>
-            <li class="flex items-center gap-4 text-white font-medium text-lg">
-              <span
-                class="w-8 h-8 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="3"
-                  stroke="currentColor"
-                  class="w-4 h-4"
-                  ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M4.5 12.75l6 6 9-13.5"></path></svg
-                >
-              </span>
-              Installed at Home or Work
-            </li>
-            <li class="flex items-center gap-4 text-white font-medium text-lg">
-              <span
-                class="w-8 h-8 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="3"
-                  stroke="currentColor"
-                  class="w-4 h-4"
-                  ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M4.5 12.75l6 6 9-13.5"></path></svg
-                >
-              </span>
-              Competitive Online Pricing
-            </li>
-          </ul>
-        </div>
-
-        {/* RIGHT: The "Phone" Widget Container */}
-        <div class="lg:w-6/12 w-full max-w-[420px] flex justify-center">
-          <div
-            class="relative w-full bg-white rounded-[3rem] border-8 border-gray-900 shadow-2xl overflow-hidden h-[800px]"
-          >
-            {/* Notch */}
-            <div
-              class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-gray-900 rounded-b-2xl z-20"
-            >
-            </div>
-
-            {/* Phone Content (Widget) */}
-            <div
-              class="h-full overflow-y-auto bg-white pt-8 pb-4 scrollbar-hide"
-            >
-              <div class="px-2">
-                <!-- TireConnect Widget -->
-                <script is:inline src="https://app.tireconnect.ca/js/widget.js"
-                ></script>
-                <div id="tireconnect"></div>
-                <script is:inline>
-                  TCWidget.init({
-                    apikey: "dc18901bfdfcb8ba529d1eeb0c15c278",
-                    container: "tireconnect",
-                  });
-                </script>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8">
+        <!-- TireConnect Widget -->
+        <script is:inline src="https://app.tireconnect.ca/js/widget.js"
+        ></script>
+        <div id="tireconnect"></div>
+        <script is:inline>
+          TCWidget.init({
+            apikey: "dc18901bfdfcb8ba529d1eeb0c15c278",
+            container: "tireconnect",
+          });
+        </script>
       </div>
     </div>
   </div>
 </BaseLayout>
-
-<style>
-  /* Hide scrollbar for the phone screen */
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-</style>

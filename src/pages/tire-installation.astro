@@ -1,12 +1,499 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Schedule Installation | Queens Mobile Tires">
-  <div class="min-h-screen flex items-center justify-center bg-gray-50">
-    <div class="text-center">
-      <h1 class="text-4xl font-black italic uppercase text-queens-primary mb-4">Schedule Installation</h1>
-      <p class="text-xl text-gray-600">Online scheduling system coming soon.</p>
+  <div class="min-h-screen bg-gray-100 py-8 font-sans">
+    <!-- Progress Steps -->
+    <div class="container mx-auto max-w-4xl mb-8 px-4">
+      <div
+        class="flex justify-between items-start text-xs font-semibold uppercase tracking-wide"
+      >
+        <!-- Step 1: Completed -->
+        <div class="flex flex-col items-center gap-2 text-green-600">
+          <div
+            class="w-10 h-10 rounded-full bg-green-500 text-white font-bold flex items-center justify-center shadow-md"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="3"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 12.75l6 6 9-13.5"></path>
+            </svg>
+          </div>
+          <span>Zip Code</span>
+        </div>
+
+        <!-- Connector Line -->
+        <div
+          class="flex-1 h-1 bg-green-500 self-center mt-[-12px] mx-2 rounded"
+        >
+        </div>
+
+        <!-- Step 2: Current -->
+        <div class="flex flex-col items-center gap-2 text-[#3b6eae]">
+          <div
+            class="w-10 h-10 rounded-full bg-[#3b6eae] text-white font-bold flex items-center justify-center shadow-lg ring-4 ring-[#3b6eae]/30"
+          >
+            2
+          </div>
+          <span class="font-bold">Job Details</span>
+        </div>
+
+        <!-- Connector Line -->
+        <div class="flex-1 h-1 bg-gray-300 self-center mt-[-12px] mx-2 rounded">
+        </div>
+
+        <!-- Step 3: Future -->
+        <div class="flex flex-col items-center gap-2 text-gray-400">
+          <div
+            class="w-10 h-10 rounded-full border-2 border-gray-300 bg-white text-gray-400 font-bold flex items-center justify-center"
+          >
+            3
+          </div>
+          <span>Time & Date</span>
+        </div>
+
+        <!-- Connector Line -->
+        <div class="flex-1 h-1 bg-gray-300 self-center mt-[-12px] mx-2 rounded">
+        </div>
+
+        <!-- Step 4: Future -->
+        <div class="flex flex-col items-center gap-2 text-gray-400">
+          <div
+            class="w-10 h-10 rounded-full border-2 border-gray-300 bg-white text-gray-400 font-bold flex items-center justify-center"
+          >
+            4
+          </div>
+          <span>Your Details</span>
+        </div>
+
+        <!-- Connector Line -->
+        <div class="flex-1 h-1 bg-gray-300 self-center mt-[-12px] mx-2 rounded">
+        </div>
+
+        <!-- Step 5: Future -->
+        <div class="flex flex-col items-center gap-2 text-gray-400">
+          <div
+            class="w-10 h-10 rounded-full border-2 border-gray-300 bg-white text-gray-400 font-bold flex items-center justify-center"
+          >
+            5
+          </div>
+          <span>Review</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Card -->
+    <div
+      class="container mx-auto max-w-3xl bg-white rounded-lg shadow-xl overflow-hidden mb-12"
+    >
+      <!-- Card Header -->
+      <div class="border-b border-gray-200 p-6 flex items-center gap-4">
+        <a href="#" class="text-gray-400 hover:text-gray-600 transition">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
+          </svg>
+        </a>
+        <h1 class="text-2xl font-black text-[#1e3a8a] uppercase tracking-wide">
+          Appointment Details
+        </h1>
+      </div>
+
+      <div class="p-8 bg-white">
+        <p class="text-sm text-gray-500 mb-8">
+          Please choose from our services menu below and enter your vehicle
+          information.
+        </p>
+
+        <!-- Services Form -->
+        <form class="space-y-6">
+          <!-- Service Option 1 -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" checked />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Mount & Balance 1 Customer Supplied Tire</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$149.99</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will perform the proper
+                installation of your supplied tire using the latest equipment.
+                Includes: Touch-less Mounting, Balancing, Installation, Hand
+                Torque Lug Nuts. All Tires set to pressure specifications. TPMS
+                reset. Does NOT include disposal of old tire.
+              </p>
+            </div>
+          </label>
+
+          <!-- Service Option 2 -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Mount & Balance 2 Customer Supplied Tires</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$169.97</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will perform the proper
+                installation of your supplied tires. Includes all standard
+                safety checks. Does NOT include disposal of old tires.
+              </p>
+            </div>
+          </label>
+
+          <!-- Service Option 3 -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Mount & Balance 3 Customer Supplied Tires</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$204.96</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will perform the proper
+                installation of your supplied tires. Includes: Touch-less
+                Mounting, Balancing, Installation, Hand Torque Lug Nuts. Does
+                NOT include disposal of old tires.
+              </p>
+            </div>
+          </label>
+
+          <!-- Service Option 4 -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Mount & Balance 4 Customer Supplied Tires</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$224.95</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will perform the proper
+                installation of your 4 supplied tires. Includes: Touch-less
+                Mounting, Balancing, Installation, Hand Torque Lug Nuts. Does
+                NOT include disposal of old tires.
+              </p>
+            </div>
+          </label>
+
+          <!-- Service Option 5 -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Mount & Balance 5 Customer Supplied Tires</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$274.94</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will perform the proper
+                installation of your 5 supplied tires. Includes: Touch-less
+                Mounting, Balancing, Installation, Hand Torque Lug Nuts. Does
+                NOT include disposal of old tires.
+              </p>
+            </div>
+          </label>
+
+          <!-- Service Option 6 -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Mount & Balance 6 Customer Supplied Tires</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$309.93</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will perform the proper
+                installation of your 6 supplied tires. Includes: Touch-less
+                Mounting, Balancing, Installation. Does NOT include disposal of
+                old tires.
+              </p>
+            </div>
+          </label>
+
+          <!-- Tire Rotation (rotation of all tires only) -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Tire Rotation (rotation of all tires only)</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$119.95</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will rotate your vehicle's
+                tires in the recommended pattern. Does NOT include mounting &
+                balancing of new tires.
+              </p>
+            </div>
+          </label>
+
+          <!-- Mount My Way - Balance 4 -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Mount My Way (balance 4 of your tires)</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$143.99</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will balance 4 of your tires.
+                Price includes balancing for 4 tires. Rotation included if
+                requested.
+              </p>
+            </div>
+          </label>
+
+          <!-- Un-mount Wheel & Tire Swap -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Un-mount Wheel & Tire Swap</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$143.99</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will exchange your current
+                rim-and-tire sets with new complete wheel/tire units. *This
+                service does NOT include mounting and balancing.
+              </p>
+            </div>
+          </label>
+
+          <!-- Tire Rotation -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Tire Rotation</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$143.99</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will rotate your tires. Price
+                includes rotating 4 tires.
+              </p>
+            </div>
+          </label>
+
+          <!-- Flat Repair -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm">Flat Repair</span>
+                <span class="font-bold text-gray-900 text-sm">$149.99</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will diagnose and determine
+                if a repair is needed or tire replacement. If the issue is
+                sidewall damage, tire is too old for safe repair, or alignment.
+                Price is for repair: only for minor small nail holes, may not
+                include puncture in the sidewall of the tire.
+              </p>
+            </div>
+          </label>
+
+          <!-- Install Spare -->
+          <label class="group relative block cursor-pointer">
+            <input type="radio" name="service" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Install Spare</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$149.99</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will install the spare tire
+                for your vehicle. (Does NOT include the spare) or the actual
+                tire change, just the install so your vehicle is roadworthy.
+                Used on the location you specify. This is an emergency-only
+                installation; not required to be disposed of properly.
+              </p>
+            </div>
+          </label>
+
+          <div class="h-px bg-gray-200 my-6"></div>
+
+          <!-- Add-Ons Section -->
+          <h3 class="text-md font-bold text-gray-700 mb-3">Add-On Services</h3>
+
+          <!-- TPMS -->
+          <label class="group relative block cursor-pointer">
+            <input type="checkbox" name="addon_tpms" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Tire Pressure Monitoring System Seal Kit</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$3.99 / ea.</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                A Mobile Certified Tire Technician will replace TPMS valve stem
+                or sensor on your vehicle. (Bring your own sensor or we can
+                order one.) *This does not include mounting & balancing or new
+                TPMS sensor.*
+              </p>
+            </div>
+          </label>
+
+          <!-- Tire Disposal -->
+          <label class="group relative block cursor-pointer">
+            <input type="checkbox" name="addon_disposal" class="peer sr-only" />
+            <div
+              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
+            >
+              <div class="flex justify-between items-start mb-1">
+                <span class="font-bold text-gray-800 text-sm"
+                  >Tire Disposal</span
+                >
+                <span class="font-bold text-gray-900 text-sm">$3.50 / ea.</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">
+                Queen My Way will dispose of your used tires in an
+                environmentally-friendly manner. (Fee is for each tire that is
+                being picked up. This is a requirement; made of rubber required
+                to be disposed of properly.)
+              </p>
+            </div>
+          </label>
+
+          <div class="h-px bg-gray-200 my-8"></div>
+
+          <!-- Vehicle Details inputs -->
+          <h3 class="text-lg font-bold text-gray-800 mb-4">Vehicle Details</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col gap-1">
+              <label class="text-xs font-bold text-gray-500 uppercase"
+                >Year</label
+              >
+              <select
+                class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
+              >
+                <option>Select Year</option>
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col gap-1">
+              <label class="text-xs font-bold text-gray-500 uppercase"
+                >Make</label
+              >
+              <input
+                type="text"
+                class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
+                placeholder=""
+              />
+            </div>
+
+            <div class="flex flex-col gap-1">
+              <label class="text-xs font-bold text-gray-500 uppercase"
+                >Model</label
+              >
+              <input
+                type="text"
+                class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
+                placeholder=""
+              />
+            </div>
+
+            <div class="flex flex-col gap-1">
+              <label class="text-xs font-bold text-gray-500 uppercase"
+                >Color</label
+              >
+              <input
+                type="text"
+                class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
+                placeholder=""
+              />
+            </div>
+
+            <div class="col-span-1 md:col-span-2 flex flex-col gap-1">
+              <label class="text-xs font-bold text-gray-500 uppercase"
+                >Plate Number</label
+              >
+              <input
+                type="text"
+                class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
+                placeholder=""
+              />
+            </div>
+          </div>
+
+          <!-- Continue Button -->
+          <div class="mt-10 pt-6 border-t border-gray-100 flex justify-center">
+            <a
+              href="/schedule-datetime"
+              class="bg-[#a3d900] hover:bg-[#92c200] text-white font-bold text-lg py-4 px-12 rounded-full uppercase tracking-wider shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 w-full md:w-auto text-center"
+            >
+              Continue <span class="ml-2">›</span>
+            </a>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </BaseLayout>
