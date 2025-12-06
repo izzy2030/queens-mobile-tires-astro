@@ -1,5 +1,7 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
+import { setDefaultResultOrder } from 'node:dns';
+
+setDefaultResultOrder('ipv4first');
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -8,6 +10,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     server: {
+      /*
+      host: '127.0.0.1',
+      */
       proxy: {
         '/api/webhook': {
           target: 'https://n8n.queensautoservices.com',
