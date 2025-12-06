@@ -32,7 +32,7 @@
 
     <!-- Headline -->
     <h1
-      class="text-6xl md:text-8xl font-sans font-normal tracking-tighter text-[var(--color-queens-primary)] mb-8 leading-[1.1]"
+      class="text-5xl md:text-7xl font-sans font-normal tracking-tighter text-[var(--color-queens-primary)] mb-8 leading-[1.1]"
     >
       We Bring The <br />
       <span class="font-serif italic text-[var(--color-queens-secondary)]"
@@ -94,7 +94,7 @@
       </div>
 
       <div
-        class="relative z-10 bg-gradient-to-br from-gray-50 via-white to-gray-100/80 backdrop-blur-xl border border-gray-200/60 rounded-3xl p-6 shadow-2xl shadow-gray-900/10 hover:shadow-3xl transition-all duration-300"
+        class="relative z-10 bg-gradient-to-br from-gray-50 via-white to-gray-100/80 backdrop-blur-xl border border-gray-200/60 rounded-3xl p-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.4)] transition-all duration-300"
         x-data="{ playing: false, audio: null, progress: 0, duration: 0, currentTime: '00:00', durationTime: '00:00' }"
         x-init="
       audio = $refs.audioPlayer;
@@ -119,7 +119,7 @@
       >
         <audio
           x-ref="audioPlayer"
-          src="https://queensmobiletires.com/wp-content/uploads/2025/01/Queens-Mobile-Tire-Welcome-Message-Cassidy.mp3"
+          src="/assets/audio/welcome-message.mp3"
           preload="metadata"></audio>
 
         <div class="flex items-center gap-5">
