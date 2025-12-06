@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 // 2. PAGE TEMPLATE
 const { city } = Astro.props;
-const acf = city.cityFields;
+const acf = (city as any).cityFields;
 ---
 
 <BaseLayout title={`${acf.localTitle || city.title} | Queens Mobile Tires`}>
