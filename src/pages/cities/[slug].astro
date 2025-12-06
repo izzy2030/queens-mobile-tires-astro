@@ -17,28 +17,60 @@ const acf = city.cityFields;
 ---
 
 <BaseLayout title={`${acf.localTitle || city.title} | Queens Mobile Tires`}>
-  <section
-    class="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-queens-black"
-  >
-    <div class="absolute inset-0 bg-hero-gradient z-10"></div>
-    {
-      acf.image1?.node?.sourceUrl && (
-        <img
-          src={acf.image1.node.sourceUrl}
-          class="absolute inset-0 w-full h-full object-cover opacity-80"
-        />
-      )
-    }
-    <div class="relative z-20 text-center px-4 max-w-4xl">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
-        {acf.localTitle || `Tire Service in ${city.title}`}
-      </h1>
-      <a
-        href="tel:847-555-0199"
-        class="bg-queens-orange text-white text-xl font-bold py-4 px-10 rounded-full hover:bg-white hover:text-queens-orange transition"
-      >
-        Book Appointment
-      </a>
+  <section class="relative py-20 lg:py-32 bg-white overflow-hidden">
+    <div class="container mx-auto px-6 max-w-7xl">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Left: Text Content -->
+        <div class="relative z-10 text-left order-2 lg:order-1">
+           <!-- Eyebrow Badge (Homepage Style) -->
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-queens-secondary/10 border border-queens-secondary/20 mb-8"
+          >
+            <span class="w-2 h-2 rounded-full bg-queens-secondary"></span>
+            <span
+              class="text-sm font-medium text-queens-primary/70 font-sans"
+            >
+              Serving {city.title.replace("Mobile Tire Service in ", "").replace(", IL", "")}
+            </span>
+          </div>
+
+          <h1 class="text-4xl md:text-6xl font-sans font-medium tracking-tight text-queens-primary mb-8 leading-[1.1]">
+            {acf.localTitle || `Tire Service in ${city.title}`}
+          </h1>
+          
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="tel:847-555-0199"
+              class="btn-primary px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all"
+            >
+              Book Appointment
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Image -->
+        <div class="relative order-1 lg:order-2">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] group">
+                <div class="absolute inset-0 bg-gradient-to-tr from-queens-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                {
+                  acf.image1?.node?.sourceUrl ? (
+                    <img
+                      src={acf.image1.node.sourceUrl}
+                      alt={`Tire service in ${city.title}`}
+                      class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div class="w-full h-full bg-gray-100 flex items-center justify-center">
+                        <span class="text-gray-300">No Image Available</span>
+                    </div>
+                  )
+                }
+            </div>
+            <!-- Decorative Blob -->
+            <div class="absolute -top-20 -right-20 w-72 h-72 bg-queens-secondary/10 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-queens-light/20 rounded-full blur-3xl -z-10"></div>
+        </div>
+      </div>
     </div>
   </section>
 
