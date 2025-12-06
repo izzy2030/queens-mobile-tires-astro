@@ -236,11 +236,11 @@
     // --- Header Style on Scroll ---
     const updateHeaderStyle = () => {
       if (window.scrollY > 10) {
-        header.classList.remove("bg-white", "shadow-sm");
-        header.classList.add("bg-white/80", "backdrop-blur-md", "shadow-md");
+        header.classList.remove("bg-white", "shadow-sm", "border-gray-100");
+        header.classList.add("bg-white/60", "backdrop-blur-xl", "shadow-sm", "supports-[backdrop-filter]:bg-white/30", "border-transparent");
       } else {
-        header.classList.add("bg-white", "shadow-sm");
-        header.classList.remove("bg-white/80", "backdrop-blur-md", "shadow-md");
+        header.classList.add("bg-white", "shadow-sm", "border-gray-100");
+        header.classList.remove("bg-white/60", "backdrop-blur-xl", "shadow-sm", "supports-[backdrop-filter]:bg-white/30", "border-transparent");
       }
     };
 
