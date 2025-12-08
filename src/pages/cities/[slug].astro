@@ -164,6 +164,17 @@ const faqSchema = {
     </div>
   </section>
 
+  <!-- EXTENDED SERVICES SECTION: Dynamic Content for SEO/Landing Pages -->
+  {
+    acf.mobileServicesContent && (
+      <section class="py-16 bg-white border-b border-gray-100">
+        <div class="container mx-auto px-6 max-w-4xl prose prose-base prose-headings:text-queens-primary text-gray-600">
+          <div set:html={acf.mobileServicesContent} />
+        </div>
+      </section>
+    )
+  }
+
   <!-- SERVICES GRID: New Content, Matching Design System -->
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-6 max-w-7xl">
