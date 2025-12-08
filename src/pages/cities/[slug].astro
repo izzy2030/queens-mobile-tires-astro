@@ -21,9 +21,34 @@ const acf = (city as any).cityFields;
 const cityName = city.title
   .replace("Mobile Tire Service in ", "")
   .replace(", IL", "");
+
+// FAQ Schema Generation
+const faqs = acf.faqs || [];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f: any) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.answer,
+    },
+  })),
+};
 ---
 
 <BaseLayout title={`${acf.localTitle || city.title} | Queens Mobile Tires`}>
+  {
+    faqs.length > 0 && (
+      <script
+        type="application/ld+json"
+        slot="head"
+        set:html={JSON.stringify(faqSchema)}
+      />
+    )
+  }
+
   <!-- HERO SECTION: Preserving the Original "Split" Design -->
   <section class="relative py-20 lg:py-32 bg-white overflow-hidden">
     <div class="container mx-auto px-6 max-w-7xl">
@@ -225,46 +250,57 @@ const cityName = city.title
           <div set:html={acf.localAttractions} />
         </div>
 
-        <!-- FAQ Accordion (New) -->
+        <!-- FAQ Accordion (New with proper fallback and schema support) -->
         <div class="mt-12">
           <h3 class="text-2xl font-bold text-queens-primary mb-6">
             Frequently Asked Questions
           </h3>
           <div class="space-y-4">
-            <details
-              class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden"
-            >
-              <summary
-                class="flex justify-between items-center font-medium cursor-pointer p-5 text-queens-primary hover:bg-white transition"
-              >
-                <span>How fast can you reach me in {cityName}?</span>
-                <span
-                  class="transition group-open:rotate-180 text-queens-secondary"
-                  >▼</span
-                >
-              </summary>
-              <div class="p-5 pt-0 text-gray-600 bg-white">
-                Most {cityName} customers see us in under 60 minutes — often faster
-                if you’re near major roads.
-              </div>
-            </details>
-            <details
-              class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden"
-            >
-              <summary
-                class="flex justify-between items-center font-medium cursor-pointer p-5 text-queens-primary hover:bg-white transition"
-              >
-                <span>Do you service apartment complexes?</span>
-                <span
-                  class="transition group-open:rotate-180 text-queens-secondary"
-                  >▼</span
-                >
-              </summary>
-              <div class="p-5 pt-0 text-gray-600 bg-white">
-                Yes! We work in every parking lot in {cityName} — apartments, office
-                parks, and driveways.
-              </div>
-            </details>
+            {
+              faqs.length > 0 ? (
+                faqs.map((faq: any) => (
+                  <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-queens-primary hover:bg-white transition">
+                      <span>{faq.question}</span>
+                      <span class="transition group-open:rotate-180 text-queens-secondary">
+                        ▼
+                      </span>
+                    </summary>
+                    <div
+                      class="p-5 pt-0 text-gray-600 bg-white"
+                      set:html={faq.answer}
+                    />
+                  </details>
+                ))
+              ) : (
+                <>
+                  <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-queens-primary hover:bg-white transition">
+                      <span>How fast can you reach me in {cityName}?</span>
+                      <span class="transition group-open:rotate-180 text-queens-secondary">
+                        ▼
+                      </span>
+                    </summary>
+                    <div class="p-5 pt-0 text-gray-600 bg-white">
+                      Most {cityName} customers see us in under 60 minutes —
+                      often faster if you’re near major roads.
+                    </div>
+                  </details>
+                  <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-queens-primary hover:bg-white transition">
+                      <span>Do you service apartment complexes?</span>
+                      <span class="transition group-open:rotate-180 text-queens-secondary">
+                        ▼
+                      </span>
+                    </summary>
+                    <div class="p-5 pt-0 text-gray-600 bg-white">
+                      Yes! We work in every parking lot in {cityName} —
+                      apartments, office parks, and driveways.
+                    </div>
+                  </details>
+                </>
+              )
+            }
           </div>
         </div>
       </div>
