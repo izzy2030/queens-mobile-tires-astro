@@ -205,7 +205,26 @@
     "title": "Mobile Tire Service in West Dundee, IL",
     "cityFields": {
       "localTitle": "Spotlight on West Dundee: Where History Meets Modern Living",
-      "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>West Dundee, IL, is a picturesque village that beautifully blends its historic charm with modern amenities. Situated along the scenic Fox River, West Dundee is known for its vibrant community, thriving local businesses, and welcoming neighborhoods. We’re proud to serve this exceptional village with tire care services that meet its residents’ needs.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Spring Hill Mall</strong>: A central destination for shopping, dining, and entertainment, offering something for everyone.</li>\n<li><strong>Grafelman Park</strong>: A beloved green space perfect for family outings, picnics, and community events.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Downtown West Dundee</strong>: A charming area featuring boutique shops, cozy cafes, and a rich sense of history.</li>\n<li><strong>Fox River Activities</strong>: From kayaking to riverside walks, the Fox River offers endless opportunities for relaxation and adventure.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Heritage Fest</strong>: A joint celebration with East Dundee that showcases the area’s history and community spirit.</li>\n<li><strong>Dickens in Dundee</strong>: A holiday tradition that transforms the village into a festive wonderland with events and activities for all ages.</li>\n</ul>\n",
+      "introText": "Skip the tow truck and the waiting room. Whether you are relaxing at home in Carrington Reserve or working near Spring Hill Mall, Queens Mobile Tires gets you rolling again with convenient next-day appointments.",
+      "localAttractions": "<h3 id=\"why-west-dundee-drivers-choose-mobile\">Why West Dundee Drivers Choose Mobile</h3>\n<p>Residents here are all too familiar with the congestion along <strong>Route 31 (Eighth Street)</strong>, especially around the shopping districts. Trying to make a left turn onto <strong>Main Street (Route 72)</strong> during the evening rush can add significant time to your commute. We know that driving from the quiet neighborhoods of <strong>Grand Pointe Meadows</strong> up to the service centers on <strong>Randall Road</strong> is a trip you'd rather avoid on your day off. Instead of sitting in a lobby while traffic builds up near the <strong>Fox River</strong> bridge, let us handle your tire change right in your driveway. We save you the hassle so you can spend your time strolling the <strong>Riverwalk</strong> or relaxing at home.</p>\n\n<h3 id=\"serving-all-of-west-dundee\">Serving All of West Dundee</h3>\n<p>Our vans are a regular sight in West Dundee.</p>\n<ul>\n<li><strong>Neighborhoods:</strong> We cover residential driveways from the historic homes near <strong>Downtown West Dundee</strong> to the modern subdivisions of <strong>The Highlands</strong> and <strong>Tartan's Glen</strong>.</li>\n<li><strong>Business Areas:</strong> We service office parks and retail lots surrounding <strong>Spring Hill Mall</strong> and the businesses along <strong>West Main Street</strong>.</li>\n<li><strong>Convenience:</strong> We come to where you are parked, so you don't miss a minute of your day.</li>\n</ul>\n\n<h3 id=\"complete-tire-services\">Complete Tire Services for West Dundee</h3>\n<ul>\n<li><strong>New Tires:</strong> We bring the inventory to you and mount them on-site.</li>\n<li><strong>Mobile Flat Repair:</strong> Scheduled patch and plug services at your location.</li>\n<li><strong>Seasonal Swaps:</strong> Perfect for West Dundee winters—we swap winter/summer sets in your driveway.</li>\n<li><strong>Balancing & Rotation:</strong> Computer balancing performed right inside our van to ensure smooth rides.</li>\n</ul>",
+      "faqs": [
+        {
+          "question": "How fast can you get to Carrington Reserve?",
+          "answer": "We typically offer next-day appointments to get you back on the road quickly without the wait of a traditional shop."
+        },
+        {
+          "question": "Do you service cars at the Spring Hill Mall area?",
+          "answer": "Yes, we frequently service vehicles in retail and office lots in that area, provided there is enough space for our van to operate safely while you work or shop."
+        },
+        {
+          "question": "Do you serve all of West Dundee?",
+          "answer": "Yes, including zip code: <strong>60118</strong>."
+        },
+        {
+          "question": "What are your hours?",
+          "answer": "We operate Monday through Saturday, 8:00 AM to 5:00 PM."
+        }
+      ],
       "source": "https://commons.wikimedia.org/wiki/File:West_Dundee_Village_Hall_(8738838622).jpg",
       "image1": {
         "node": {
