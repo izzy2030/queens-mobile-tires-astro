@@ -1,0 +1,70 @@
+---
+// src/components/CityReviews.astro
+// Global reviews component for city pages
+// Uses real customer feedback adapted for local context
+
+interface Props {
+    cityName: string;
+}
+
+const { cityName } = Astro.props;
+
+// Selected real reviews from the provided list
+const reviews = [
+    {
+        name: "Bashar Danial",
+        text: "They immediately jumped into action and replaced the bad tire with a new tire and had us back on the road, all of this in under one hour!!!",
+        stars: 5,
+    },
+    {
+        name: "Sharon Balog",
+        text: "They showed me how to see the amount of tread left and the year of the tires. They were able to get me new tires the next day. Extremely reasonable and trustworthy!",
+        stars: 5,
+    },
+    {
+        name: "Mike",
+        text: "Saved me from having a rim fall off while driving on the highway. I had limited tools and thankfully they had me back on my way within 10 minutes.",
+        stars: 5,
+    },
+];
+---
+
+<div
+    class="bg-queens-primary text-white p-8 rounded-3xl shadow-xl relative overflow-hidden"
+>
+    <div class="relative z-10">
+        <h3 class="text-2xl font-bold mb-6">What {cityName} Drivers Say</h3>
+        <div class="space-y-6">
+            {
+                reviews.map((review) => (
+                    <div class="pb-6 border-b border-white/10 last:border-0 last:pb-0">
+                        <div class="flex text-yellow-400 mb-2 text-sm">
+                            {"★".repeat(review.stars)}
+                        </div>
+                        <p class="text-gray-200 italic text-sm mb-3">
+                            "{review.text}"
+                        </p>
+                        <p class="font-bold text-sm">
+                            — {review.name}, {cityName}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    <!-- Abstract BG -->
+    <div
+        class="absolute top-0 right-0 p-12 opacity-10 transform translate-x-1/2 -translate-y-1/2 pointer-events-none"
+    >
+        <svg
+            class="w-64 h-64"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                fill="#ffffff"
+                d="M47.7,-61.8C61.3,-51.1,71.4,-36.8,76.4,-21.2C81.4,-5.6,81.4,11.3,73.4,24.8C65.5,38.3,49.7,48.4,34.4,56.3C19.1,64.2,4.3,69.9,-9.5,68.7C-23.3,67.6,-36.1,59.6,-47.5,49.1C-58.9,38.6,-68.9,25.6,-72.6,10.9C-76.3,-3.8,-73.7,-20.2,-64.3,-33.2C-55,-46.2,-38.9,-55.8,-23.7,-58.5C-8.4,-61.2,6,-57.1,19.9,-53.1L47.7,-61.8Z"
+                transform="translate(100 100)"></path>
+        </svg>
+    </div>
+</div>
