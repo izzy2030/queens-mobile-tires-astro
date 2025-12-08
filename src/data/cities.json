@@ -170,7 +170,26 @@
     "title": "Mobile Tire Service in East Dundee, IL",
     "cityFields": {
       "localTitle": "Spotlight on East Dundee: A Historic Gem Along the Fox River",
-      "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>East Dundee, IL, is a charming village with a rich history and a vibrant community spirit. Nestled along the scenic Fox River, East Dundee combines its historical roots with modern amenities, making it a wonderful place to live, work, and explore. We’re honored to serve this thriving village with tire care solutions designed for its residents.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>The Depot</strong>: A central hub for community events and gatherings, reflecting the village’s historical significance.</li>\n<li><strong>Riverwalk</strong>: A beautiful stretch along the Fox River, perfect for leisurely walks and enjoying the natural scenery.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Downtown East Dundee</strong>: A lively area filled with unique shops, cozy cafes, and locally-owned businesses.</li>\n<li><strong>Farmers Market</strong>: A seasonal favorite where residents come together to enjoy fresh produce and handmade goods.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Dundee Heritage Fest</strong>: A celebration of the village’s history, featuring music, food, and family-friendly activities.</li>\n<li><strong>Holiday Tree Lighting</strong>: A festive annual tradition that brings the community together to celebrate the season.</li>\n</ul>\n",
+      "introText": "Skip the tow truck and the waiting room. Whether you are relaxing at home in The Terraces of Radcliffe or working near Santa's Village, Queens Mobile Tires gets you rolling again with convenient next-day appointments.",
+      "localAttractions": "<h3 id=\"why-east-dundee-drivers-choose-mobile\">Why East Dundee Drivers Choose Mobile</h3>\n<p>Locals know that navigating the intersection of <strong>Route 72 (Higgins Road)</strong> and <strong>Route 25</strong> can be a bottleneck, especially during the summer rush to the amusement park. Between the visitors heading to the <strong>Culinary District</strong> and the traffic flow near the car dealerships, leaving your vehicle at a shop is a major inconvenience. We understand that getting from the historic homes near the <strong>Fox River</strong> to a service center can disrupt your entire day. Instead of dealing with the construction often found on <strong>Route 68 (Penny Avenue)</strong> or fighting for parking downtown, let us handle your tire change right in your driveway. We save you the trip so you can enjoy a treat at <strong>Van's Frozen Custard</strong> instead of waiting in a lobby.</p>\n\n<h3 id=\"serving-all-of-east-dundee\">Serving All of East Dundee</h3>\n<p>Our vans are a regular sight in East Dundee.</p>\n<ul>\n<li><strong>Neighborhoods:</strong> We cover residential driveways from the quiet streets of <strong>Dunridge</strong> to the riverfront properties near <strong>Water Street</strong>.</li>\n<li><strong>Business Areas:</strong> We service office parks and lots near the <strong>Christina Drive</strong> industrial area and retail spaces along <strong>Dundee Avenue</strong>.</li>\n<li><strong>Convenience:</strong> We come to where you are parked, so you don't miss a minute of your day.</li>\n</ul>\n\n<h3 id=\"complete-tire-services\">Complete Tire Services for East Dundee</h3>\n<ul>\n<li><strong>New Tires:</strong> We bring the inventory to you and mount them on-site.</li>\n<li><strong>Mobile Flat Repair:</strong> Scheduled patch and plug services at your location.</li>\n<li><strong>Seasonal Swaps:</strong> Perfect for East Dundee winters—we swap winter/summer sets in your driveway.</li>\n<li><strong>Balancing & Rotation:</strong> Computer balancing performed right inside our van to ensure smooth rides.</li>\n</ul>",
+      "faqs": [
+        {
+          "question": "How fast can you get to River Haven?",
+          "answer": "We typically offer next-day appointments to get you back on the road quickly without the wait of a traditional shop."
+        },
+        {
+          "question": "Do you service cars at business lots near Route 72?",
+          "answer": "Yes, as long as there is safe clearance, we can work in office or retail parking lots while you work."
+        },
+        {
+          "question": "Do you serve all of East Dundee?",
+          "answer": "Yes, including zip code: <strong>60118</strong>."
+        },
+        {
+          "question": "What are your hours?",
+          "answer": "We operate Monday through Saturday, 8:00 AM to 5:00 PM."
+        }
+      ],
       "source": null,
       "image1": {
         "node": {
