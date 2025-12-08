@@ -8,8 +8,8 @@
       "source": "https://commons.wikimedia.org/wiki/File:First_congregrational_elgin_il.jpg",
       "image1": {
         "node": {
-          "sourceUrl": "https://queensmobiletires.com/wp-content/uploads/2024/12/17263346523_da164a61cc_b.jpg",
-          "altText": ""
+          "sourceUrl": "/images/cities/elgin.webp",
+          "altText": "Elgin Water Tower"
         }
       },
       "image2": null
@@ -22,7 +22,12 @@
       "localTitle": "Spotlight on Prairie Grove: Embracing Community Spirit",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>Prairie Grove is a picturesque village that perfectly balances natural beauty with a strong sense of community. From its open spaces to its welcoming neighborhoods, Prairie Grove is a place we’re proud to serve, bringing tire care convenience to your doorstep.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Prairie Grove Nature Preserve</strong>: A haven for wildlife and a peaceful retreat for nature lovers, offering trails and scenic views.</li>\n<li><strong>Local Parks and Recreation Areas</strong>: Spaces where families gather for outdoor activities and relaxation.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Community-Focused Businesses</strong>: Prairie Grove’s local shops and services embody the village’s friendly, small-town charm.</li>\n<li><strong>Unique Agricultural Contributions</strong>: Highlighting the role of local farms in providing fresh produce and supporting the regional economy.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Prairie Grove Fall Festival</strong>: An annual celebration filled with music, food, and activities that bring neighbors together.</li>\n<li><strong>Holiday Market</strong>: A seasonal tradition showcasing local artisans and their crafts, perfect for finding one-of-a-kind gifts.</li>\n</ul>\n",
       "source": null,
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/prairie-grove.webp",
+          "altText": "Prairie Grove Town Center"
+        }
+      },
       "image2": null
     }
   },
@@ -33,7 +38,12 @@
       "localTitle": "Spotlight on Barrington: A Blend of Charm and Progress",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>Barrington is a vibrant village known for its historic charm, dynamic lifestyle, and dedication to preserving its rich heritage. Surrounded by natural beauty and thriving neighborhoods, Barrington offers a unique blend of small-town warmth and modern amenities. We’re honored to serve this remarkable community.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Barrington Area Historical Museum</strong>: Discover the stories and artifacts that highlight Barrington’s storied past.</li>\n<li><strong>Citizen’s Park</strong>: A perfect spot for outdoor activities, community events, and tranquil moments in nature.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Downtown Barrington</strong>: A bustling center featuring boutique shops, gourmet dining, and a vibrant arts scene.</li>\n<li><strong>Barrington’s White House</strong>: A cultural landmark offering events, performances, and community gatherings.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Barrington Art Festival</strong>: A celebration of creativity that brings together artists and enthusiasts from all over.</li>\n<li><strong>Holiday Tree Lighting Ceremony</strong>: A cherished tradition that marks the start of the festive season with joy and togetherness.</li>\n</ul>\n",
       "source": "https://commons.wikimedia.org/wiki/File:Barrington_il.jpg",
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/barrington.webp",
+          "altText": "Barrington Illinois White House"
+        }
+      },
       "image2": null
     }
   },
@@ -44,7 +54,12 @@
       "localTitle": "Spotlight on Huntley: A Village with Heart",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>Huntley, IL, is a charming village celebrated for its rich history, welcoming neighborhoods, and strong community values. Known as &#8220;The Friendly Village with Country Charm,&#8221; Huntley is a wonderful place to call home. We’re proud to serve its residents, making tire care both convenient and reliable.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Deicke Park</strong>: A central hub for family fun and outdoor activities, featuring playgrounds, sports fields, and scenic walking paths.</li>\n<li><strong>Tom’s Farm Market</strong>: A beloved spot offering fresh produce, delicious baked goods, and seasonal events that bring the community together.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Historic Downtown Huntley</strong>: A vibrant area filled with unique shops, local eateries, and community events that keep the village lively.</li>\n<li><strong>Huntley Farmers Market</strong>: A seasonal favorite where residents gather to support local farmers and artisans.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Huntley Fall Fest</strong>: A community celebration featuring live music, carnival rides, and plenty of family-friendly entertainment.</li>\n<li><strong>Fourth of July Fireworks Show</strong>: A spectacular display that lights up the sky and brings neighbors together in celebration.</li>\n</ul>\n",
       "source": "https://commons.wikimedia.org/wiki/File:Huntley_Area_Public_Library.jpg",
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/huntley.webp",
+          "altText": "Huntley Winter Day"
+        }
+      },
       "image2": null
     }
   },
@@ -55,7 +70,12 @@
       "localTitle": "Spotlight on Gilberts: A Growing Village with Community Spirit",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>Gilberts, IL, is a welcoming village known for its friendly atmosphere, scenic surroundings, and a strong sense of community. With its blend of small-town charm and modern conveniences, Gilberts is a place we’re proud to serve, offering tire care that fits seamlessly into busy lives.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Town Center Park</strong>: A favorite spot for families and residents, featuring playgrounds, open fields, and a splash pad for summertime fun.</li>\n<li><strong>Gilberts Water Tower Park</strong>: A historic and picturesque site that reflects the village’s unique heritage.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Downtown Gilberts</strong>: Home to local businesses, cozy cafes, and vibrant community events, adding to the village’s charm.</li>\n<li><strong>Local Artisans and Markets</strong>: A showcase of the creativity and entrepreneurial spirit of Gilberts residents.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Gilberts Community Days</strong>: An annual festival filled with live music, delicious food, and activities for all ages.</li>\n<li><strong>Holiday Tree Lighting</strong>: A cherished tradition that brings neighbors together to celebrate the festive season.</li>\n</ul>\n",
       "source": null,
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/gilberts.webp",
+          "altText": "Gilberts Water Tower"
+        }
+      },
       "image2": null
     }
   },
@@ -66,7 +86,12 @@
       "localTitle": "Spotlight on Crystal Lake: A City That Shines",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>Crystal Lake, IL, is a vibrant city known for its picturesque landscapes, welcoming neighborhoods, and dynamic local culture. From its iconic lake to its bustling downtown, Crystal Lake offers something special for everyone. We’re proud to serve this thriving community with tire care tailored to its residents.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Crystal Lake Main Beach</strong>: A beloved spot for swimming, boating, and relaxing by the water, drawing families and visitors alike.</li>\n<li><strong>Veterans Acres Park</strong>: A scenic park perfect for hiking, picnicking, and enjoying the great outdoors.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Historic Downtown Crystal Lake</strong>: A charming hub of unique shops, local restaurants, and year-round events that bring the community together.</li>\n<li><strong>Raue Center for the Arts</strong>: A cultural treasure hosting performances, concerts, and exhibits that enrich the city’s vibrant arts scene.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Crystal Lake Festival of Lights Parade</strong>: A festive annual tradition that lights up the streets and spreads holiday cheer.</li>\n<li><strong>Johnny Appleseed Festival</strong>: A celebration of the city’s history and heritage, featuring family-friendly activities, live entertainment, and local vendors.</li>\n</ul>\n",
       "source": "https://commons.wikimedia.org/wiki/File:Crystal_Lake_01.jpg",
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/crystal-lake.webp",
+          "altText": "Crystal Lake Historic Center"
+        }
+      },
       "image2": null
     }
   },
@@ -77,7 +102,12 @@
       "localTitle": "Spotlight on Sleepy Hollow: A Village with Timeless Charm",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>Sleepy Hollow, IL, is a serene village celebrated for its peaceful atmosphere, strong community ties, and beautiful surroundings. Known for its historic roots and friendly neighborhoods, Sleepy Hollow is a place we’re proud to serve, ensuring tire care is as seamless as possible.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Sabatino Park</strong>: A family-friendly space with playgrounds, open fields, and a welcoming environment for outdoor fun.</li>\n<li><strong>Sleepy Hollow Pool</strong>: A cherished spot where residents gather to relax and enjoy the summer sunshine.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Local Small Businesses</strong>: Sleepy Hollow is home to unique local shops that add to its charm and character.</li>\n<li><strong>Community Markets</strong>: Seasonal events that bring together residents to support local vendors and artisans.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Sleepy Hollow Summer Concert Series</strong>: A delightful tradition where neighbors gather to enjoy live music and good company.</li>\n<li><strong>Halloween Bonfire Event</strong>: A seasonal celebration that captures the village’s welcoming and festive spirit.</li>\n</ul>\n",
       "source": null,
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/sleepy-hollow.webp",
+          "altText": "Sleepy Hollow Town Sign"
+        }
+      },
       "image2": null
     }
   },
@@ -88,7 +118,12 @@
       "localTitle": "Spotlight on Fox River Grove: A Riverside Retreat",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>Fox River Grove, IL, is a picturesque village nestled along the Fox River, known for its natural beauty, friendly residents, and rich history. Whether enjoying outdoor adventures or connecting with neighbors, Fox River Grove offers a sense of community and charm that we’re proud to serve.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Fox River Grove Memorial Library</strong>: A hub of learning and connection, offering events and resources for all ages.</li>\n<li><strong>Norge Ski Club</strong>: A historic landmark and the oldest continuously operating ski club in the United States, hosting thrilling ski jumping events.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Downtown Fox River Grove</strong>: A quaint area featuring local shops, dining options, and a welcoming atmosphere.</li>\n<li><strong>Fox River Activities</strong>: Boating, fishing, and riverside picnics are just a few of the activities that highlight the village’s connection to nature.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Fox River Grove Summer Festival</strong>: A lively annual event with music, food, and activities that bring the community together.</li>\n<li><strong>Holiday Tree Lighting Ceremony</strong>: A cherished tradition that celebrates the season and strengthens community bonds.</li>\n</ul>\n",
       "source": "https://commons.wikimedia.org/wiki/File:Chalets_in_Fox_River_Grove,_IL.jpg",
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/fox-river-grove.webp",
+          "altText": "Fox River Grove Town Center"
+        }
+      },
       "image2": null
     }
   },
@@ -99,7 +134,12 @@
       "localTitle": "Spotlight on East Dundee: A Historic Gem Along the Fox River",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>East Dundee, IL, is a charming village with a rich history and a vibrant community spirit. Nestled along the scenic Fox River, East Dundee combines its historical roots with modern amenities, making it a wonderful place to live, work, and explore. We’re honored to serve this thriving village with tire care solutions designed for its residents.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>The Depot</strong>: A central hub for community events and gatherings, reflecting the village’s historical significance.</li>\n<li><strong>Riverwalk</strong>: A beautiful stretch along the Fox River, perfect for leisurely walks and enjoying the natural scenery.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Downtown East Dundee</strong>: A lively area filled with unique shops, cozy cafes, and locally-owned businesses.</li>\n<li><strong>Farmers Market</strong>: A seasonal favorite where residents come together to enjoy fresh produce and handmade goods.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Dundee Heritage Fest</strong>: A celebration of the village’s history, featuring music, food, and family-friendly activities.</li>\n<li><strong>Holiday Tree Lighting</strong>: A festive annual tradition that brings the community together to celebrate the season.</li>\n</ul>\n",
       "source": null,
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/east-dundee.webp",
+          "altText": "East Dundee Winter Downtown"
+        }
+      },
       "image2": null
     }
   },
@@ -110,7 +150,12 @@
       "localTitle": "Spotlight on West Dundee: Where History Meets Modern Living",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>West Dundee, IL, is a picturesque village that beautifully blends its historic charm with modern amenities. Situated along the scenic Fox River, West Dundee is known for its vibrant community, thriving local businesses, and welcoming neighborhoods. We’re proud to serve this exceptional village with tire care services that meet its residents’ needs.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Spring Hill Mall</strong>: A central destination for shopping, dining, and entertainment, offering something for everyone.</li>\n<li><strong>Grafelman Park</strong>: A beloved green space perfect for family outings, picnics, and community events.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Downtown West Dundee</strong>: A charming area featuring boutique shops, cozy cafes, and a rich sense of history.</li>\n<li><strong>Fox River Activities</strong>: From kayaking to riverside walks, the Fox River offers endless opportunities for relaxation and adventure.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Heritage Fest</strong>: A joint celebration with East Dundee that showcases the area’s history and community spirit.</li>\n<li><strong>Dickens in Dundee</strong>: A holiday tradition that transforms the village into a festive wonderland with events and activities for all ages.</li>\n</ul>\n",
       "source": "https://commons.wikimedia.org/wiki/File:West_Dundee_Village_Hall_(8738838622).jpg",
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/west-dundee.webp",
+          "altText": "West Dundee Downtown"
+        }
+      },
       "image2": null
     }
   },
@@ -121,7 +166,12 @@
       "localTitle": "Spotlight on Cary: A Village Rooted in Community",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>Cary, IL, is a welcoming village known for its strong sense of community, scenic landscapes, and family-friendly atmosphere. Nestled along the Fox River, Cary offers a perfect balance of small-town charm and modern living. We’re honored to serve this vibrant village, bringing convenient tire care to its residents.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Cary Park District</strong>: A hub for recreation, featuring sports fields, walking trails, and programs for all ages.</li>\n<li><strong>Hoffman Park</strong>: A serene green space with beautiful trails and opportunities for outdoor adventures.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Downtown Cary</strong>: A bustling area with local shops, restaurants, and a welcoming vibe that brings neighbors together.</li>\n<li><strong>Cary Grove Farmers Market</strong>: A seasonal favorite for fresh produce, artisan goods, and community connections.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Cary Main Street Fest</strong>: A lively annual event showcasing local businesses, live music, and family activities.</li>\n<li><strong>Merry Cary Holiday Parade</strong>: A cherished holiday tradition that spreads joy and strengthens community ties.</li>\n</ul>\n",
       "source": null,
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/cary.webp",
+          "altText": "Cary Metra Station"
+        }
+      },
       "image2": null
     }
   },
@@ -132,7 +182,12 @@
       "localTitle": "Spotlight on Carpentersville: A Village with a Vibrant Spirit",
       "localAttractions": "<h3 id=\"a-community-close-to-our-hearts\">A Community Close to Our Hearts</h3>\n<p>Carpentersville, IL, is a lively village with a rich history and a bright future. Situated along the Fox River, this community is known for its diverse neighborhoods, scenic parks, and commitment to progress. We’re proud to serve Carpentersville, bringing convenient and reliable tire care directly to its residents.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Fox River Shores Forest Preserve</strong>: A stunning natural area offering trails, fishing spots, and picturesque river views.</li>\n<li><strong>Keith Andres Memorial Park</strong>: A favorite for outdoor enthusiasts, featuring hiking and biking trails surrounded by lush greenery.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Old Town Carpentersville</strong>: A historic area with charming architecture and a growing selection of local businesses.</li>\n<li><strong>Spring Hill Mall</strong>: A popular destination for shopping, dining, and entertainment, conveniently located near the village.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Concerts in the Park</strong>: A summer tradition where residents gather for live music and good times.</li>\n<li><strong>Fall Fest</strong>: A community celebration featuring food, games, and family-friendly activities that highlight the village’s vibrant spirit.</li>\n</ul>\n",
       "source": "https://commons.wikimedia.org/wiki/File:Atlantic_Flour_Mills_(8726235062).jpg",
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/carpentersville.webp",
+          "altText": "Carpentersville Otto"
+        }
+      },
       "image2": null
     }
   },
@@ -143,7 +198,12 @@
       "localTitle": "Spotlight on Lake in the Hills: We’re Proud to Call It Home",
       "localAttractions": "<h3 id=\"a-community-we-know-and-love\">A Community We Know and Love</h3>\n<p>Lake in the Hills isn’t just where we do business, it’s where we live and engage with our neighbors. We know what local drivers face, from snowy winters to busy summer roads, and we tailor our services with these conditions in mind.</p>\n<h3 id=\"local-gems-to-explore\">Local Gems to Explore</h3>\n<ul>\n<li><strong>Lake in the Hills Fen</strong>: Enjoy a peaceful walk and take in the natural beauty that makes our community special.</li>\n<li><strong>Goebbert’s Pumpkin Patch and Apple Orchard</strong>: A local favorite, perfect for family outings, fresh produce, and seasonal festivities.</li>\n</ul>\n<h3 id=\"thriving-local-life-and-commerce\">Thriving Local Life and Commerce</h3>\n<ul>\n<li><strong>Downtown Lake in the Hills</strong>: Discover a variety of local businesses that keep our town humming along. We’re proud to serve these hardworking neighbors, helping keep their vehicles ready for whatever the day brings.</li>\n</ul>\n<h3 id=\"coming-together-as-a-community\">Coming Together as a Community</h3>\n<ul>\n<li><strong>Summer Sunset Festival</strong>: This annual event brings everyone together for music, food, and fun—just one of the many reasons we’re proud to be part of this community.</li>\n</ul>\n<h3 id=\"our-commitment-to-lake-in-the-hills\">Our Commitment to Lake in the Hills</h3>\n<p>We support local events and initiatives, invest in local employment, and do our part to keep roads safe. When you choose Queens Mobile Tires, you’re choosing a team that cares about your vehicle and your community.</p>\n",
       "source": "https://commons.wikimedia.org/wiki/File:Lake_in_the_Hills_-_Woods_Creek_Lake.jpg",
-      "image1": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/lake-in-the-hills.webp",
+          "altText": "Lake in the Hills Water Tower"
+        }
+      },
       "image2": null
     }
   }

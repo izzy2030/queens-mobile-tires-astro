@@ -35,11 +35,13 @@ const sortedCities = cities.sort((a, b) => a.title.localeCompare(b.title));
 
         <!-- Right: Image Placeholder -->
         <div class="relative order-1 lg:order-2">
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] group bg-gray-100 flex items-center justify-center">
-                 <!-- You can replace this SVG with a real map image later -->
-                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-24 h-24 text-gray-300">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.159.69.159 1.006 0Z" />
-                </svg>
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] group">
+                <div class="absolute inset-0 bg-gradient-to-tr from-queens-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                <img 
+                  src="/images/mobile-tire-installation-highway.webp" 
+                  alt="Mobile Tire Installation on Highway" 
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
             </div>
             <!-- Decorative Blob -->
             <div class="absolute -top-20 -right-20 w-72 h-72 bg-queens-secondary/10 rounded-full blur-3xl -z-10"></div>

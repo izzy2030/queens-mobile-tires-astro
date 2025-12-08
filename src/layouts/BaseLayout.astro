@@ -1,14 +1,15 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import '@fontsource/inter';
-import '@fontsource/source-serif-4';
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-const { title = "Queens Mobile Tires", description = "We come to you." } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
+import "@fontsource/inter";
+import "@fontsource/source-serif-4";
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const { title = "Queens Mobile Tires", description = "We come to you." } =
+  Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -19,7 +20,6 @@ const { title = "Queens Mobile Tires", description = "We come to you." } = Astro
     <ViewTransitions />
   </head>
   <body class="bg-gray-50 text-queens-primary flex flex-col min-h-screen">
-    
     <Header />
 
     <main class="flex-grow">
@@ -27,6 +27,5 @@ const { title = "Queens Mobile Tires", description = "We come to you." } = Astro
     </main>
 
     <Footer />
-
   </body>
 </html>
