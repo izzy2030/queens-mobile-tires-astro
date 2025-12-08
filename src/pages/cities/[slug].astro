@@ -41,10 +41,19 @@ const cityName = city.title
           </div>
 
           <h1
-            class="text-4xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tight text-queens-primary mb-8 leading-[1.1]"
+            class="text-4xl md:text-6xl font-sans font-normal tracking-tighter text-queens-primary mb-8 leading-[1.1]"
           >
-            Mobile Tire Service in {cityName}
+            Mobile Tire Service <br /> in <span
+              class="font-serif italic text-queens-secondary"
+              >{cityName}, IL</span
+            >
           </h1>
+
+          <h3
+            class="text-xl md:text-2xl text-queens-primary/60 mb-6 leading-relaxed font-sans font-light"
+          >
+            We bring the tire shop to your driveway or office in {cityName}.
+          </h3>
 
           <!-- New Copy from HTML Sample -->
           <p class="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -56,17 +65,11 @@ const cityName = city.title
 
           <div class="flex flex-wrap gap-4 items-center">
             <a
-              href="tel:+18475551234"
-              class="btn-primary px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all"
-            >
-              Call (847) 555-1234
-            </a>
-            <a
               href="/buy-new-tires"
               data-astro-reload
-              class="btn-secondary px-8 py-4 text-lg"
+              class="btn-primary shadow-2xl hover:scale-105 transition-transform duration-300 px-10 py-5 text-xl"
             >
-              Book Online
+              Buy New Tires
             </a>
           </div>
 
