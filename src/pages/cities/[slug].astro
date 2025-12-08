@@ -48,9 +48,10 @@ const cityName = city.title
 
           <!-- New Copy from HTML Sample -->
           <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-            Stuck on the road? Flat in your driveway? We come to you in {
-              cityName
-            } — same-day service, 7 days a week.
+            {
+              acf.introText ||
+                `Stuck on the road? Flat in your driveway? We come to you in ${cityName} — same-day service, 7 days a week.`
+            }
           </p>
 
           <div class="flex flex-wrap gap-4 items-center">
