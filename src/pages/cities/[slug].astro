@@ -11,6 +11,7 @@ import ChecklistItem from "../../components/cities/ChecklistItem.astro";
 import SectionHeader from "../../components/cities/SectionHeader.astro";
 import CTABanner from "../../components/cities/CTABanner.astro";
 import InfoPill from "../../components/cities/InfoPill.astro";
+import CityServicesGrid from "../../components/cities/CityServicesGrid.astro";
 
 // 1. FETCH ALL CITIES & GENERATE PATHS
 import cities from "../../data/cities.json";
@@ -177,124 +178,11 @@ const faqSchema = {
   {
     acf.mobileServicesContent && (
       <>
-        {/* Section 1: Services Hero with Gradient + Full Descriptions */}
-        <section class="relative py-24 overflow-hidden bg-gradient-to-br from-queens-primary via-queens-primary to-[#1a3a5c]">
-          {/* Decorative Elements */}
-          <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-queens-secondary rounded-full blur-3xl" />
-            <div class="absolute bottom-10 right-20 w-96 h-96 bg-queens-light rounded-full blur-3xl" />
-          </div>
-
-          <div class="container mx-auto px-6 max-w-7xl relative z-10">
-            <div class="text-center mb-16">
-              <span class="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-queens-secondary text-sm font-medium mb-6 border border-white/20">
-                Professional Mobile Service
-              </span>
-              <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-                Mobile Tire Services in {cityName}
-              </h2>
-              <p class="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-                Expert tire care delivered directly to your driveway. No shop
-                visits, no waiting rooms - just professional service where you
-                need it.
-              </p>
-            </div>
-
-            {/* Services We Offer - Dynamic Loop */}
-            <div class="mb-12">
-              <h3 class="text-2xl font-bold text-white text-center mb-10">
-                Services We Offer In {cityName}
-              </h3>
-              <div class="grid md:grid-cols-2 gap-8">
-                {acf.mobileServicesContent.services.map(
-                  (service: any, index: number) => (
-                    <div class="group relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500 hover:shadow-2xl">
-                      <div class="flex items-start gap-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-queens-secondary to-queens-secondary/60 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                          {/* Dynamic Icons based on index */}
-                          {index === 0 && (
-                            <svg
-                              class="w-8 h-8 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <circle cx="12" cy="12" r="10" stroke-width="2" />
-                              <circle cx="12" cy="12" r="3" stroke-width="2" />
-                              <path
-                                stroke-width="2"
-                                d="M12 2v4M12 18v4M2 12h4M18 12h4"
-                              />
-                            </svg>
-                          )}
-                          {index === 1 && (
-                            <svg
-                              class="w-8 h-8 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
-                              />
-                            </svg>
-                          )}
-                          {index === 2 && (
-                            <svg
-                              class="w-8 h-8 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <rect
-                                x="2"
-                                y="6"
-                                width="20"
-                                height="12"
-                                rx="2"
-                                stroke-width="2"
-                              />
-                              <path
-                                stroke-width="2"
-                                d="M6 18v2M18 18v2M6 6V4M18 6V4"
-                              />
-                            </svg>
-                          )}
-                          {index === 3 && (
-                            <svg
-                              class="w-8 h-8 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                              />
-                            </svg>
-                          )}
-                        </div>
-                        <div>
-                          <h4
-                            class="text-xl font-bold text-white mb-3"
-                            set:html={service.title}
-                          />
-                          <p
-                            class="text-white/70 leading-relaxed"
-                            set:html={service.text}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ),
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Section 1: Services Grid - Using Reusable Component */}
+        <CityServicesGrid
+          cityName={cityName}
+          services={acf.mobileServicesContent.services}
+        />
 
         {/* Section 2: Convenient Next-Day Service - Dynamic Content */}
         <section class="py-24 bg-white">
@@ -756,14 +644,28 @@ const faqSchema = {
         <h2 class="text-3xl font-bold mb-8 text-queens-primary">
           We Know {cityName}
         </h2>
-        <div
-          class="prose prose-base prose-headings:text-queens-primary prose-a:text-queens-secondary text-gray-600 mb-12"
-        >
+
+        <!-- Custom Styled Content -->
+        <div class="city-content mb-12">
           <!-- CMS Content -->
           <div set:html={acf.localAttractions} />
+
+          <!-- Homepage Link -->
+          <p class="mt-8 pt-8 border-t border-gray-100">
+            <a
+              href="/"
+              class="inline-flex items-center gap-2 text-queens-primary font-bold hover:text-queens-secondary transition-colors group text-lg"
+            >
+              <span
+                class="transform group-hover:-translate-x-1 transition-transform"
+                >←</span
+              >
+              Back to Queens Mobile Tires Homepage
+            </a>
+          </p>
         </div>
 
-        <!-- FAQ Accordion (New with proper fallback and schema support) -->
+        <!-- FAQ Accordion -->
         <div class="mt-12">
           <h3 class="text-2xl font-bold text-queens-primary mb-6">
             Frequently Asked Questions
@@ -780,7 +682,7 @@ const faqSchema = {
                       </span>
                     </summary>
                     <div
-                      class="p-5 pt-0 text-gray-600 bg-white"
+                      class="p-5 pt-0 text-gray-600 bg-white leading-relaxed"
                       set:html={faq.answer}
                     />
                   </details>
@@ -799,18 +701,6 @@ const faqSchema = {
                       often faster if you’re near major roads.
                     </div>
                   </details>
-                  <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-queens-primary hover:bg-white transition">
-                      <span>Do you service apartment complexes?</span>
-                      <span class="transition group-open:rotate-180 text-queens-secondary">
-                        ▼
-                      </span>
-                    </summary>
-                    <div class="p-5 pt-0 text-gray-600 bg-white">
-                      Yes! We work in every parking lot in {cityName} -
-                      apartments, office parks, and driveways.
-                    </div>
-                  </details>
                 </>
               )
             }
@@ -820,6 +710,45 @@ const faqSchema = {
 
       <!-- Right: Reviews Column (New) -->
       <div class="lg:col-span-5 space-y-8">
+        <!-- NEW: Areas We Serve (Sidebar Widget - Cleaner Design) -->
+        <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+          <h3 class="text-xl font-bold text-queens-primary mb-6">
+            Areas We Serve
+          </h3>
+          <ul class="space-y-4">
+            {
+              cities
+                .filter((c) => c.slug !== city.slug) // Exclude current
+                .sort(() => 0.5 - Math.random()) // Shuffle
+                .slice(0, 5) // Take 5
+                .map((c) => (
+                  <li>
+                    <a
+                      href={`/cities/${c.slug}`}
+                      class="group flex items-center gap-3 text-gray-600 hover:text-queens-primary transition-colors"
+                    >
+                      <span class="w-1.5 h-1.5 rounded-full bg-queens-secondary group-hover:scale-150 transition-transform" />
+                      <span class="font-medium text-lg">
+                        {c.title
+                          .replace("Mobile Tire Service in ", "")
+                          .replace(", IL", "")}
+                      </span>
+                    </a>
+                  </li>
+                ))
+            }
+          </ul>
+          <div class="mt-8 pt-6 border-t border-gray-100">
+            <a
+              href="/locations"
+              class="text-sm font-bold text-queens-primary hover:text-queens-secondary transition-colors inline-flex items-center gap-1"
+            >
+              View All Locations
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
         <CityReviews cityName={cityName} />
 
         <!-- Image 2 (If available) -->
@@ -837,6 +766,71 @@ const faqSchema = {
       </div>
     </div>
   </div>
+
+  <style is:global>
+    /* Manual Styling for City Content */
+    .city-content {
+      color: #374151; /* gray-700 */
+      font-size: 1.125rem;
+      line-height: 1.8;
+      font-family: "Inter", sans-serif;
+    }
+
+    .city-content h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 1.875rem; /* text-3xl */
+      line-height: 1.3;
+      font-weight: 800;
+      color: #0b1121; /* queens-primary */
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.025em;
+      border-bottom: 2px solid #f3f4f6; /* Subtle divider */
+      padding-bottom: 0.75rem;
+    }
+
+    .city-content p {
+      margin-bottom: 1.75rem;
+    }
+
+    .city-content a {
+      color: #0e79c9; /* queens-secondary */
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.2s;
+    }
+
+    .city-content a:hover {
+      color: #0b1121;
+    }
+
+    .city-content ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 2.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .city-content li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .city-content li::before {
+      content: "→"; /* Arrow instead of bullet for movement */
+      position: absolute;
+      left: 0;
+      color: #0e79c9;
+      font-weight: 800;
+    }
+
+    .city-content strong {
+      color: #0b1121;
+      font-weight: 700;
+    }
+  </style>
 
   <!-- FINAL CTA: Simple & Bold -->
   <CityCTA headline={`Ready to Get Rolling in ${cityName}?`} />
