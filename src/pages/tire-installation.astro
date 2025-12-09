@@ -3,6 +3,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Job Details | Queens Mobile Tires">
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Tire Installation",
+    "provider": {
+      "@type": "AutomotiveBusiness",
+      "name": "Queens Mobile Tires"
+    }
+  }
+  </script>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://queensmobiletires.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tire Installation",
+        "item": "https://queensmobiletires.com/tire-installation"
+      }]
+    }
+  </script>
   <style>
     @keyframes pulse-qty {
       0%,

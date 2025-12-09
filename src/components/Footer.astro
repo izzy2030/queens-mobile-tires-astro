@@ -1,5 +1,5 @@
 ---
-import cities from '../data/cities.json';
+import cities from "../data/cities.json";
 
 // Clean up titles (e.g. "Mobile Tire Service in Elgin, IL" -> "Elgin, IL")
 const cleanTitle = (title: string) => {
@@ -12,11 +12,17 @@ const cleanTitle = (title: string) => {
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       {/* Column 1: Brand */}
       <div>
-        <h3 class="text-white font-black text-xl mb-4 uppercase tracking-tight">
-          Queens <span class="text-queens-secondary">Mobile</span>
-        </h3>
-        <p class="text-sm leading-relaxed">
-          Northern Illinois' premier mobile tire service. We come to you.
+        <a href="/" class="inline-block group mb-4">
+          <h3
+            class="text-white font-black text-xl uppercase tracking-tight group-hover:opacity-80 transition-opacity"
+          >
+            Queens <span class="text-queens-secondary">Mobile</span>
+          </h3>
+        </a>
+        <p class="text-sm leading-relaxed max-w-xs text-gray-400">
+          Queens Mobile Tires brings the tire shop directly to your home or
+          office. We provide professional installation, balancing, and repair
+          services across the Chicago suburbs, saving you time and hassle.
         </p>
       </div>
 
@@ -88,8 +94,11 @@ const cleanTitle = (title: string) => {
             ))
           }
         </ul>
-        <a href="/locations" class="inline-block mt-4 text-xs font-semibold text-queens-secondary hover:text-white transition-colors">
-            View All {cities.length} Locations →
+        <a
+          href="/locations"
+          class="inline-block mt-4 text-xs font-semibold text-queens-secondary hover:text-white transition-colors"
+        >
+          View All {cities.length} Locations →
         </a>
       </div>
     </div>
@@ -102,4 +111,3 @@ const cleanTitle = (title: string) => {
     </div>
   </div>
 </footer>
-

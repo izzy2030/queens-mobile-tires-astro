@@ -7,6 +7,32 @@ const sortedCities = cities.sort((a, b) => a.title.localeCompare(b.title));
 ---
 
 <BaseLayout title="Service Areas | Queens Mobile Tires" description="We serve many locations in Illinois. Find your city here.">
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Service Areas",
+    "description": "We serve many locations in Illinois. Find your city here.",
+    "url": "https://queensmobiletires.com/locations"
+  }
+  </script>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://queensmobiletires.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Locations",
+        "item": "https://queensmobiletires.com/locations"
+      }]
+    }
+  </script>
   <section class="relative py-20 lg:py-32 bg-white overflow-hidden">
     <div class="container mx-auto px-6 max-w-7xl">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -41,6 +67,7 @@ const sortedCities = cities.sort((a, b) => a.title.localeCompare(b.title));
                   src="/images/mobile-tire-installation-highway.webp" 
                   alt="Mobile Tire Installation on Highway" 
                   class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
             </div>
             <!-- Decorative Blob -->
@@ -58,7 +85,7 @@ const sortedCities = cities.sort((a, b) => a.title.localeCompare(b.title));
           <a href={`/cities/${city.slug}`} class="group block bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden transform hover:-translate-y-1">
             <div class="relative h-48 bg-gray-200 overflow-hidden">
                {city.cityFields.image1?.node?.sourceUrl ? (
-                  <img src={city.cityFields.image1.node.sourceUrl} alt={city.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <img src={city.cityFields.image1.node.sourceUrl} alt={city.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                ) : (
                   <div class="w-full h-full bg-gradient-to-br from-gray-800 to-queens-black flex items-center justify-center relative">
                     <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>

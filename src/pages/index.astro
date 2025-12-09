@@ -11,6 +11,23 @@ import TrustAnchor from '../components/TrustAnchor.astro';
 ---
 
 <BaseLayout title="Queens Mobile Tires | We Come To You">
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutomotiveBusiness",
+      "name": "Queens Mobile Tires",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mobile Service",
+        "addressLocality": "Chicago",
+        "addressRegion": "IL",
+        "postalCode": "60007",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-847-925-1100",
+      "url": "https://queensmobiletires.com/"
+    }
+  </script>
   <Hero />
   <ThreeSteps />
   <BentoGrid />

@@ -50,6 +50,43 @@ const faqSchema = {
 ---
 
 <BaseLayout title={`${acf.localTitle || city.title} | Queens Mobile Tires`}>
+  <script type="application/ld+json" slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": `Queens Mobile Tires in ${cityName}`,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": cityName,
+      "addressRegion": "IL",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-847-925-1100",
+    "url": `https://queensmobiletires.com/cities/${city.slug}`
+  }
+  </script>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://queensmobiletires.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Locations",
+        "item": "https://queensmobiletires.com/locations"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": cityName,
+        "item": `https://queensmobiletires.com/cities/${city.slug}`
+      }]
+    }
+  </script>
   {
     faqs.length > 0 && (
       <script
@@ -143,6 +180,7 @@ const faqSchema = {
                   src={acf.image1.node.sourceUrl}
                   alt={`Queens Mobile Tires van in ${cityName}`}
                   class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
               ) : (
                 <div class="w-full h-full bg-gray-100 flex items-center justify-center">
@@ -322,6 +360,7 @@ const faqSchema = {
                     src="/src/assets/images/Mobile Tire Sevrice - Algonquin IL.webp"
                     alt="Mobile tire service van in action"
                     class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
                   />
                   <div class="absolute inset-0 bg-gradient-to-t from-queens-primary/60 to-transparent" />
                   <div class="absolute bottom-6 left-6 right-6">
@@ -618,6 +657,7 @@ const faqSchema = {
                 src={acf.image2.node.sourceUrl}
                 class="w-full h-full object-cover"
                 alt={`More views of ${cityName}`}
+                loading="lazy"
               />
             </div>
           )
