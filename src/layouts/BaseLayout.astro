@@ -11,7 +11,7 @@ const { title = "Queens Mobile Tires", description = "We come to you." } =
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -21,7 +21,9 @@ const { title = "Queens Mobile Tires", description = "We come to you." } =
     <ViewTransitions />
     <slot name="head" />
   </head>
-  <body class="bg-gray-50 text-queens-primary flex flex-col min-h-screen">
+  <body
+    class="bg-gray-50 text-queens-primary flex flex-col min-h-screen w-full overflow-x-hidden"
+  >
     <Header />
 
     <main class="flex-grow">
