@@ -203,6 +203,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     type="text"
                                     required
                                     x-model="firstName"
+                                    autocomplete="given-name"
                                     class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                                 />
                             </div>
@@ -217,6 +218,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     type="text"
                                     required
                                     x-model="lastName"
+                                    autocomplete="family-name"
                                     class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                                 />
                             </div>
@@ -231,6 +233,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     type="tel"
                                     required
                                     x-model="phone"
+                                    autocomplete="tel"
                                     class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                                 />
                             </div>
@@ -245,6 +248,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     type="email"
                                     required
                                     x-model="email"
+                                    autocomplete="email"
                                     class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                                 />
                             </div>
@@ -267,6 +271,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     type="text"
                                     required
                                     x-model="street"
+                                    autocomplete="street-address"
                                     class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                                 />
                             </div>
@@ -281,6 +286,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                     type="text"
                                     required
                                     x-model="city"
+                                    autocomplete="address-level2"
                                     class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                                 />
                             </div>
@@ -294,6 +300,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                 <select
                                     required
                                     x-model="state"
+                                    autocomplete="address-level1"
                                     class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                                 >
                                     <option value="">Select State</option>
@@ -311,6 +318,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                                 <input
                                     type="text"
                                     x-model="zip"
+                                    autocomplete="postal-code"
                                     class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                                     placeholder="60010"
                                 />

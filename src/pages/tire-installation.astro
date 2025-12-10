@@ -721,6 +721,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <select
                 class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                 x-model="vehicleYear"
+                autocomplete="cc-exp-year"
               >
                 <option>Select Year</option>
                 {
@@ -741,6 +742,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                 placeholder=""
                 x-model="vehicleMake"
+                autocomplete="cc-name"
               />
             </div>
 
@@ -753,6 +755,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                 placeholder=""
                 x-model="vehicleModel"
+                autocomplete="off"
               />
             </div>
 
@@ -765,6 +768,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                 placeholder=""
                 x-model="vehicleColor"
+                autocomplete="off"
               />
             </div>
 
@@ -777,6 +781,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
                 placeholder=""
                 x-model="vehiclePlate"
+                autocomplete="off"
               />
             </div>
           </div>

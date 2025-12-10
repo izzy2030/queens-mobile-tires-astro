@@ -24,9 +24,10 @@ const { title = "Queens Mobile Tires", description = "We come to you." } =
   <body
     class="bg-gray-50 text-queens-primary flex flex-col min-h-screen w-full overflow-x-hidden"
   >
+    <a href="#main-content" class="skip-to-content-link">Skip to main content</a>
     <Header />
 
-    <main class="flex-grow">
+    <main id="main-content" class="flex-grow">
       <slot />
     </main>
 
