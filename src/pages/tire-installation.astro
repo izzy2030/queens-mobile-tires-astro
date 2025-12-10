@@ -4,31 +4,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="Job Details | Queens Mobile Tires">
   <script type="application/ld+json" slot="head">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Tire Installation",
-    "provider": {
-      "@type": "AutomotiveBusiness",
-      "name": "Queens Mobile Tires"
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Tire Installation",
+      "provider": {
+        "@type": "AutomotiveBusiness",
+        "name": "Queens Mobile Tires"
+      }
     }
-  }
   </script>
   <script type="application/ld+json" slot="head">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://queensmobiletires.com/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Tire Installation",
-        "item": "https://queensmobiletires.com/tire-installation"
-      }]
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://queensmobiletires.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tire Installation",
+          "item": "https://queensmobiletires.com/tire-installation"
+        }
+      ]
     }
   </script>
   <style>
@@ -255,8 +258,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             >
               <div class="flex justify-between items-start mb-1">
                 <span class="font-bold text-gray-800 text-sm"
-                  >Mount & Balance <span x-text="mountQty"></span> Customer Supplied
-                  Tire<span x-show="mountQty > 1">s</span></span
+                  >Mount, Balance & Installation <span x-text="mountQty"></span> Customer
+                  Supplied Tire<span x-show="mountQty > 1">s</span></span
                 >
                 <span
                   class="font-bold text-gray-900 text-sm"
@@ -343,58 +346,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 A Mobile Certified Tire Technician will rotate your vehicle's
                 tires in the recommended pattern. Does NOT include mounting &
                 balancing of new tires.
-              </p>
-            </div>
-          </label>
-
-          <!-- Mount My Way - Balance 4 -->
-          <label class="group relative block cursor-pointer">
-            <input
-              type="radio"
-              name="service"
-              class="peer sr-only"
-              value="mount-my-way"
-              x-model="selectedService"
-            />
-            <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
-            >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
-                  >Mount My Way (balance 4 of your tires)</span
-                >
-                <span class="font-bold text-gray-900 text-sm">$143.99</span>
-              </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
-                A Mobile Certified Tire Technician will balance 4 of your tires.
-                Price includes balancing for 4 tires. Rotation included if
-                requested.
-              </p>
-            </div>
-          </label>
-
-          <!-- Un-mount Wheel & Tire Swap -->
-          <label class="group relative block cursor-pointer">
-            <input
-              type="radio"
-              name="service"
-              class="peer sr-only"
-              value="unmount-swap"
-              x-model="selectedService"
-            />
-            <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
-            >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
-                  >Un-mount Wheel & Tire Swap</span
-                >
-                <span class="font-bold text-gray-900 text-sm">$143.99</span>
-              </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
-                A Mobile Certified Tire Technician will exchange your current
-                rim-and-tire sets with new complete wheel/tire units. *This
-                service does NOT include mounting and balancing.
               </p>
             </div>
           </label>
