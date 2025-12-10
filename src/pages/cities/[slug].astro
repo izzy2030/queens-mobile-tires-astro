@@ -150,20 +150,17 @@ const faqSchema = {
           </div>
 
           <!-- Audio Player (New Feature, Styled consistently) -->
-          <div class="mt-8 pt-8 border-t border-gray-100">
-            <p
-              class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3"
-            >
-              Message from our team
-            </p>
-            <audio controls class="w-full max-w-xs h-10 rounded-lg">
-              <source
-                src={`/audio/welcome-${cityName.toLowerCase().replace(" ", "-")}.mp3`}
-                type="audio/mpeg"
-              />
-              Your browser does not support audio.
-            </audio>
-          </div>
+          {city.audioFile && (
+            <div class="mt-8 pt-8 border-t border-gray-100">
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">
+                Message from our team
+              </p>
+              <audio controls class="w-full max-w-xs h-10 rounded-lg">
+                <source src={city.audioFile} type="audio/mpeg" />
+                Your browser does not support audio.
+              </audio>
+            </div>
+          )}
         </div>
 
         <!-- Right: Image (Truck Proof) -->
