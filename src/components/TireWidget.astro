@@ -1,8 +1,7 @@
 ---
 // src/components/TireWidget.astro
 // This is a UI Shell. Later, we can connect the <form> action to your real search URL.
-import { Image } from "astro:assets";
-import iphoneImage from "../assets/images/Tireconnect iPhone.webp";
+
 ---
 
 <section class="relative py-24 overflow-hidden" style="background: linear-gradient(135deg, #0D1B2A 0%, #0D1B2A 60%, #132F4C 100%);">
@@ -66,8 +65,8 @@ import iphoneImage from "../assets/images/Tireconnect iPhone.webp";
 
       {/* RIGHT: The "App" Interface (Static Image) */}
       <div class="lg:w-5/12 w-full max-w-md flex justify-center">
-        <Image
-          src={iphoneImage}
+        <img
+          src="/images/tireconnect-iphone.webp"
           alt="TireConnect App on iPhone"
           class="w-1/2 h-auto drop-shadow-2xl hover:scale-[1.02] transition duration-500"
         />
