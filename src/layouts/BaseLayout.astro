@@ -6,8 +6,17 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import MobileStickyCTA from "../components/MobileStickyCTA.astro";
-const { title = "Queens Mobile Tires", description = "We come to you." } =
-  Astro.props;
+import type { BrandConfig } from "../brands";
+import { mobileTiresBrand } from "../brands";
+
+const {
+  title = "Queens Mobile Tires",
+  description = "We come to you.",
+  brand: propBrand,
+} = Astro.props;
+
+// Use provided brand or default to mobile tires brand
+const brand: BrandConfig = propBrand || mobileTiresBrand;
 ---
 
 <!doctype html>
@@ -24,14 +33,15 @@ const { title = "Queens Mobile Tires", description = "We come to you." } =
   <body
     class="bg-gray-50 text-queens-primary flex flex-col min-h-screen w-full overflow-x-hidden"
   >
-    <a href="#main-content" class="skip-to-content-link">Skip to main content</a>
-    <Header />
+    <a href="#main-content" class="skip-to-content-link">Skip to main content</a
+    >
+    <Header brand={brand} />
 
     <main id="main-content" class="flex-grow">
       <slot />
     </main>
 
-    <Footer />
-    <MobileStickyCTA />
+    <Footer brand={brand} />
+    <MobileStickyCTA brand={brand} />
   </body>
 </html>

@@ -1,5 +1,12 @@
 ---
+import type { BrandConfig } from "../brands";
 
+const { brand } = Astro.props as { brand: BrandConfig };
+
+const nameParts = brand.name.split(" ");
+const firstName = nameParts[0];
+const secondName = nameParts.length > 1 ? nameParts[1] : "";
+const restName = nameParts.length > 2 ? nameParts.slice(2).join(" ") : "";
 ---
 
 <header
@@ -10,45 +17,47 @@
     class="container mx-auto px-6 max-w-7xl h-20 flex justify-between items-center"
   >
     <!-- Logo -->
-    <a href="/" class="group flex items-center gap-2">
+    <a href={`/${brand.id}`} class="group flex items-center gap-2">
       <span
         class="text-2xl font-black italic tracking-tighter uppercase text-queens-primary group-hover:text-queens-secondary transition-colors duration-300"
       >
-        Queens <span
+        {firstName}
+        <span
           class="text-queens-secondary group-hover:text-queens-primary transition-colors duration-300"
-          >Mobile</span
+          >{secondName}</span
         >
+        {restName}
       </span>
     </a>
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-8">
       <a
-        href="/"
+        href={`/${brand.id}`}
         data-astro-prefetch="hover"
         class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide"
         >Home</a
       >
       <a
-        href="/buy-new-tires"
+        href={`/${brand.id}/buy-new-tires`}
         data-astro-reload
         class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide"
         >Find New Tires</a
       >
       <a
-        href="/tire-installation"
+        href={`/${brand.id}/tire-installation`}
         data-astro-prefetch="hover"
         class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide"
         >Schedule Install</a
       >
       <a
-        href="/about"
+        href={`/${brand.id}/about`}
         data-astro-prefetch="hover"
         class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide"
         >About</a
       >
       <a
-        href="/faq"
+        href={`/${brand.id}/faq`}
         data-astro-prefetch="hover"
         class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide"
         >FAQ</a
@@ -119,8 +128,8 @@
           <span class="text-white font-black text-lg">Q</span>
         </div>
         <div>
-          <p class="font-bold text-queens-primary">Queens Mobile</p>
-          <p class="text-sm text-gray-500">Tires</p>
+          <p class="font-bold text-queens-primary">{firstName} {secondName}</p>
+          <p class="text-sm text-gray-500">{restName}</p>
         </div>
       </div>
     </div>
@@ -128,7 +137,7 @@
     <!-- Menu Items -->
     <nav class="flex-1 py-4 px-2 overflow-y-auto">
       <a
-        href="/"
+        href={`/${brand.id}`}
         data-astro-prefetch="hover"
         class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 transition-colors"
       >
@@ -149,7 +158,7 @@
         <span class="font-medium">Home</span>
       </a>
       <a
-        href="/buy-new-tires"
+        href={`/${brand.id}/buy-new-tires`}
         data-astro-reload
         class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 transition-colors"
       >
@@ -170,7 +179,7 @@
         <span class="font-medium">Find New Tires</span>
       </a>
       <a
-        href="/tire-installation"
+        href={`/${brand.id}/tire-installation`}
         data-astro-prefetch="hover"
         class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 transition-colors"
       >
@@ -191,7 +200,7 @@
         <span class="font-medium">Schedule Install</span>
       </a>
       <a
-        href="/faq"
+        href={`/${brand.id}/faq`}
         data-astro-prefetch="hover"
         class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 transition-colors"
       >
@@ -212,7 +221,7 @@
         <span class="font-medium">FAQ</span>
       </a>
       <a
-        href="/about"
+        href={`/${brand.id}/about`}
         data-astro-prefetch="hover"
         class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 transition-colors"
       >
@@ -237,7 +246,7 @@
     <!-- CTA Button -->
     <div class="p-6 border-t border-gray-100">
       <a
-        href="/buy-new-tires"
+        href={`/${brand.id}/buy-new-tires`}
         data-astro-reload
         class="btn-primary w-full text-center shadow-lg"
       >

@@ -1,4 +1,7 @@
 ---
+import type { BrandConfig } from "../brands";
+import { mobileTiresBrand } from "../brands";
+
 /**
  * MobileStickyCTA - Floating mobile CTA bar
  * Conditions:
@@ -8,9 +11,12 @@
  * - Excluded from /buy-new-tires page
  */
 
+const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
+
 // Check if we're on the buy-new-tires page (exclude)
 const currentPath = Astro.url.pathname;
-const isExcludedPage = currentPath === '/buy-new-tires' || currentPath === '/buy-new-tires/';
+// We need to check for brand-prefixed exclusion too
+const isExcludedPage = currentPath.includes('/buy-new-tires');
 ---
 
 {!isExcludedPage && (
@@ -39,7 +45,7 @@ const isExcludedPage = currentPath === '/buy-new-tires' || currentPath === '/buy
         <div class="flex items-center gap-2">
           <!-- Shop Button -->
           <a 
-            href="/buy-new-tires"
+            href={`/${brand.id}/buy-new-tires`}
             data-astro-reload
             class="px-4 py-2 bg-white text-queens-secondary font-bold text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg"
           >
@@ -48,7 +54,7 @@ const isExcludedPage = currentPath === '/buy-new-tires' || currentPath === '/buy
           
           <!-- Phone Button -->
           <a 
-            href="tel:+18479251100"
+            href={`tel:${brand.phone.replace(/\D/g, '')}`}
             class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
             aria-label="Call us"
           >

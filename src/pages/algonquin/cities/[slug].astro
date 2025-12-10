@@ -1,21 +1,21 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import CityCTA from "../../components/CityCTA.astro";
-import CityReviews from "../../components/CityReviews.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import CityCTA from "../../../components/CityCTA.astro";
+import CityReviews from "../../../components/CityReviews.astro";
 
 // City Page Components
-import GlassServiceCard from "../../components/cities/GlassServiceCard.astro";
-import FeatureCard from "../../components/cities/FeatureCard.astro";
-import ImageTextSection from "../../components/cities/ImageTextSection.astro";
-import ChecklistItem from "../../components/cities/ChecklistItem.astro";
-import SectionHeader from "../../components/cities/SectionHeader.astro";
-import CTABanner from "../../components/cities/CTABanner.astro";
-import InfoPill from "../../components/cities/InfoPill.astro";
-import CityServicesGrid from "../../components/cities/CityServicesGrid.astro";
-import CitySchedulingHero from "../../components/cities/CitySchedulingHero.astro";
+import GlassServiceCard from "../../../components/cities/GlassServiceCard.astro";
+import FeatureCard from "../../../components/cities/FeatureCard.astro";
+import ImageTextSection from "../../../components/cities/ImageTextSection.astro";
+import ChecklistItem from "../../../components/cities/ChecklistItem.astro";
+import SectionHeader from "../../../components/cities/SectionHeader.astro";
+import CTABanner from "../../../components/cities/CTABanner.astro";
+import InfoPill from "../../../components/cities/InfoPill.astro";
+import CityServicesGrid from "../../../components/cities/CityServicesGrid.astro";
+import CitySchedulingHero from "../../../components/cities/CitySchedulingHero.astro";
 
 // 1. FETCH ALL CITIES & GENERATE PATHS
-import cities from "../../data/cities.json";
+import cities from "../../../data/cities.json";
 
 export async function getStaticPaths() {
   return cities.map((city) => ({
