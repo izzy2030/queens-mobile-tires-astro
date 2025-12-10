@@ -98,7 +98,7 @@ const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
       </div>
 
       <div
-        class="relative z-10 bg-gradient-to-br from-gray-50 via-white to-gray-100/80 backdrop-blur-xl border border-gray-200/60 rounded-3xl p-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.4)] transition-all duration-300"
+        class="relative z-10 bg-gradient-to-br from-gray-50 via-white to-gray-100/80 dark:from-slate-800 dark:via-slate-900 dark:to-slate-900/80 backdrop-blur-xl border border-gray-200/60 dark:border-slate-700 rounded-3xl p-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.4)] transition-all duration-300"
         x-data="{ playing: false, audio: null, progress: 0, duration: 0, currentTime: '00:00', durationTime: '00:00' }"
         x-init="
       audio = $refs.audioPlayer;
