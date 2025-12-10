@@ -1,5 +1,6 @@
 ---
 import cities from "../data/cities.json";
+import TrustBadges from "./TrustBadges.astro";
 
 // Clean up titles (e.g. "Mobile Tire Service in Elgin, IL" -> "Elgin, IL")
 const cleanTitle = (title: string) => {
@@ -104,10 +105,13 @@ const cleanTitle = (title: string) => {
     </div>
 
     {/* Bottom Bar */}
-    <div class="pt-8 border-t border-gray-800 text-center text-sm">
+    <div
+      class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
+    >
       <p>
         &copy; {new Date().getFullYear()} Queens Mobile Tires. Serving Northern Illinois.
       </p>
+      <TrustBadges />
     </div>
   </div>
 </footer>
