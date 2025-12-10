@@ -141,7 +141,7 @@ const faqSchema = {
 
           <div class="flex flex-wrap gap-4 items-center">
             <a
-              href="/buy-new-tires"
+              href="/mobile-tires/buy-new-tires"
               data-astro-reload
               class="btn-primary shadow-2xl hover:scale-105 transition-transform duration-300 px-10 py-5 text-xl"
             >
@@ -222,7 +222,7 @@ const faqSchema = {
         />
 
         {/* Section 3: Why Choose Queens Mobile - Dynamic Loop */}
-        <section class="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <section class="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-slate-900 dark:to-slate-900 transition-colors duration-300">
           <div class="container mx-auto px-6 max-w-7xl">
             <div class="text-center mb-16">
               <span class="text-queens-secondary font-semibold text-sm uppercase tracking-wider">
@@ -558,7 +558,7 @@ const faqSchema = {
           <!-- Homepage Link -->
           <p class="mt-8 pt-8 border-t border-gray-100">
             <a
-              href="/"
+              href="/mobile-tires"
               class="inline-flex items-center gap-2 text-queens-primary font-bold hover:text-queens-secondary transition-colors group text-lg"
             >
               <span
@@ -629,7 +629,7 @@ const faqSchema = {
                 .map((c) => (
                   <li>
                     <a
-                      href={`/cities/${c.slug}`}
+                      href={`/mobile-tires/cities/${c.slug}`}
                       class="group flex items-center gap-3 text-gray-600 hover:text-queens-primary transition-colors"
                     >
                       <span class="w-1.5 h-1.5 rounded-full bg-queens-secondary group-hover:scale-150 transition-transform" />
@@ -645,7 +645,7 @@ const faqSchema = {
           </ul>
           <div class="mt-8 pt-6 border-t border-gray-100">
             <a
-              href="/locations"
+              href="/mobile-tires/locations"
               class="text-sm font-bold text-queens-primary hover:text-queens-secondary transition-colors inline-flex items-center gap-1"
             >
               View All Locations

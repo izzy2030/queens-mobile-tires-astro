@@ -1,5 +1,9 @@
 ---
 import GlobalCallToAction from "./GlobalCallToAction.astro";
+import type { BrandConfig } from "../brands";
+import { mobileTiresBrand } from "../brands";
+
+const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
 ---
 
 <section class="relative py-24 bg-white overflow-hidden">
@@ -187,7 +191,7 @@ import GlobalCallToAction from "./GlobalCallToAction.astro";
 
     <!-- CTA Button -->
     <div class="mt-[-2rem] mb-12 relative z-20 flex justify-center">
-      <GlobalCallToAction />
+      <GlobalCallToAction brand={brand} />
     </div>
   </div>
 </section>

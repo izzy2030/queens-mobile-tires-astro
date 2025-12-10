@@ -14,6 +14,325 @@
     --font-serif: "Source Serif 4", serif;
 }
 
+/* ========================================
+   SEMANTIC THEME VARIABLES
+   These automatically switch based on .dark class
+   ======================================== */
+
+:root {
+    /* Text Colors */
+    --text-primary: #0b1121;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+    --text-inverted: #ffffff;
+
+    /* Background Colors */
+    --bg-page: #f9fafb;
+    --bg-surface: #ffffff;
+    --bg-elevated: #ffffff;
+    --bg-muted: #f3f4f6;
+
+    /* Border Colors */
+    --border-default: #e5e7eb;
+    --border-muted: #f3f4f6;
+
+    /* Shadow opacity */
+    --shadow-opacity: 0.1;
+}
+
+.dark {
+    /* Text Colors - inverted for dark mode */
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --text-inverted: #0b1121;
+
+    /* Background Colors - dark surfaces */
+    --bg-page: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-elevated: #334155;
+    --bg-muted: #1e293b;
+
+    /* Border Colors */
+    --border-default: #334155;
+    --border-muted: #1e293b;
+
+    /* Shadow opacity - less visible on dark */
+    --shadow-opacity: 0.3;
+}
+
+/* ========================================
+   BASE ELEMENT OVERRIDES
+   Apply semantic colors to common elements
+   ======================================== */
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========================================
+   GLOBAL TYPOGRAPHY - Theme Aware
+   All headings and body text use semantic colors
+   ======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+}
+
+p,
+li,
+td,
+th,
+label,
+span,
+div {
+    color: inherit;
+}
+
+/* Body text defaults */
+p {
+    color: var(--text-secondary);
+}
+
+/* Links */
+a {
+    color: inherit;
+}
+
+a:not([class]) {
+    color: var(--color-queens-secondary);
+}
+
+a:not([class]):hover {
+    color: var(--color-queens-light);
+}
+
+/* Cards and surfaces */
+.bg-white {
+    background-color: var(--bg-surface) !important;
+}
+
+.bg-gray-50 {
+    background-color: var(--bg-page) !important;
+}
+
+.bg-gray-100 {
+    background-color: var(--bg-muted) !important;
+}
+
+/* Text colors */
+.text-gray-600 {
+    color: var(--text-secondary) !important;
+}
+
+.text-gray-500 {
+    color: var(--text-muted) !important;
+}
+
+.text-gray-400 {
+    color: var(--text-muted) !important;
+}
+
+.text-gray-700 {
+    color: var(--text-secondary) !important;
+}
+
+/* Queens primary text - switch to light in dark mode */
+.text-queens-primary {
+    color: var(--text-primary) !important;
+}
+
+/* Primary text color override (CSS variable syntax) */
+.text-\[var\(--color-queens-primary\)\] {
+    color: var(--text-primary) !important;
+}
+
+/* Primary opacity text colors */
+.text-\[var\(--color-queens-primary\)\]\/60,
+.text-\[var\(--color-queens-primary\)\]\/70 {
+    color: var(--text-muted) !important;
+}
+
+/* Border colors */
+.border-gray-100,
+.border-gray-200,
+.border-gray-800 {
+    border-color: var(--border-default) !important;
+}
+
+/* Hover backgrounds */
+.hover\:bg-gray-50:hover,
+.hover\:bg-gray-100:hover {
+    background-color: var(--bg-elevated) !important;
+}
+
+/* Mobile menu panel */
+#mobile-menu .bg-white {
+    background-color: var(--bg-surface) !important;
+}
+
+#mobile-menu .border-gray-100 {
+    border-color: var(--border-default) !important;
+}
+
+#mobile-menu .text-gray-700 {
+    color: var(--text-primary) !important;
+}
+
+#mobile-menu .text-gray-500 {
+    color: var(--text-muted) !important;
+}
+
+#mobile-menu .bg-gray-100 {
+    background-color: var(--bg-muted) !important;
+}
+
+#mobile-menu .hover\:bg-gray-200:hover {
+    background-color: var(--bg-elevated) !important;
+}
+
+/* Shadows - adjust for dark mode */
+.shadow-lg,
+.shadow-xl {
+    --tw-shadow-color: rgba(0, 0, 0, var(--shadow-opacity));
+}
+
+/* ========================================
+   COMPREHENSIVE DARK MODE TEXT OVERRIDES
+   ======================================== */
+
+/* Queens brand colors - switch in dark mode */
+.text-queens-black {
+    color: var(--text-primary) !important;
+}
+
+/* Black text */
+.text-black {
+    color: var(--text-primary) !important;
+}
+
+/* Additional gray variants */
+.text-gray-800,
+.text-gray-900 {
+    color: var(--text-primary) !important;
+}
+
+.text-gray-300 {
+    color: var(--text-muted) !important;
+}
+
+/* Link colors in content areas */
+.dark a:not(.btn-primary):not(.btn-secondary):not([class*="text-queens-secondary"]):not([class*="text-white"]) {
+    color: var(--color-queens-light);
+}
+
+.dark a:not(.btn-primary):not(.btn-secondary):hover {
+    color: var(--color-queens-secondary);
+}
+
+/* City content area specific overrides */
+.city-content {
+    color: var(--text-secondary) !important;
+}
+
+.city-content h3 {
+    color: var(--text-primary) !important;
+}
+
+.city-content p {
+    color: var(--text-secondary) !important;
+}
+
+.city-content strong {
+    color: var(--text-primary) !important;
+}
+
+.city-content a {
+    color: var(--color-queens-secondary) !important;
+}
+
+.dark .city-content a:hover {
+    color: var(--color-queens-light) !important;
+}
+
+/* Cards with dark backgrounds should keep light text */
+.bg-queens-primary,
+.bg-queens-black,
+.bg-queens-dark {
+    color: white !important;
+}
+
+.bg-queens-primary *,
+.bg-queens-black *,
+.bg-queens-dark * {
+    color: inherit;
+}
+
+/* Ensure white text stays white */
+.text-white {
+    color: white !important;
+}
+
+/* Form inputs and interactive elements */
+.dark input,
+.dark textarea,
+.dark select {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    border-color: var(--border-default);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+    color: var(--text-muted);
+}
+
+/* FAQ accordion in dark mode */
+.dark details {
+    background-color: var(--bg-surface) !important;
+    border-color: var(--border-default) !important;
+}
+
+.dark details summary {
+    color: var(--text-primary) !important;
+}
+
+.dark details>div {
+    background-color: var(--bg-elevated) !important;
+    color: var(--text-secondary) !important;
+}
+
+/* Service cards and feature boxes */
+.dark .bg-gray-50 {
+    background-color: var(--bg-muted) !important;
+}
+
+/* Stepper/Progress indicators */
+.dark .border-gray-300 {
+    border-color: var(--border-default) !important;
+}
+
+/* Ensure proper contrast on elevated surfaces */
+.dark .bg-white h1,
+.dark .bg-white h2,
+.dark .bg-white h3,
+.dark .bg-white h4,
+.dark .bg-white h5,
+.dark .bg-white h6 {
+    color: var(--text-primary) !important;
+}
+
+.dark .bg-white p {
+    color: var(--text-secondary) !important;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;

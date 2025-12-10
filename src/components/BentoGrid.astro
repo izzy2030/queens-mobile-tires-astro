@@ -1,5 +1,8 @@
 ---
+import type { BrandConfig } from "../brands";
+import { mobileTiresBrand } from "../brands";
 
+const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
 ---
 
 <section class="py-24 bg-gray-50">
@@ -110,7 +113,7 @@
           </h3>
           <p class="text-white/80">Back on the road in no time.</p>
           <a
-            href="/buy-new-tires"
+            href={`/${brand.id}/buy-new-tires`}
             data-astro-reload
             class="btn-primary mt-6 inline-block shadow-lg"
           >

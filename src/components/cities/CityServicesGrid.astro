@@ -88,10 +88,10 @@ const iconPairs = [
           
           <!-- Icon Pair -->
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white/80 group-hover:border-queens-secondary/50 group-hover:text-queens-secondary transition-all duration-300">
+            <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white opacity-80 group-hover:border-queens-secondary/50 group-hover:text-queens-secondary transition-all duration-300">
               <Fragment set:html={iconPairs[index % iconPairs.length][0]} />
             </div>
-            <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white/80 group-hover:border-queens-secondary/50 group-hover:text-queens-secondary transition-all duration-300">
+            <div class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white opacity-80 group-hover:border-queens-secondary/50 group-hover:text-queens-secondary transition-all duration-300">
               <Fragment set:html={iconPairs[index % iconPairs.length][1]} />
             </div>
           </div>
@@ -100,7 +100,7 @@ const iconPairs = [
           <h3 class="text-xl lg:text-2xl font-bold text-white mb-4" set:html={service.title} />
 
           <!-- Description -->
-          <p class="text-white/60 leading-relaxed text-base lg:text-lg" set:html={service.text} />
+          <p class="text-white opacity-60 leading-relaxed text-base lg:text-lg" set:html={service.text} />
         </div>
       ))}
     </div>
