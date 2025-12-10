@@ -1233,5 +1233,520 @@
       },
       "image2": null
     }
+  },
+  {
+    "slug": "mobile-tire-service-in-algonquin-il",
+    "title": "Mobile Tire Service in Algonquin, IL",
+    "audioFile": "/audio/cities/Mobile Tire Service In Algonquin IL.mp3",
+    "cityFields": {
+      "localTitle": "Spotlight on Algonquin: The Gem of the Fox River",
+      "introText": "Don't let a flat tire ruin your drive down Route 62. Whether you're shopping at Algonquin Commons or relaxing near the Fox River, Queens Mobile Tires brings the shop to you. Skip the congestion on the bypass and get back on the road with our convenient next-day service.",
+      "localAttractions": "<h3 id=\"why-algonquin-drivers-choose-mobile\">Why Algonquin Drivers Choose Mobile</h3>\n<p>Algonquin is a bustling hub, and anyone who drives <strong>Randall Road</strong> knows the traffic can be intense. Navigating the construction near the <strong>Longmeadow Parkway</strong> bridge or fighting the weekend crowds at <strong>Algonquin Commons</strong> just to sit in a tire shop waiting room is a hassle you don't need. Instead of wasting your afternoon, let us come to your home in <strong>Glenmoor</strong> or your office near <strong>Corporate Parkway</strong>.</p>\n\n<h3 id=\"serving-all-of-algonquin\">Serving All of Algonquin</h3>\n<ul>\n<li><strong>East & West:</strong> From the historic Old Town district to the sprawling subdivisions on the west side, we cover every corner of the village.</li>\n<li><strong>Shopping Districts:</strong> We frequently service vehicles for employees working at the <strong>Commons</strong> or the <strong>Galleria</strong>, ensuring your shift isn't interrupted by car trouble.</li>\n</ul>\n\n<h3 id=\"complete-tire-services\">Complete Tire Services for Algonquin</h3>\n<p>We provide dealership-quality service right in your driveway.</p>\n<ul>\n<li><strong>New Tire Installation:</strong> We bring the tires and the equipment to you.</li>\n<li><strong>Seasonal Swaps:</strong> Perfect for handling the hills and river roads in winter.</li>\n<li><strong>Flat Repairs:</strong> Quick fixes for nails picked up on Route 31.</li>\n</ul>",
+      "mobileServicesContent": {
+        "services": [
+          {
+            "title": "At-Home Tire Installation",
+            "text": "Shop our online catalog for <strong>SUVs, trucks, and sedans</strong>. We deliver and install right at your Algonquin home."
+          },
+          {
+            "title": "Mobile Flat Repair",
+            "text": "Stuck in your driveway? We come to you to patch, plug, or replace your tire on the spot."
+          },
+          {
+            "title": "Seasonal Changeovers",
+            "text": "Switch between winter and summer sets without loading heavy tires into your trunk."
+          },
+          {
+            "title": "Fleet Services",
+            "text": "We keep local plumbing, electric, and delivery fleets moving with on-site maintenance."
+          }
+        ],
+        "section2": {
+          "title": "Next-Day Service<br/>In Algonquin, IL",
+          "content1": "Your time is valuable. That's why we offer specific appointment windows so you aren't waiting around all day.",
+          "content2": "Book online 24/7 or call us to schedule a technician to visit your home or workplace."
+        },
+        "section3": [
+          {
+            "title": "Local Experts",
+            "text": "We know the area and valid shortcuts to get to you on time."
+          },
+          {
+            "title": "Top Equipment",
+            "text": "Our vans carry Corghi touchless changers and digital balancers."
+          },
+          {
+            "title": "Safe & Secure",
+            "text": "We perform all work on-site, fully insured and professional."
+          }
+        ],
+        "section4": {
+          "title": "Mobile Tire Service in Algonquin",
+          "text": "Avoid the traffic on <strong>Route 62</strong> and <strong>Rakow Road</strong>. We bring the expertise to you.",
+          "list": [
+            "<strong>Mounting & Balancing</strong> at your door",
+            "<strong>TPMS Service</strong> and resets",
+            "<strong>Flat Repairs</strong> for punctures and leaks",
+            "<strong>Winter Tire Swaps</strong> for safety"
+          ]
+        },
+        "section5": {
+          "title": "Your Algonquin Tire Shop on Wheels",
+          "text": "Queens Mobile Tires is the easiest way to buy coordinates. We supply all major brands and install them with precision.",
+          "highlights": [
+            {
+              "title": "Convenience",
+              "text": "No waiting rooms, no dropping off your car."
+            },
+            {
+              "title": "Quality",
+              "text": "We use the same equipment as high-end dealerships."
+            },
+            {
+              "title": "Value",
+              "text": "Competitive pricing with premium service."
+            }
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "question": "Do you service cars at Algonquin Commons?",
+          "answer": "Yes, we can service employee or customer vehicles in the parking lots, provided there is ample space and permission."
+        },
+        {
+          "question": "How soon can you get here?",
+          "answer": "We typically offer next-day appointments."
+        },
+        {
+          "question": "What zip codes do you cover?",
+          "answer": "We cover <strong>60102</strong> and surrounding areas."
+        },
+        {
+          "question": "Do you take old tires?",
+          "answer": "Yes, we responsibly recycle your old tires."
+        }
+      ],
+      "source": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/Algonquin.webp",
+          "altText": "Algonquin Fox River Bridge"
+        }
+      },
+      "image2": null
+    }
+  },
+  {
+    "slug": "mobile-tire-service-in-hoffman-estates-il",
+    "title": "Mobile Tire Service in Hoffman Estates, IL",
+    "audioFile": "/audio/cities/Mobile Tire Service In Hoffman Estates IL.mp3",
+    "cityFields": {
+      "localTitle": "Spotlight on Hoffman Estates: Growing with the Community",
+      "introText": "Whether you're near the NOW Arena or living in the quiet cul-de-sacs of Poplar Creek, Queens Mobile Tires brings the tire shop to you. Avoid the I-90 construction traffic and let us handle your tire needs right in your driveway.",
+      "localAttractions": "<h3 id=\"why-hoffman-estates-drivers-choose-mobile\">Why Hoffman Estates Drivers Choose Mobile</h3>\n<p>Hoffman Estates is a major commercial and residential corridor. Locals know that traffic near the <strong>I-90 interchange</strong> on <strong>Barrington Road</strong> or <strong>Roselle Road</strong> can be a nightmare. Why fight the crowds near <strong>Poplar Creek</strong> just to wait in a lobby? We bring our mobile tire shop directly to your home in <strong>Bradbury</strong> or your office at the <strong>Greenspoint</strong> business park.</p>\n\n<h3 id=\"serving-all-of-hoffman-estates\">Serving All of Hoffman Estates</h3>\n<ul>\n<li><strong>North & South:</strong> From the prestigious homes north of the tollway to the established neighborhoods near Schaumburg, we cover it all.</li>\n<li><strong>Corporate Campuses:</strong> We are a favorite for employees at the major corporate headquarters along I-90, servicing cars while you work.</li>\n</ul>\n\n<h3 id=\"complete-tire-services\">Complete Tire Services for Hoffman Estates</h3>\n<p>We provide professional mounting and balancing using state-of-the-art mobile equipment.</p>\n<ul>\n<li><strong>New Tire Sales:</strong> All major brands available online.</li>\n<li><strong>Leak Repair:</strong> We fix slow leaks from construction debris.</li>\n<li><strong>Seasonal Swaps:</strong> Keep your family safe with winter tires installed at home.</li>\n</ul>",
+      "mobileServicesContent": {
+        "services": [
+          {
+            "title": "Mobile Tire Installation",
+            "text": "Select from thousands of tires online. We bring them to your Hoffman Estates location and install them perfectly."
+          },
+          {
+            "title": "Flat Tire Repair",
+            "text": "Don't tow it. We come to you to fix flats caused by nails, screws, or debris."
+          },
+          {
+            "title": "Tire Rotation",
+            "text": "Extend the life of your tires with regular rotations performed in your driveway."
+          },
+          {
+            "title": "Corporate Fleet",
+            "text": "We service company cars and fleets at office parks throughout the village."
+          }
+        ],
+        "section2": {
+          "title": "Convenient Service<br/>In Hoffman Estates, IL",
+          "content1": "Stop wasting your lunch break at the mechanic. Our mobile vans are fully equipped garages that come to you.",
+          "content2": "Schedule online for a time that fits your busy calendar."
+        },
+        "section3": [
+          {
+            "title": "Zero Hassle",
+            "text": "We handle everything while you work or relax."
+          },
+          {
+            "title": "Precision Work",
+            "text": "Computerized balancing ensures a smooth ride on the tollway."
+          },
+          {
+            "title": "Trusted Service",
+            "text": "5-star rated service from local professionals."
+          }
+        ],
+        "section4": {
+          "title": "We Come to You in Hoffman Estates",
+          "text": "Skip the drive down <strong>Golf Road</strong>. We handle all your tire needs on-site.",
+          "list": [
+            "<strong>New Tire Mounting</strong>",
+            "<strong>Computerized Balancing</strong>",
+            "<strong>TPMS Diagnostics</strong>",
+            "<strong>Seasonal Switch-overs</strong>"
+          ]
+        },
+        "section5": {
+          "title": "Your Mobile Tire Expert in Hoffman Estates",
+          "text": "We bring the store to your door. Get the tires you want without the hassle you hate.",
+          "highlights": [
+            {
+              "title": "Easy Booking",
+              "text": "Online or by phone."
+            },
+            {
+              "title": "Expert Care",
+              "text": "We treat your rims with care."
+            },
+            {
+              "title": "Fast",
+              "text": "Get back on the road sooner."
+            }
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "question": "Can you service my car at work?",
+          "answer": "Yes, we frequently visit the business parks along I-90."
+        },
+        {
+          "question": "What zip codes do you cover?",
+          "answer": "We serve <strong>60169, 60192</strong> and neighboring areas."
+        },
+        {
+          "question": "Do you sell winter tires?",
+          "answer": "Yes, we have a full selection of winter and all-weather tires."
+        },
+        {
+          "question": "Are you insured?",
+          "answer": "Yes, we are fully insured for mobile service."
+        }
+      ],
+      "source": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/Hoffman Estates.webp",
+          "altText": "Hoffman Estates Sears Centre"
+        }
+      },
+      "image2": null
+    }
+  },
+  {
+    "slug": "mobile-tire-service-in-palatine-il",
+    "title": "Mobile Tire Service in Palatine, IL",
+    "audioFile": "/audio/cities/Mobile Tire Service In Palatine IL.mp3",
+    "cityFields": {
+      "localTitle": "Spotlight on Palatine: A Hometown Feel",
+      "introText": "From the historic downtown to the quiet streets of Winston Park, Queens Mobile Tires allows you to skip the shop. We perform full tire installations and repairs right in your Palatine driveway.",
+      "localAttractions": "<h3 id=\"why-palatine-drivers-choose-mobile\">Why Palatine Drivers Choose Mobile</h3>\n<p>Driving down <strong>Northwest Highway</strong> or <strong>Palatine Road</strong> can be a test of patience, especially during rush hour. Why spend your Saturday morning sitting in a shop waiting room when you could be at <strong>Twin Lakes</strong> or the <strong>Farmers Market</strong>? We bring the service to your home, so you don't have to miss out on the things you enjoy.</p>\n\n<h3 id=\"serving-all-of-palatine\">Serving All of Palatine</h3>\n<ul>\n<li><strong>Residential Areas:</strong> We service all neighborhoods, including <strong>Pepper Tree</strong>, <strong>Reseda</strong>, and the downtown condos.</li>\n<li><strong>Commuters:</strong> Leave your car in the driveway and let us fix it while you work from home.</li>\n</ul>\n\n<h3 id=\"complete-tire-services\">Complete Tire Services for Palatine</h3>\n<p>We are a full-service tire shop on wheels.</p>\n<ul>\n<li><strong>Tire Replacement:</strong> We sell and install tires from Bridgestone, Continental, Pirelli, and more.</li>\n<li><strong>Flat Repair:</strong> We patch punctures permanently.</li>\n<li><strong>Balancing:</strong> We eliminate highway vibrations.</li>\n</ul>",
+      "mobileServicesContent": {
+        "services": [
+          {
+            "title": "At-Home Installation",
+            "text": "We bring the tires and the tech to your Palatine home."
+          },
+          {
+            "title": "On-Site Repair",
+            "text": "Fixed where you park. No towing required."
+          },
+          {
+            "title": "Seasonal Swaps",
+            "text": "Ready for winter? We install your snow tires in your garage."
+          },
+          {
+            "title": "TPMS Service",
+            "text": "We reset and replace tire pressure sensors on-site."
+          }
+        ],
+        "section2": {
+          "title": "Reliable Service<br/>In Palatine, IL",
+          "content1": "We fit into your schedule, not the other way around.",
+          "content2": "Our technicians are professional, clean, and efficient."
+        },
+        "section3": [
+          {
+            "title": "Save Time",
+            "text": "No round trips to the shop."
+          },
+          {
+            "title": "Save Money",
+            "text": "Competitive tire pricing."
+          },
+          {
+            "title": "Stay Safe",
+            "text": "Contact-free service available."
+          }
+        ],
+        "section4": {
+          "title": "We Come to You in Palatine",
+          "text": "From <strong>Dundee Road</strong> to <strong>Quentin Road</strong>, we have you covered.",
+          "list": [
+            "<strong>Tire Installation</strong>",
+            "<strong>Wheel Balancing</strong>",
+            "<strong>Tire Rotation</strong>",
+            "<strong>Flat Repair</strong>"
+          ]
+        },
+        "section5": {
+          "title": "Palatine's Premier Mobile Tire Service",
+          "text": "Experience the convenience of mobile tire care.",
+          "highlights": [
+            {
+              "title": "Convenient",
+              "text": "We work around your life."
+            },
+            {
+              "title": "Professional",
+              "text": "Exceptional service standards."
+            },
+            {
+              "title": "Local",
+              "text": "Serving Palatine proudly."
+            }
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "question": "Do you service Winston Park?",
+          "answer": "Yes, we cover all Palatine neighborhoods."
+        },
+        {
+          "question": "What is your service area zip code?",
+          "answer": "We serve <strong>60067, 60074</strong> and nearby."
+        },
+        {
+          "question": "Can you fix a flat in my office lot?",
+          "answer": "Yes, provided we have permission and space."
+        },
+        {
+          "question": "How do I pay?",
+          "answer": "We accept major credit cards on-site."
+        }
+      ],
+      "source": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/Palatine.webp",
+          "altText": "Palatine Downtown"
+        }
+      },
+      "image2": null
+    }
+  },
+  {
+    "slug": "mobile-tire-service-in-schaumburg-il",
+    "title": "Mobile Tire Service in Schaumburg, IL",
+    "audioFile": "/audio/cities/Mobile Tire Service In Schaumburg IL.mp3",
+    "cityFields": {
+      "localTitle": "Spotlight on Schaumburg: Retail & Business Hub",
+      "introText": "Avoid the traffic around Woodfield Mall. Queens Mobile Tires comes to your home or office in Schaumburg for full tire service. Buying new tires has never been this easy.",
+      "localAttractions": "<h3 id=\"why-schaumburg-drivers-choose-mobile\">Why Schaumburg Drivers Choose Mobile</h3>\n<p>Schaumburg is bustling, and the traffic near <strong>Woodfield Mall</strong> and <strong>Streets of Woodfield</strong> is legendary. Nobody wants to spend their free time stuck on <strong>Golf Road</strong> heading to a tire shop. Whether you live in <strong>Sheffield Towne</strong> or <strong>Town Square</strong>, we bring the shop to you. Skip the lines and the waiting rooms.</p>\n\n<h3 id=\"serving-all-of-schaumburg\">Serving All of Schaumburg</h3>\n<ul>\n<li><strong>Residential:</strong> We service all homes, apartments, and condos with appropriate parking.</li>\n<li><strong>Corporate:</strong> We are experts at servicing office parks near the <strong>Zurich</strong> headquarters and other major employers (check with your facility manager).</li>\n</ul>\n\n<h3 id=\"complete-tire-services\">Complete Tire Services for Schaumburg</h3>\n<p>Dealership quality at your doorstep.</p>\n<ul>\n<li><strong>New Tires:</strong> We supply and install all major brands.</li>\n<li><strong>Flats:</strong> We repair punctures safely.</li>\n<li><strong>Rotations:</strong> Keep your tires wearing evenly.</li>\n</ul>",
+      "mobileServicesContent": {
+        "services": [
+          {
+            "title": "Mobile Tire Service",
+            "text": "We bring a fully equipped van to your Schaumburg location."
+          },
+          {
+            "title": "Flat Tire Help",
+            "text": "We fix flats fast, so you can get back to your day."
+          },
+          {
+            "title": "Winter Tires",
+            "text": "Don't slide this winter. We install snow tires at your home."
+          },
+          {
+            "title": "Tire Sales",
+            "text": "Great prices on top brands, delivered and installed."
+          }
+        ],
+        "section2": {
+          "title": "Schaumburg's<br/>Best Mobile Service",
+          "content1": "We turn your driveway into a service bay.",
+          "content2": "Next-day appointments available."
+        },
+        "section3": [
+          {
+            "title": "Avoid Traffic",
+            "text": "Stay home and let us come to you."
+          },
+          {
+            "title": "Expert Techs",
+            "text": "We do the job right the first time."
+          },
+          {
+            "title": "Easy Booking",
+            "text": "Schedule online in minutes."
+          }
+        ],
+        "section4": {
+          "title": "We Come to You in Schaumburg",
+          "text": "Serving all of Schaumburg, from <strong>Roselle Road</strong> to <strong>Meacham</strong>.",
+          "list": [
+            "<strong>Tire Mounting</strong>",
+            "<strong>Computer Balancing</strong>",
+            "<strong>Puncture Repair</strong>",
+            "<strong>Seasonal service</strong>"
+          ]
+        },
+        "section5": {
+          "title": "Tire Care Simplified in Schaumburg",
+          "text": "The modern way to buy and maintain tires.",
+          "highlights": [
+            {
+              "title": "Smart",
+              "text": "Save time and hassle."
+            },
+            {
+              "title": "Safe",
+              "text": "Contactless options."
+            },
+            {
+              "title": "Simple",
+              "text": "We handle everything."
+            }
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "question": "Do you service apartments?",
+          "answer": "Yes, if there is a flat surface and permission from management."
+        },
+        {
+          "question": "What zip codes?",
+          "answer": "We cover <strong>60173, 60193, 60194</strong>."
+        },
+        {
+          "question": "Can you meet me at Woodfield?",
+          "answer": "We generally require a distinct address and safe working space, so residential or office locations are preferred over busy mall lots."
+        },
+        {
+          "question": "Do you do alignments?",
+          "answer": "Currently we focus on tire installation and balancing. We do not do alignments mobile."
+        }
+      ],
+      "source": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/Schaumburg.webp",
+          "altText": "Schaumburg Library"
+        }
+      },
+      "image2": null
+    }
+  },
+  {
+    "slug": "mobile-tire-service-in-south-elgin-il",
+    "title": "Mobile Tire Service in South Elgin, IL",
+    "audioFile": "/audio/cities/Mobile Tire Service In South Elgin IL.mp3",
+    "cityFields": {
+      "localTitle": "Spotlight on South Elgin: A River Village",
+      "introText": "Whether you live near Panton Mill Park or the new subdivisions off Stearns Road, Queens Mobile Tires brings the service to you. Skip the shop and get your tires changed in your South Elgin driveway.",
+      "localAttractions": "<h3 id=\"why-south-elgin-drivers-choose-mobile\">Why South Elgin Drivers Choose Mobile</h3>\n<p>South Elgin is growing fast, but driving up <strong>Randall Road</strong> to find a shop is still a chore. Avoid the traffic lights and the construction near <strong>Stearns Road</strong>. We come to your home in <strong>Thornwood</strong>, <strong>Sage Creek</strong>, or the historic village center. Enjoy your day at <strong>SEBA Park</strong> instead of a waiting room.</p>\n\n<h3 id=\"serving-all-of-south-elgin\">Serving All of South Elgin</h3>\n<ul>\n<li><strong>Neighborhoods:</strong> We service all residential areas, big and small.</li>\n<li><strong>Flexibility:</strong> We work around your schedule with convenient appointment windows.</li>\n</ul>\n\n<h3 id=\"complete-tire-services\">Complete Tire Services for South Elgin</h3>\n<p>Professional mobile tire shop at your door.</p>\n<ul>\n<li><strong>Installation:</strong> We mount and balance tires on-site.</li>\n<li><strong>Repair:</strong> Fast fixes for flats.</li>\n<li><strong>Maintenance:</strong> Rotations and seasonal swaps.</li>\n</ul>",
+      "mobileServicesContent": {
+        "services": [
+          {
+            "title": "Mobile Tire Shop",
+            "text": "We bring a van full of equipment to your South Elgin home."
+          },
+          {
+            "title": "Flat Repair",
+            "text": "We fix punctures and leaks on the spot."
+          },
+          {
+            "title": "Tire Sales",
+            "text": "Browse online and have them delivered and installed."
+          },
+          {
+            "title": "Seasonal Swaps",
+            "text": "Don't break your back. Let us swap your winter wheels."
+          }
+        ],
+        "section2": {
+          "title": "Convenience<br/>In South Elgin, IL",
+          "content1": "We make tire care easy and stress-free.",
+          "content2": "Book your slot today."
+        },
+        "section3": [
+          {
+            "title": "Time Saver",
+            "text": "We come to you."
+          },
+          {
+            "title": "Quality Work",
+            "text": "Expert technicians."
+          },
+          {
+            "title": "Great Value",
+            "text": "Competitive prices."
+          }
+        ],
+        "section4": {
+          "title": "We Come to You in South Elgin",
+          "text": "Serving <strong>Randall Road</strong> corridor and beyond.",
+          "list": [
+            "<strong>New Tires</strong>",
+            "<strong>Balancing</strong>",
+            "<strong>Repairs</strong>",
+            "<strong>Rotations</strong>"
+          ]
+        },
+        "section5": {
+          "title": "South Elgin's Mobile Tire Choice",
+          "text": "Join your neighbors in choosing the easier way to buy tires.",
+          "highlights": [
+            {
+              "title": "Trusted",
+              "text": "Local and reliable."
+            },
+            {
+              "title": "Efficient",
+              "text": "Done right, done fast."
+            },
+            {
+              "title": "Safe",
+              "text": "Professional service."
+            }
+          ]
+        }
+      },
+      "faqs": [
+        {
+          "question": "Do you go to Thornwood?",
+          "answer": "Yes, we frequently service the Thornwood subdivision."
+        },
+        {
+          "question": "What is the zip code?",
+          "answer": "We serve <strong>60177</strong>."
+        },
+        {
+          "question": "How long does it take?",
+          "answer": "Usually 45-60 minutes for a full set."
+        },
+        {
+          "question": "Do you need water or power?",
+          "answer": "No, our vans are fully self-sufficient."
+        }
+      ],
+      "source": null,
+      "image1": {
+        "node": {
+          "sourceUrl": "/images/cities/South Elgin.webp",
+          "altText": "South Elgin Panton Mill Park"
+        }
+      },
+      "image2": null
+    }
   }
 ]
