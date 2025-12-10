@@ -3,6 +3,7 @@ export type BrandConfig = {
     name: string;
     domain?: string;
     logoPath: string;
+    logoPathWhite?: string;
     primaryColor: string;
     accentColor: string;
     phone: string;

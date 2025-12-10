@@ -22,13 +22,21 @@ const cleanTitle = (title: string) => {
       {/* Column 1: Brand */}
       <div>
         <a href={`/${brand.id}`} class="inline-block group mb-4">
-          <h3
-            class="text-white font-black text-xl uppercase tracking-tight group-hover:opacity-80 transition-opacity"
-          >
-            {firstName}
-            <span class="text-queens-secondary">{secondName}</span>
-            {restName}
-          </h3>
+          {
+            brand.logoPathWhite ? (
+              <img
+                src={brand.logoPathWhite}
+                alt={brand.name}
+                class="h-10 w-auto object-contain mb-2"
+              />
+            ) : (
+              <h3 class="text-white font-black text-xl uppercase tracking-tight group-hover:opacity-80 transition-opacity">
+                {firstName}{" "}
+                <span class="text-queens-secondary">{secondName}</span>{" "}
+                {restName}
+              </h3>
+            )
+          }
         </a>
         <p class="text-sm leading-relaxed max-w-xs text-gray-400">
           {brand.name} brings the tire shop directly to your home or office. We provide
