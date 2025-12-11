@@ -8,10 +8,6 @@ const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
 
 <section class="py-24 bg-white relative overflow-hidden">
   <div
-    class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"
-  >
-  </div>
-  <div
     class="absolute -left-20 top-40 w-64 h-64 bg-queens-secondary/5 rounded-full blur-3xl pointer-events-none"
   >
   </div>
@@ -133,7 +129,7 @@ const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
         class="bg-gray-50 border border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl dark:shadow-queens-secondary/5 dark:hover:shadow-queens-secondary/20 transition duration-500 group"
       >
         <div
-          class="w-14 h-14 bg-white border border-gray-200 rounded-2xl flex items-center justify-center mb-6 text-gray-700 group-hover:border-queens-secondary group-hover:text-queens-secondary transition duration-300"
+          class="w-14 h-14 bg-queens-primary rounded-2xl flex items-center justify-center mb-6 text-white group-hover:bg-queens-secondary transition duration-300"
         >
           {/* SCALE ICON */}
           <svg
@@ -166,7 +162,7 @@ const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
       >
         <div class="flex-grow">
           <div
-            class="w-14 h-14 bg-queens-secondary/10 rounded-2xl flex items-center justify-center mb-6 text-queens-secondary"
+            class="w-14 h-14 bg-queens-primary rounded-2xl flex items-center justify-center mb-6 text-white group-hover:bg-queens-secondary transition duration-300"
           >
             {/* WIFI/SENSOR ICON */}
             <svg

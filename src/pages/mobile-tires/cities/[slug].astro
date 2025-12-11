@@ -622,31 +622,31 @@ const faqSchema = {
             {
               faqs.length > 0 ? (
                 faqs.map((faq: any) => (
-                  <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-queens-primary hover:bg-white dark:hover:bg-slate-800 transition">
+                  <details class="group rounded-2xl border border-gray-100 dark:border-white/10 overflow-hidden bg-gray-50 dark:!bg-transparent dark:!bg-none dark:shadow-none">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-queens-primary dark:text-white/90 hover:bg-gray-100 dark:hover:bg-white/5 transition dark:!bg-transparent dark:!bg-none">
                       <span>{faq.question}</span>
                       <span class="transition group-open:rotate-180 text-queens-secondary">
                         ▼
                       </span>
                     </summary>
                     <div
-                      class="p-5 pt-0 text-gray-600 bg-white leading-relaxed"
+                      class="p-5 pt-0 text-gray-600 dark:text-white/70 bg-white dark:!bg-transparent dark:!bg-none leading-relaxed"
                       set:html={faq.answer}
                     />
                   </details>
                 ))
               ) : (
                 <>
-                  <details class="group bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-queens-primary hover:bg-white dark:hover:bg-slate-800 transition">
+                  <details class="group rounded-2xl border border-gray-100 dark:border-white/10 overflow-hidden bg-gray-50 dark:!bg-transparent dark:!bg-none dark:shadow-none">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-queens-primary dark:text-white/90 hover:bg-gray-100 dark:hover:bg-white/5 transition dark:!bg-transparent dark:!bg-none">
                       <span>How fast can you reach me in {cityName}?</span>
                       <span class="transition group-open:rotate-180 text-queens-secondary">
                         ▼
                       </span>
                     </summary>
-                    <div class="p-5 pt-0 text-gray-600 bg-white">
+                    <div class="p-5 pt-0 text-gray-600 dark:text-white/70 bg-white dark:!bg-transparent dark:!bg-none">
                       Most {cityName} customers see us in under 60 minutes -
-                      often faster if you’re near major roads.
+                      often faster if you're near major roads.
                     </div>
                   </details>
                 </>

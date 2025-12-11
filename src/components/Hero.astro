@@ -39,9 +39,7 @@ const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
       class="text-5xl md:text-7xl font-sans font-normal tracking-tighter text-[var(--color-queens-primary)] mb-8 leading-[1.1]"
     >
       We Bring The <br />
-      <span class="font-serif italic text-[var(--color-queens-secondary)]"
-        >Tire Shop</span
-      > To You
+      <span class="font-serif italic text-queens-secondary">Tire Shop</span> To You
     </h1>
 
     <!-- Subheadline -->
@@ -52,137 +50,86 @@ const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
       work.
     </p>
 
-    <!-- Audio Player (Premium Design) -->
-    <div class="relative max-w-md mx-auto mb-20 group">
-      <!-- Flowing Beam Animation (SVG Stroke) -->
-      <svg
-        class="absolute -inset-[2px] w-[calc(100%+4px)] h-[calc(100%+4px)] pointer-events-none"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
+    <!-- Audio Player (City Page Style) -->
+    <div
+      class="max-w-md mx-auto mb-20 text-left"
+      x-data="{ playing: false, audio: null, progress: 0, currentTime: '00:00' }"
+      x-init="
+        audio = $refs.audioPlayer;
+        audio.addEventListener('timeupdate', () => {
+          progress = (audio.currentTime / audio.duration) * 100;
+          let min = Math.floor(audio.currentTime / 60);
+          let sec = Math.floor(audio.currentTime % 60);
+          currentTime = (min < 10 ? '0' : '') + min + ':' + (sec < 10 ? '0' : '') + sec;
+        });
+        audio.addEventListener('ended', () => { playing = false; progress = 0; currentTime = '00:00'; });
+      "
+    >
+      <p
+        class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4 pl-4"
       >
-        <rect
-          x="0"
-          y="0"
-          width="100"
-          height="100"
-          rx="14"
-          ry="14"
-          fill="none"
-          stroke="url(#beam-gradient)"
-          stroke-width="0.8"
-          class="beam-path"
-          pathLength="100"></rect>
-        <defs>
-          <linearGradient id="beam-gradient" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="transparent"></stop>
-            <stop
-              offset="40%"
-              stop-color="var(--color-queens-light)"
-              stop-opacity="0.8"></stop>
-            <stop
-              offset="50%"
-              stop-color="var(--color-queens-light)"
-              stop-opacity="1"></stop>
-            <stop
-              offset="60%"
-              stop-color="var(--color-queens-light)"
-              stop-opacity="0.8"></stop>
-            <stop offset="100%" stop-color="transparent"></stop>
-          </linearGradient>
-        </defs>
-      </svg>
-      <!-- Soft Outer Glow (Static) -->
-      <div
-        class="absolute -inset-1 rounded-[28px] bg-[var(--color-queens-light)]/20 blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-700"
-      >
-      </div>
+        Message from our team
+      </p>
 
       <div
-        class="relative z-10 bg-gradient-to-br from-gray-50 via-white to-gray-100/80 dark:from-slate-800 dark:via-slate-900 dark:to-slate-900/80 backdrop-blur-xl border border-gray-200/60 dark:border-slate-700 rounded-3xl p-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.4)] transition-all duration-300"
-        x-data="{ playing: false, audio: null, progress: 0, duration: 0, currentTime: '00:00', durationTime: '00:00' }"
-        x-init="
-      audio = $refs.audioPlayer;
-      audio.addEventListener('loadedmetadata', () => {
-        duration = audio.duration;
-        let min = Math.floor(duration / 60);
-        let sec = Math.floor(duration % 60);
-        durationTime = (min < 10 ? '0' : '') + min + ':' + (sec < 10 ? '0' : '') + sec;
-      });
-      audio.addEventListener('timeupdate', () => {
-        progress = (audio.currentTime / audio.duration) * 100;
-        let min = Math.floor(audio.currentTime / 60);
-        let sec = Math.floor(audio.currentTime % 60);
-        currentTime = (min < 10 ? '0' : '') + min + ':' + (sec < 10 ? '0' : '') + sec;
-      });
-      audio.addEventListener('ended', () => {
-        playing = false;
-        progress = 0;
-        currentTime = '00:00';
-      });
-    "
+        class="bg-gray-50 dark:bg-slate-800 rounded-2xl p-4 flex items-center gap-4 border border-gray-100 dark:border-slate-700 shadow-sm"
       >
         <audio
           x-ref="audioPlayer"
           src="/assets/audio/welcome-message.mp3"
-          preload="metadata"></audio>
+          preload="metadata"
+          class="hidden"></audio>
 
-        <div class="flex items-center gap-5">
-          <button
-            @click="playing ? audio.pause() : audio.play(); playing = !playing"
-            class="w-14 h-14 flex items-center justify-center rounded-full bg-white text-[var(--color-queens-secondary)] hover:scale-105 hover:shadow-lg hover:shadow-[var(--color-queens-secondary)]/30 transition-all duration-300 focus:outline-none shadow-md ring-2 ring-[var(--color-queens-secondary)]/10 group-hover:ring-[var(--color-queens-secondary)]/20"
+        <!-- Play Button -->
+        <button
+          @click="playing ? audio.pause() : audio.play(); playing = !playing"
+          class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-queens-primary text-white hover:bg-queens-secondary transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+          aria-label="Play Audio Message"
+        >
+          <template x-if="!playing">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-5 h-5 ml-0.5"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </template>
+          <template x-if="playing">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </template>
+        </button>
+
+        <!-- Progress -->
+        <div class="flex-grow">
+          <div
+            class="flex justify-between text-[10px] font-bold text-gray-400 dark:text-gray-500 mb-2 uppercase tracking-wider"
           >
-            <template x-if="!playing">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-6 h-6 ml-0.5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
-                ></path>
-              </svg>
-            </template>
-            <template x-if="playing">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.75 5.25v13.5m-7.5-13.5v13.5"></path>
-              </svg>
-            </template>
-          </button>
-
-          <div class="flex-grow flex flex-col justify-center gap-2">
+            <span>Listen</span>
+            <span x-text="currentTime">00:00</span>
+          </div>
+          <div
+            class="h-1.5 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden cursor-pointer relative"
+            @click="let rect = $el.getBoundingClientRect(); let x = $event.clientX - rect.left; let percent = x / rect.width; audio.currentTime = percent * audio.duration;"
+          >
             <div
-              class="flex justify-between text-[10px] font-bold tracking-widest uppercase text-gray-500"
+              class="absolute top-0 left-0 h-full bg-queens-secondary transition-all duration-100"
+              :style="`width: ${progress}%`"
             >
-              <span>Your Time, Your Place</span>
-              <span
-                x-text="currentTime"
-                class="text-[var(--color-queens-secondary)]">00:00</span
-              >
-            </div>
-            <div
-              class="bg-gray-200/60 h-2 rounded-full overflow-hidden cursor-pointer relative shadow-inner"
-              @click="let rect = $el.getBoundingClientRect(); let x = $event.clientX - rect.left; let width = rect.width; let percent = x / width; audio.currentTime = percent * audio.duration;"
-            >
-              <div
-                class="bg-gradient-to-r from-[var(--color-queens-secondary)] to-[var(--color-queens-light)] h-full absolute top-0 left-0 transition-all duration-100 ease-linear shadow-sm"
-                :style="`width: ${progress}%`"
-              >
-              </div>
             </div>
           </div>
         </div>
@@ -206,40 +153,4 @@ const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
   }
 </script>
 
-<style>
-  .beam-path {
-    stroke-dasharray: 25 75;
-    stroke-dashoffset: 0;
-    animation: beam-flow 3s linear infinite;
-    filter: drop-shadow(0 0 6px var(--color-queens-light))
-      drop-shadow(0 0 12px var(--color-queens-light));
-  }
-  @keyframes beam-flow {
-    from {
-      stroke-dashoffset: 100;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  @keyframes blob {
-    0% {
-      transform: translate(0px, 0px) scale(1);
-    }
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
-    100% {
-      transform: translate(0px, 0px) scale(1);
-    }
-  }
-  .animate-blob {
-    animation: blob 7s infinite;
-  }
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-</style>
+<style></style>

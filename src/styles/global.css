@@ -4,7 +4,7 @@
 
 @theme {
     --color-queens-primary: #0b1121;
-    --color-queens-secondary: #0e79c9;
+    --color-queens-secondary: #0a79c8;
     --color-queens-dark: #080c17;
     --color-queens-light: #1489e1;
     --color-queens-orange: #f97316;
@@ -12,6 +12,35 @@
 
     --font-sans: "Inter", sans-serif;
     --font-serif: "Source Serif 4", serif;
+}
+
+/* ========================================
+   BRAND COLOR UTILITIES
+   Override heading color rules for brand colors
+   ======================================== */
+
+.text-queens-secondary,
+h1 .text-queens-secondary,
+h2 .text-queens-secondary,
+h3 .text-queens-secondary,
+span.text-queens-secondary {
+    color: #0a79c8 !important;
+}
+
+.text-queens-primary {
+    color: #0b1121 !important;
+}
+
+/* Hover states for secondary color */
+.hover\:text-queens-secondary:hover,
+a.hover\:text-queens-secondary:hover,
+nav a.hover\:text-queens-secondary:hover {
+    color: #0a79c8 !important;
+}
+
+/* Group hover for icons and nested elements */
+.group:hover .group-hover\:text-queens-secondary {
+    color: #0a79c8 !important;
 }
 
 /* ========================================
@@ -530,4 +559,109 @@ html {
 
 .btn-secondary:hover {
     background: #d1d5db;
+}
+
+/* ========================================
+   FAQ ACCORDION DARK MODE STYLES
+   ======================================== */
+
+.faq-item {
+    transition: all 0.3s ease;
+}
+
+:where(.dark, .dark *) .faq-item,
+.faq-item:where(.dark, .dark *) {
+    background: rgba(15, 23, 42, 0.6) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+:where(.dark, .dark *) .faq-item:hover,
+.faq-item:hover:where(.dark, .dark *) {
+    border-color: rgba(59, 110, 174, 0.3) !important;
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.4) !important;
+}
+
+:where(.dark, .dark *) .faq-item.active,
+.faq-item.active:where(.dark, .dark *) {
+    border-color: #3b6eae !important;
+    box-shadow: 0 0 30px rgba(59, 110, 174, 0.3), 0 0 60px rgba(59, 110, 174, 0.1) !important;
+}
+
+/* FAQ Question Text */
+:where(.dark, .dark *) .faq-trigger span span:last-child,
+.faq-trigger span span:last-child:where(.dark, .dark *) {
+    color: #f1f5f9 !important;
+}
+
+/* FAQ Answer Text */
+:where(.dark, .dark *) .faq-content p,
+.faq-content p:where(.dark, .dark *) {
+    color: #94a3b8 !important;
+}
+
+/* FAQ Icon Background */
+:where(.dark, .dark *) .faq-icon,
+.faq-icon:where(.dark, .dark *) {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+:where(.dark, .dark *) .faq-icon svg,
+.faq-icon svg:where(.dark, .dark *) {
+    color: #94a3b8 !important;
+}
+
+:where(.dark, .dark *) .faq-item:hover .faq-icon,
+.faq-item:hover .faq-icon:where(.dark, .dark *) {
+    background-color: rgba(59, 110, 174, 0.2) !important;
+}
+
+:where(.dark, .dark *) .faq-item:hover .faq-icon svg,
+.faq-item:hover .faq-icon svg:where(.dark, .dark *) {
+    color: #60a5fa !important;
+}
+
+/* FAQ Number Badge */
+:where(.dark, .dark *) .faq-trigger span span:first-child,
+.faq-trigger span span:first-child:where(.dark, .dark *) {
+    background-color: rgba(59, 110, 174, 0.2) !important;
+    color: #60a5fa !important;
+}
+
+/* FAQ Answer Border */
+:where(.dark, .dark *) .faq-content>div,
+.faq-content>div:where(.dark, .dark *) {
+    border-color: rgba(59, 110, 174, 0.3) !important;
+}
+
+/* City page FAQ styles (details/summary elements) - simplified transparent dark mode */
+:where(.dark, .dark *) details.group,
+details.group:where(.dark, .dark *) {
+    background: transparent !important;
+    background-image: none !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+:where(.dark, .dark *) details.group:hover,
+details.group:hover:where(.dark, .dark *) {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+:where(.dark, .dark *) details.group[open],
+details.group[open]:where(.dark, .dark *) {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: none !important;
+}
+
+:where(.dark, .dark *) details.group summary,
+details.group summary:where(.dark, .dark *) {
+    color: rgba(255, 255, 255, 0.9) !important;
+    background: transparent !important;
+    background-image: none !important;
+}
+
+:where(.dark, .dark *) details.group>div,
+details.group>div:where(.dark, .dark *) {
+    background: transparent !important;
+    background-image: none !important;
+    color: rgba(255, 255, 255, 0.7) !important;
 }

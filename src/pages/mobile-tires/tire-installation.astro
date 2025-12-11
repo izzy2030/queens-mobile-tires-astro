@@ -34,7 +34,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       ]
     }
   </script>
-  <style>
+  <style is:global>
     @keyframes pulse-qty {
       0%,
       100% {
@@ -48,6 +48,149 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     }
     .animate-pulse-qty {
       animation: pulse-qty 0.8s ease-in-out 2;
+    }
+
+    /* Premium Dark Theme Card Styles */
+    .service-card {
+      position: relative;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(248, 250, 252, 0.9) 100%
+      );
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    :where(.dark, .dark *) .service-card,
+    .service-card:where(.dark, .dark *) {
+      background: linear-gradient(
+        135deg,
+        rgba(30, 41, 59, 0.95) 0%,
+        rgba(15, 23, 42, 0.9) 100%
+      ) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      backdrop-filter: blur(10px);
+    }
+
+    .service-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    :where(.dark, .dark *) .service-card:hover,
+    .service-card:hover:where(.dark, .dark *) {
+      box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-card.selected {
+      border: 2px solid #3b6eae !important;
+      box-shadow:
+        0 0 20px rgba(59, 110, 174, 0.3),
+        0 0 40px rgba(59, 110, 174, 0.1);
+    }
+
+    :where(.dark, .dark *) .service-card.selected,
+    .service-card.selected:where(.dark, .dark *) {
+      box-shadow:
+        0 0 30px rgba(59, 110, 174, 0.5),
+        0 0 60px rgba(59, 110, 174, 0.3) !important;
+    }
+
+    .service-card.selected::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #3b6eae 0%, #60a5fa 100%);
+      border-radius: 4px 0 0 4px;
+    }
+
+    .addon-card.selected {
+      border: 2px solid #22c55e !important;
+      box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+    }
+
+    :where(.dark, .dark *) .addon-card.selected,
+    .addon-card.selected:where(.dark, .dark *) {
+      box-shadow:
+        0 0 30px rgba(34, 197, 94, 0.5),
+        0 0 60px rgba(34, 197, 94, 0.3) !important;
+    }
+
+    .addon-card.selected::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #22c55e 0%, #4ade80 100%);
+      border-radius: 4px 0 0 4px;
+    }
+
+    /* Dark theme text colors */
+    :where(.dark, .dark *) .card-title,
+    .card-title:where(.dark, .dark *) {
+      color: #f1f5f9 !important;
+    }
+
+    :where(.dark, .dark *) .card-price,
+    .card-price:where(.dark, .dark *) {
+      color: #60a5fa !important;
+    }
+
+    :where(.dark, .dark *) .card-description,
+    .card-description:where(.dark, .dark *) {
+      color: #94a3b8 !important;
+    }
+
+    :where(.dark, .dark *) .addon-card .card-price,
+    .addon-card .card-price:where(.dark, .dark *) {
+      color: #4ade80 !important;
+    }
+
+    /* Form field styles for dark mode */
+    .form-field {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: #1f2937;
+      transition: all 0.2s ease;
+    }
+
+    :where(.dark, .dark *) .form-field,
+    .form-field:where(.dark, .dark *) {
+      background: linear-gradient(
+        135deg,
+        rgba(30, 41, 59, 0.95) 0%,
+        rgba(15, 23, 42, 0.9) 100%
+      ) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      color: #f1f5f9 !important;
+    }
+
+    .form-field:focus {
+      border-color: #3b6eae !important;
+      box-shadow: 0 0 0 3px rgba(59, 110, 174, 0.2);
+    }
+
+    :where(.dark, .dark *) .form-field:focus,
+    .form-field:focus:where(.dark, .dark *) {
+      border-color: #3b6eae !important;
+      box-shadow: 0 0 15px rgba(59, 110, 174, 0.3) !important;
+    }
+
+    /* Section title in dark mode */
+    :where(.dark, .dark *) .section-title,
+    .section-title:where(.dark, .dark *) {
+      color: #f1f5f9 !important;
+    }
+
+    :where(.dark, .dark *) .field-label,
+    .field-label:where(.dark, .dark *) {
+      color: #94a3b8 !important;
     }
   </style>
   <div class="min-h-screen bg-gray-100 py-8 font-sans">
@@ -254,18 +397,21 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               @click="triggerPulse('pulseMountQty')"
             />
             <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+              class="service-card p-5 rounded-xl overflow-hidden"
+              :class="selectedService === 'mount-balance' ? 'selected' : ''"
             >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
+              <div class="flex justify-between items-start mb-2">
+                <span class="card-title font-bold text-gray-800 text-sm"
                   >Mount, Balance & Installation <span x-text="mountQty"></span> Customer
                   Supplied Tire<span x-show="mountQty > 1">s</span></span
                 >
                 <span
-                  class="font-bold text-gray-900 text-sm"
+                  class="card-price font-bold text-[#3b6eae] text-sm"
                   x-text="'$' + mountPrice"></span>
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed mb-4">
+              <p
+                class="card-description text-xs text-gray-500 leading-relaxed mb-4"
+              >
                 A Mobile Certified Tire Technician will perform the proper
                 installation of your supplied tires using the latest equipment.
                 Includes: Touch-less Mounting, Balancing, Installation, Hand
@@ -334,15 +480,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               x-model="selectedService"
             />
             <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+              class="service-card p-5 rounded-xl overflow-hidden"
+              :class="selectedService === 'tire-rotation-only' ? 'selected' : ''"
             >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
+              <div class="flex justify-between items-start mb-2">
+                <span class="card-title font-bold text-gray-800 text-sm"
                   >Tire Rotation (rotation of all tires only)</span
                 >
-                <span class="font-bold text-gray-900 text-sm">$119.95</span>
+                <span class="card-price font-bold text-[#3b6eae] text-sm"
+                  >$119.95</span
+                >
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
+              <p class="card-description text-xs text-gray-500 leading-relaxed">
                 A Mobile Certified Tire Technician will rotate your vehicle's
                 tires in the recommended pattern. Does NOT include mounting &
                 balancing of new tires.
@@ -360,13 +509,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               x-model="selectedService"
             />
             <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+              class="service-card p-5 rounded-xl overflow-hidden"
+              :class="selectedService === 'flat-repair' ? 'selected' : ''"
             >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm">Flat Repair</span>
-                <span class="font-bold text-gray-900 text-sm">$149.99</span>
+              <div class="flex justify-between items-start mb-2">
+                <span class="card-title font-bold text-gray-800 text-sm"
+                  >Flat Repair</span
+                >
+                <span class="card-price font-bold text-[#3b6eae] text-sm"
+                  >$149.99</span
+                >
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
+              <p class="card-description text-xs text-gray-500 leading-relaxed">
                 A Mobile Certified Tire Technician will diagnose and determine
                 if a repair is needed or tire replacement. If the issue is
                 sidewall damage, tire is too old for safe repair, or alignment.
@@ -386,15 +540,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               x-model="selectedService"
             />
             <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-blue-50 peer-checked:border-[#3b6eae] transition-all"
+              class="service-card p-5 rounded-xl overflow-hidden"
+              :class="selectedService === 'install-spare' ? 'selected' : ''"
             >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
+              <div class="flex justify-between items-start mb-2">
+                <span class="card-title font-bold text-gray-800 text-sm"
                   >Install Spare</span
                 >
-                <span class="font-bold text-gray-900 text-sm">$149.99</span>
+                <span class="card-price font-bold text-[#3b6eae] text-sm"
+                  >$149.99</span
+                >
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed">
+              <p class="card-description text-xs text-gray-500 leading-relaxed">
                 A Mobile Certified Tire Technician will install the spare tire
                 for your vehicle. (Does NOT include the spare) or the actual
                 tire change, just the install so your vehicle is roadworthy.
@@ -423,17 +580,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               @click="if(!addonTpms) triggerPulse('pulseTpmsQty')"
             />
             <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
+              class="service-card addon-card p-5 rounded-xl overflow-hidden"
+              :class="addonTpms ? 'selected' : ''"
             >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
+              <div class="flex justify-between items-start mb-2">
+                <span class="card-title font-bold text-gray-800 text-sm"
                   >Tire Pressure Monitoring System Seal Kit</span
                 >
                 <span
-                  class="font-bold text-gray-900 text-sm"
+                  class="card-price font-bold text-[#22c55e] text-sm"
                   x-text="'$' + tpmsPrice"></span>
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed mb-4">
+              <p
+                class="card-description text-xs text-gray-500 leading-relaxed mb-4"
+              >
                 A Mobile Certified Tire Technician will replace TPMS valve stem
                 or sensor on your vehicle. (Bring your own sensor or we can
                 order one.) *This does not include mounting & balancing or new
@@ -507,17 +667,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               @click="if(!addonDisposal) triggerPulse('pulseDisposalQty')"
             />
             <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
+              class="service-card addon-card p-5 rounded-xl overflow-hidden"
+              :class="addonDisposal ? 'selected' : ''"
             >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
+              <div class="flex justify-between items-start mb-2">
+                <span class="card-title font-bold text-gray-800 text-sm"
                   >Tire Disposal</span
                 >
                 <span
-                  class="font-bold text-gray-900 text-sm"
+                  class="card-price font-bold text-[#22c55e] text-sm"
                   x-text="'$' + disposalPrice"></span>
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed mb-4">
+              <p
+                class="card-description text-xs text-gray-500 leading-relaxed mb-4"
+              >
                 Queen My Way will dispose of your used tires in an
                 environmentally-friendly manner. (Fee is for each tire that is
                 being picked up. This is a requirement; made of rubber required
@@ -591,18 +754,21 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
               @click="if(!addonSensor) triggerPulse('pulseSensorQty')"
             />
             <div
-              class="p-4 rounded-lg border-2 border-transparent bg-gray-50 hover:bg-gray-100 peer-checked:bg-green-50 peer-checked:border-green-500 transition-all"
+              class="service-card addon-card p-5 rounded-xl overflow-hidden"
+              :class="addonSensor ? 'selected' : ''"
             >
-              <div class="flex justify-between items-start mb-1">
-                <span class="font-bold text-gray-800 text-sm"
+              <div class="flex justify-between items-start mb-2">
+                <span class="card-title font-bold text-gray-800 text-sm"
                   >Tire pressure monitoring system (TPMS) sensor replacement
                   service</span
                 >
                 <span
-                  class="font-bold text-gray-900 text-sm"
+                  class="card-price font-bold text-[#22c55e] text-sm"
                   x-text="'$' + sensorPrice"></span>
               </div>
-              <p class="text-xs text-gray-500 leading-relaxed mb-4">
+              <p
+                class="card-description text-xs text-gray-500 leading-relaxed mb-4"
+              >
                 Replace your faulty TPMS sensors with new ones. Price is per
                 unit. Includes programming.
               </p>
@@ -663,14 +829,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           <div class="h-px bg-gray-200 my-8"></div>
 
           <!-- Vehicle Details inputs -->
-          <h3 class="text-lg font-bold text-gray-800 mb-4">Vehicle Details</h3>
+          <h3 class="section-title text-lg font-bold text-gray-800 mb-4">
+            Vehicle Details
+          </h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="flex flex-col gap-1">
-              <label class="text-xs font-bold text-gray-500 uppercase"
+              <label
+                class="field-label text-xs font-bold text-gray-500 uppercase"
                 >Year</label
               >
               <select
-                class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
+                class="form-field rounded-lg px-4 py-3 w-full text-sm focus:outline-none"
                 x-model="vehicleYear"
                 autocomplete="cc-exp-year"
               >
@@ -685,12 +854,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             </div>
 
             <div class="flex flex-col gap-1">
-              <label class="text-xs font-bold text-gray-500 uppercase"
+              <label
+                class="field-label text-xs font-bold text-gray-500 uppercase"
                 >Make</label
               >
               <input
                 type="text"
-                class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
+                class="form-field rounded-lg px-4 py-3 w-full text-sm focus:outline-none"
                 placeholder=""
                 x-model="vehicleMake"
                 autocomplete="cc-name"
@@ -698,12 +868,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             </div>
 
             <div class="flex flex-col gap-1">
-              <label class="text-xs font-bold text-gray-500 uppercase"
+              <label
+                class="field-label text-xs font-bold text-gray-500 uppercase"
                 >Model</label
               >
               <input
                 type="text"
-                class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
+                class="form-field rounded-lg px-4 py-3 w-full text-sm focus:outline-none"
                 placeholder=""
                 x-model="vehicleModel"
                 autocomplete="off"
@@ -711,12 +882,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             </div>
 
             <div class="flex flex-col gap-1">
-              <label class="text-xs font-bold text-gray-500 uppercase"
+              <label
+                class="field-label text-xs font-bold text-gray-500 uppercase"
                 >Color</label
               >
               <input
                 type="text"
-                class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
+                class="form-field rounded-lg px-4 py-3 w-full text-sm focus:outline-none"
                 placeholder=""
                 x-model="vehicleColor"
                 autocomplete="off"
@@ -724,12 +896,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             </div>
 
             <div class="col-span-1 md:col-span-2 flex flex-col gap-1">
-              <label class="text-xs font-bold text-gray-500 uppercase"
+              <label
+                class="field-label text-xs font-bold text-gray-500 uppercase"
                 >Plate Number</label
               >
               <input
                 type="text"
-                class="border border-gray-300 rounded px-3 py-3 w-full text-sm focus:outline-none focus:border-[#3b6eae]"
+                class="form-field rounded-lg px-4 py-3 w-full text-sm focus:outline-none"
                 placeholder=""
                 x-model="vehiclePlate"
                 autocomplete="off"

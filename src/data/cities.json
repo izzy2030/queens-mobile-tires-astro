@@ -280,6 +280,24 @@
           ]
         }
       },
+      "faqs": [
+        {
+          "question": "How fast can you reach me in Barrington?",
+          "answer": "We typically offer next-day appointments to get you back on the road quickly. We are very familiar with <strong>Downtown Barrington</strong>, <strong>Barrington Hills</strong>, and the surrounding communities."
+        },
+        {
+          "question": "Do you service homes in Barrington Hills?",
+          "answer": "Yes, we frequently serve residents in <strong>Barrington Hills</strong> and understand the longer driveways and estate properties in the area. Simply ensure there is a flat, paved surface for our equipment."
+        },
+        {
+          "question": "Do you serve all of Barrington?",
+          "answer": "Yes, we cover the entire Barrington area, including <strong>South Barrington</strong>, <strong>Lake Barrington</strong>, and <strong>Deer Park</strong>."
+        },
+        {
+          "question": "What are your hours?",
+          "answer": "We operate Monday through Saturday, 8:00 AM to 5:00 PM."
+        }
+      ],
       "source": "https://commons.wikimedia.org/wiki/File:Barrington_il.jpg",
       "image1": {
         "node": {
@@ -467,6 +485,24 @@
           ]
         }
       },
+      "faqs": [
+        {
+          "question": "How fast can you reach me in Gilberts?",
+          "answer": "We typically offer next-day appointments to get you back on the road quickly. We are very familiar with the neighborhoods in Gilberts, including <strong>The Conservancy</strong>, <strong>Timber Trails</strong>, and <strong>Town Center</strong>."
+        },
+        {
+          "question": "Do you service cars at office parks near Route 72?",
+          "answer": "Yes, as long as there is safe clearance, we can work in office parking lots along <strong>Galligan Road</strong> or near the commercial areas while you work."
+        },
+        {
+          "question": "Do you serve all of Gilberts?",
+          "answer": "Yes, we cover the entire village, including zip code <strong>60136</strong>."
+        },
+        {
+          "question": "What are your hours?",
+          "answer": "We operate Monday through Saturday, 8:00 AM to 5:00 PM."
+        }
+      ],
       "source": null,
       "image1": {
         "node": {

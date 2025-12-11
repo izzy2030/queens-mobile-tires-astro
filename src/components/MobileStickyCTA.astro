@@ -13,10 +13,10 @@ import { mobileTiresBrand } from "../brands";
 
 const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
 
-// Check if we're on the buy-new-tires page (exclude)
+// Check if we're on the buy-new-tires or tire-installation page (exclude)
 const currentPath = Astro.url.pathname;
 // We need to check for brand-prefixed exclusion too
-const isExcludedPage = currentPath.includes('/buy-new-tires');
+const isExcludedPage = currentPath.includes('/buy-new-tires') || currentPath.includes('/tire-installation');
 ---
 
 {!isExcludedPage && (
@@ -37,7 +37,7 @@ const isExcludedPage = currentPath.includes('/buy-new-tires');
           </div>
           <div>
             <p class="text-white font-bold text-sm">Find New Tires</p>
-            <p class="text-white/70 text-xs">Shop online, we install</p>
+            <p class="text-white text-xs">Shop online, we install</p>
           </div>
         </div>
         
@@ -47,7 +47,8 @@ const isExcludedPage = currentPath.includes('/buy-new-tires');
           <a 
             href={`/${brand.id}/buy-new-tires`}
             data-astro-reload
-            class="px-4 py-2 bg-white text-queens-secondary font-bold text-sm rounded-full hover:bg-white/90 transition-colors shadow-lg"
+            class="px-4 py-2 font-bold text-sm rounded-full transition-colors shadow-lg"
+            style="background-color: #ffffff !important; color: #0a79c8 !important;"
           >
             Shop
           </a>
@@ -55,7 +56,7 @@ const isExcludedPage = currentPath.includes('/buy-new-tires');
           <!-- Phone Button -->
           <a 
             href={`tel:${brand.phone.replace(/\D/g, '')}`}
-            class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+            class="w-10 h-10 bg-white/20 dark:bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 dark:hover:bg-white/30 transition-colors"
             aria-label="Call us"
           >
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
