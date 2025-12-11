@@ -149,7 +149,7 @@ const faqSchema = {
             </a>
           </div>
 
-          <!-- Audio Player (New Feature, Styled consistently) -->
+          <!-- Audio Player (Premium Design with Rotating Beam) -->
           {city.audioFile && (
             <div 
               class="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800"
@@ -165,41 +165,78 @@ const faqSchema = {
                 audio.addEventListener('ended', () => { playing = false; progress = 0; currentTime = '00:00'; });
               "
             >
-              <p class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4">
-                Message from our team
-              </p>
-              
-              <div class="bg-gray-50 dark:bg-slate-800 rounded-2xl p-4 flex items-center gap-4 border border-gray-100 dark:border-slate-700 shadow-sm">
-                <audio x-ref="audioPlayer" src={city.audioFile} preload="metadata" class="hidden"></audio>
-                
-                <!-- Play Button -->
-                <button 
-                  @click="playing ? audio.pause() : audio.play(); playing = !playing"
-                  class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-queens-primary text-white hover:bg-queens-secondary transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
-                  aria-label="Play Audio Message"
-                >
-                  <template x-if="!playing">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 ml-0.5">
-                      <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
-                    </svg>
-                  </template>
-                  <template x-if="playing">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                      <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z" clip-rule="evenodd" />
-                    </svg>
-                  </template>
-                </button>
+              <!-- Player Card Container with Rotating Beam -->
+              <div class="audio-player-wrapper relative rounded-2xl p-[2px]">
+                <!-- Rotating Beam Border -->
+                <div class="absolute inset-0 rounded-2xl overflow-hidden">
+                  <div
+                    class="audio-beam-border absolute inset-[-50%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_60deg,var(--color-queens-secondary)_120deg,#22d3ee_180deg,transparent_240deg,transparent_360deg)]"
+                  >
+                  </div>
+                </div>
 
-                <!-- Progress -->
-                <div class="flex-grow">
-                   <div class="flex justify-between text-[10px] font-bold text-gray-400 dark:text-gray-500 mb-2 uppercase tracking-wider">
-                      <span>Listen</span>
-                      <span x-text="currentTime">00:00</span>
-                   </div>
-                   <div class="h-1.5 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden cursor-pointer relative"
-                        @click="let rect = $el.getBoundingClientRect(); let x = $event.clientX - rect.left; let percent = x / rect.width; audio.currentTime = percent * audio.duration;">
-                      <div class="absolute top-0 left-0 h-full bg-queens-secondary transition-all duration-100" :style="`width: ${progress}%`"></div>
-                   </div>
+                <!-- Inner Card (Glassmorphic) -->
+                <div
+                  class="relative z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-[14px] p-5 flex items-center gap-5 shadow-xl"
+                >
+                  <audio x-ref="audioPlayer" src={city.audioFile} preload="metadata" class="hidden"></audio>
+
+                  <!-- Premium Play Button -->
+                  <button
+                    @click="playing ? audio.pause() : audio.play(); playing = !playing"
+                    class="relative w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-full bg-gradient-to-br from-queens-primary to-queens-secondary text-white hover:from-queens-secondary hover:to-cyan-400 transition-all duration-300 shadow-lg shadow-queens-secondary/30 hover:shadow-xl hover:shadow-queens-secondary/50 hover:scale-110"
+                    aria-label="Play Audio Message"
+                  >
+                    <template x-if="!playing">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6 ml-1"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </template>
+                    <template x-if="playing">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </template>
+                  </button>
+
+                  <!-- Progress Section -->
+                  <div class="flex-grow">
+                    <div
+                      class="flex justify-between text-xs font-semibold text-queens-primary/70 dark:text-gray-400 mb-3"
+                    >
+                      <span class="flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-queens-secondary animate-pulse"></span>
+                        Listen Now
+                      </span>
+                      <span class="font-mono" x-text="currentTime">00:00</span>
+                    </div>
+                    <div
+                      class="h-2 bg-gray-200/80 dark:bg-slate-700/80 rounded-full overflow-hidden cursor-pointer relative shadow-inner"
+                      @click="let rect = $el.getBoundingClientRect(); let x = $event.clientX - rect.left; let percent = x / rect.width; audio.currentTime = percent * audio.duration;"
+                    >
+                      <div
+                        class="absolute top-0 left-0 h-full bg-gradient-to-r from-queens-secondary to-cyan-400 rounded-full transition-all duration-100"
+                        :style="`width: ${progress}%`"
+                      >
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -778,6 +815,32 @@ const faqSchema = {
     .city-content strong {
       color: #0b1121;
       font-weight: 700;
+    }
+
+    /* Rotating Beam Animation for Audio Player */
+    .audio-beam-border {
+      animation: rotate-beam 4s linear infinite;
+    }
+    
+    @keyframes rotate-beam {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    /* Optional: Add glow effect to the wrapper */
+    .audio-player-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 1rem;
+      background: linear-gradient(90deg, var(--color-queens-secondary), #22d3ee, var(--color-queens-secondary));
+      opacity: 0.3;
+      filter: blur(8px);
+      z-index: -1;
     }
   </style>
 

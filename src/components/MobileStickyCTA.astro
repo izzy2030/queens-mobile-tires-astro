@@ -83,8 +83,8 @@ const isExcludedPage = currentPath.includes('/buy-new-tires') || currentPath.inc
       const documentHeight = document.documentElement.scrollHeight;
       const scrollPercent = scrollY / (documentHeight - windowHeight);
       
-      // Calculate trigger point (25% of viewport from top)
-      const triggerPoint = windowHeight * 0.25;
+      // Calculate trigger point (33% of viewport from top)
+      const triggerPoint = windowHeight * 0.33;
       
       // Calculate footer position
       let nearFooter = false;
