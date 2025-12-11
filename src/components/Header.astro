@@ -18,7 +18,7 @@ const restName = nameParts.length > 2 ? nameParts.slice(2).join(" ") : "";
     class="container mx-auto px-6 max-w-7xl h-20 flex justify-between items-center"
   >
     <!-- Logo -->
-    <a href={`/${brand.id}`} class="group flex items-center gap-2">
+    <a href={`/`} class="group flex items-center gap-2">
       {
         brand.logoPath && brand.logoPath.includes("New-Logo") ? (
           <>
@@ -49,31 +49,31 @@ const restName = nameParts.length > 2 ? nameParts.slice(2).join(" ") : "";
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-8">
       <a
-        href={`/${brand.id}`}
+        href={`/`}
         data-astro-prefetch="hover"
         class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide dark:text-gray-300 dark:hover:text-queens-secondary"
         >Home</a
       >
       <a
-        href={`/${brand.id}/buy-new-tires`}
+        href={`/buy-new-tires`}
         data-astro-reload
         class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide dark:text-gray-300 dark:hover:text-queens-secondary"
         >Find New Tires</a
       >
       <a
-        href={`/${brand.id}/tire-installation`}
+        href={`/tire-installation`}
         data-astro-prefetch="hover"
         class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide dark:text-gray-300 dark:hover:text-queens-secondary"
         >Schedule Install</a
       >
       <a
-        href={`/${brand.id}/about`}
+        href={`/about`}
         data-astro-prefetch="hover"
         class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide dark:text-gray-300 dark:hover:text-queens-secondary"
         >About</a
       >
       <a
-        href={`/${brand.id}/faq`}
+        href={`/faq`}
         data-astro-prefetch="hover"
         class="text-sm font-medium hover:text-queens-secondary transition-colors uppercase tracking-wide dark:text-gray-300 dark:hover:text-queens-secondary"
         >FAQ</a
@@ -180,7 +180,7 @@ const restName = nameParts.length > 2 ? nameParts.slice(2).join(" ") : "";
     <!-- Menu Items -->
     <nav class="flex-1 py-4 px-2 overflow-y-auto">
       <a
-        href={`/${brand.id}`}
+        href={`/`}
         data-astro-prefetch="hover"
         class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 hover:text-queens-secondary transition-colors group"
       >
@@ -201,7 +201,7 @@ const restName = nameParts.length > 2 ? nameParts.slice(2).join(" ") : "";
         <span class="font-medium">Home</span>
       </a>
       <a
-        href={`/${brand.id}/buy-new-tires`}
+        href={`/buy-new-tires`}
         data-astro-reload
         class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 hover:text-queens-secondary transition-colors group"
       >
@@ -222,7 +222,7 @@ const restName = nameParts.length > 2 ? nameParts.slice(2).join(" ") : "";
         <span class="font-medium">Find New Tires</span>
       </a>
       <a
-        href={`/${brand.id}/tire-installation`}
+        href={`/tire-installation`}
         data-astro-prefetch="hover"
         class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 hover:text-queens-secondary transition-colors group"
       >
@@ -243,7 +243,7 @@ const restName = nameParts.length > 2 ? nameParts.slice(2).join(" ") : "";
         <span class="font-medium">Schedule Install</span>
       </a>
       <a
-        href={`/${brand.id}/faq`}
+        href={`/faq`}
         data-astro-prefetch="hover"
         class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 hover:text-queens-secondary transition-colors group"
       >
@@ -264,7 +264,7 @@ const restName = nameParts.length > 2 ? nameParts.slice(2).join(" ") : "";
         <span class="font-medium">FAQ</span>
       </a>
       <a
-        href={`/${brand.id}/about`}
+        href={`/about`}
         data-astro-prefetch="hover"
         class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-50 hover:text-queens-secondary transition-colors group"
       >
@@ -289,7 +289,7 @@ const restName = nameParts.length > 2 ? nameParts.slice(2).join(" ") : "";
     <!-- CTA Button -->
     <div class="p-6 border-t border-gray-100">
       <a
-        href={`/${brand.id}/buy-new-tires`}
+        href={`/buy-new-tires`}
         data-astro-reload
         class="btn-primary w-full text-center shadow-lg"
       >

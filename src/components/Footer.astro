@@ -21,7 +21,7 @@ const cleanTitle = (title: string) => {
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       {/* Column 1: Brand */}
       <div>
-        <a href={`/${brand.id}`} class="inline-block group mb-4">
+        <a href={`/`} class="inline-block group mb-4">
           {
             brand.logoPathWhite ? (
               <img
@@ -64,7 +64,7 @@ const cleanTitle = (title: string) => {
         <ul class="space-y-2">
           <li>
             <a
-              href={`/${brand.id}`}
+              href={`/`}
               data-astro-prefetch="hover"
               class="text-sm hover:text-queens-secondary transition-colors"
               >Home</a
@@ -72,7 +72,7 @@ const cleanTitle = (title: string) => {
           </li>
           <li>
             <a
-              href={`/${brand.id}/about`}
+              href={`/about`}
               data-astro-prefetch="hover"
               class="text-sm hover:text-queens-secondary transition-colors"
               >About Us</a
@@ -80,7 +80,7 @@ const cleanTitle = (title: string) => {
           </li>
           <li>
             <a
-              href={`/${brand.id}/buy-new-tires`}
+              href={`/buy-new-tires`}
               data-astro-reload
               class="text-sm hover:text-queens-secondary transition-colors"
               >Find New Tires</a
@@ -88,7 +88,7 @@ const cleanTitle = (title: string) => {
           </li>
           <li>
             <a
-              href={`/${brand.id}/tire-installation`}
+              href={`/tire-installation`}
               data-astro-prefetch="hover"
               class="text-sm hover:text-queens-secondary transition-colors"
               >Schedule Install</a
@@ -96,7 +96,7 @@ const cleanTitle = (title: string) => {
           </li>
           <li>
             <a
-              href={`/${brand.id}/locations`}
+              href={`/locations`}
               data-astro-prefetch="hover"
               class="text-sm hover:text-queens-secondary transition-colors"
               >Service Areas</a
@@ -104,7 +104,7 @@ const cleanTitle = (title: string) => {
           </li>
           <li>
             <a
-              href={`/${brand.id}/faq`}
+              href={`/faq`}
               data-astro-prefetch="hover"
               class="text-sm hover:text-queens-secondary transition-colors"
               >FAQ</a
@@ -112,7 +112,7 @@ const cleanTitle = (title: string) => {
           </li>
           <li>
             <a
-              href={`/${brand.id}/terms`}
+              href={`/terms`}
               data-astro-prefetch="hover"
               class="text-sm hover:text-queens-secondary transition-colors"
               >Terms of Use</a
@@ -120,7 +120,7 @@ const cleanTitle = (title: string) => {
           </li>
           <li>
             <a
-              href={`/${brand.id}/privacy`}
+              href={`/privacy`}
               data-astro-prefetch="hover"
               class="text-sm hover:text-queens-secondary transition-colors"
               >Privacy Policy</a
@@ -139,7 +139,7 @@ const cleanTitle = (title: string) => {
             cities.slice(0, 10).map((city) => (
               <li>
                 <a
-                  href={`/${brand.id}/cities/${city.slug}`}
+                  href={`/cities/${city.slug}`}
                   class="hover:text-queens-secondary transition-colors"
                 >
                   {cleanTitle(city.title)}
@@ -149,7 +149,7 @@ const cleanTitle = (title: string) => {
           }
         </ul>
         <a
-          href={`/${brand.id}/locations`}
+          href={`/locations`}
           class="inline-block mt-4 text-xs font-semibold text-queens-secondary hover:text-white transition-colors"
         >
           View All {cities.length} Locations →
