@@ -19,7 +19,7 @@ const {
 const brand: BrandConfig = propBrand || mobileTiresBrand;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
@@ -47,26 +47,7 @@ const brand: BrandConfig = propBrand || mobileTiresBrand;
       // Re-apply after View Transitions swap
       document.addEventListener("astro:after-swap", applyTheme);
     </script>
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "@id": "https://queensmobiletires.com/#organization",
-        "name": "Queens Mobile Tires",
-        "url": "https://queensmobiletires.com/",
-        "logo": "https://queensmobiletires.com/favicon.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+1-847-925-1100",
-          "contactType": "customer service"
-        },
-        "founder": {
-          "@type": "Person",
-          "name": "Israel",
-          "jobTitle": "Founder & Lead Technician"
-        }
-      }
-    </script>
+
     <slot name="head" />
   </head>
   <body
