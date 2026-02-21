@@ -63,5 +63,43 @@ const brand: BrandConfig = propBrand || mobileTiresBrand;
 
     <Footer brand={brand} />
     <MobileStickyCTA brand={brand} />
+
+    <script is:inline>
+      function initRevealAnimations() {
+        // Wait for first paint to complete before observing,
+        // so elements already in viewport don't jank on transition start
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.1, rootMargin: "0px 0px -30px 0px" }
+            );
+
+            document
+              .querySelectorAll(".reveal, .reveal-stagger, .reveal-scale")
+              .forEach((el) => {
+                observer.observe(el);
+              });
+          }, 50);
+        });
+      }
+
+      // Run on initial load
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initRevealAnimations);
+      } else {
+        initRevealAnimations();
+      }
+
+      // Re-run after Astro View Transitions
+      document.addEventListener("astro:after-swap", initRevealAnimations);
+    </script>
   </body>
 </html>

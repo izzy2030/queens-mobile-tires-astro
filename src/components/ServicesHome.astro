@@ -14,7 +14,7 @@ const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
 
   <div class="container mx-auto px-4 max-w-7xl">
     {/* HEADER: Focus on Retail + Convenience */}
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-scale">
       <div
         class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200 bg-gray-50 text-gray-600 text-xs font-bold uppercase tracking-widest mb-4"
       >
@@ -32,7 +32,9 @@ const { brand = mobileTiresBrand } = Astro.props as { brand?: BrandConfig };
     </div>
 
     {/* BENTO GRID */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger"
+    >
       {/* CARD 1: THE TIRE INVENTORY (Sales Focus) */}
       <div
         class="md:col-span-2 rounded-3xl p-8 shadow-2xl hover:shadow-queens-secondary/20 transition duration-500 group relative overflow-hidden border border-gray-800"
