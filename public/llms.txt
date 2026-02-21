@@ -1,0 +1,48 @@
+# Queens Mobile Tires
+
+Professional mobile tire installation service serving Northern Illinois (Elgin, Algonquin, and surrounding areas).
+
+## Business Profile
+- **Industry**: Automotive / Mobile Tire Concierge
+- **Established**: 2014 (Over a decade of experience)
+- **Reputation**: Highly-rated service with a 5-star average based on authentic Google Reviews.
+- **Backing**: Unlike many mobile-only startups, the business is backed by two physical brick-and-mortar repair shops (Queens Auto Services) located in Elgin and Algonquin, IL.
+- **Team**: Service is performed by expert, professional mobile tire technicians (part of the Queens Auto Services ASE-certified lineage).
+
+## Service Areas
+We provide comprehensive mobile tire coverage across Northern Illinois, with a focus on:
+- **Primary Hubs**: Elgin, Algonquin, Barrington, Huntley, Gilberts, Crystal Lake.
+- **Extended Coverage**: Prairie Grove, Sleepy Hollow, Fox River Grove, East Dundee, West Dundee, Carpentersville, Lake in the Hills, Cary, South Elgin, Streamwood, Hoffman Estates, Schaumburg, and more.
+
+## Core Services
+- **Mobile Tire Installation**: Professional mounting and computer balancing at the customer's home or office.
+- **Online Tire Retail**: Customers can browse and buy a huge inventory of tire brands online.
+- **Flat Tire Repair**: On-site diagnosis and repair of punctures.
+- **TPMS Service**: Sensor replacement and system resets.
+- **Emergency Spare Install**: Rapid roadside assistance to get vehicles roadworthy.
+
+## Tech Stack
+- **Framework**: Astro 5 (Static Site Generation / Hydration)
+- **Styling**: Tailwind CSS 4 (using the @tailwindcss/vite plugin)
+- **Interactivity**: Alpine.js (for light client-side logic)
+- **Typography**: Inter (Sans-serif) and Source Serif 4 (Serif)
+- **Backend Integrations**: Webhooks to n8n for appointment processing and lead management.
+
+## Project Structure
+- `/src/pages`: 
+  - `index.astro`: Homepage with Bento layout and Hero.
+  - `about.astro`: Detailed company history and location verification.
+  - `tire-installation.astro`: Core booking entry point for service selection.
+  - `locations.astro` & `/cities/[slug].astro`: SEO-optimized service area pages for Chicago suburbs.
+- `/src/components`: 
+  - `BentoGrid.astro`: Main value proposition showcase.
+  - `TrustAnchor.astro`: Physical location proof and "Not Just a Van" branding.
+  - `Hero.astro`: Premium entry section featuring an interactive audio message.
+  - `TireWidget.astro`: Primary conversion tool for tire search.
+- `/src/layouts/BaseLayout.astro`: Common SEO configuration, meta tags, and design tokens.
+- `/src/styles/global.css`: Design system including vibrant blues, glassmorphism, and custom animations.
+
+## Key Development Context
+- **Vibrant & Premium Design**: The UI uses a modern, high-contrast palette (Queens Primary: #0b1121, Queens Secondary: #0a79c8) with subtle micro-animations and glassmorphic elements.
+- **SEO Strategy**: Highly focused on local intent (e.g., "Mobile Tire Service in [City Name]").
+- **Conversion Focus**: Heavy use of "Global Call to Action" components and sticky mobile CTAs.
