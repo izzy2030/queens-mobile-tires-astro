@@ -19,17 +19,86 @@ import { mobileTiresBrand } from "../brands";
     {
       "@context": "https://schema.org",
       "@type": "AutomotiveBusiness",
+      "@id": "https://queensmobiletires.com/#localbusiness",
       "name": "Queens Mobile Tires",
+      "image": "https://queensmobiletires.com/images/mobile-tire-service-algonquin-il.webp",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Mobile Service",
-        "addressLocality": "Chicago",
+        "streetAddress": "2401 E Algonquin Rd",
+        "addressLocality": "Lake in the Hills",
         "addressRegion": "IL",
-        "postalCode": "60007",
+        "postalCode": "60102",
         "addressCountry": "US"
       },
+      "url": "https://queensmobiletires.com/",
       "telephone": "+1-847-925-1100",
-      "url": "https://queensmobiletires.com/"
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Tire Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Tire Installation",
+              "description": "Professional mounting and balancing at your location."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Flat Tire Repair",
+              "description": "On-site patch and plug services for punctured tires."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "TPMS Sensor Service",
+              "description": "Tire Pressure Monitoring System diagnostics and reset."
+            }
+          }
+        ]
+      },
+      "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I have to go to a tire shop?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! We bring the entire tire shop to you. We install and balance tires in your driveway or at your workplace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What areas do you serve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We serve Lake in the Hills, Elgin, Algonquin, Barrington, and surrounding Northern Illinois suburbs."
+            }
+          }
+        ]
+      }
     }
   </script>
   <Hero brand={mobileTiresBrand} />
